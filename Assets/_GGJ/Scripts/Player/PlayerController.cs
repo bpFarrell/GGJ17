@@ -6,28 +6,50 @@ public class PlayerController : MonoBehaviour {
     public Vector3 velocity = new Vector3();
     public float friction = 1;
     public float power = 5;
+    float lastPressTime;
+    float twistDelay = 0.2f;
     public IList<GameObject> tents = new List<GameObject>();
+    public delegate void func();
+    float twist = 360;
+    public event func flutter;
 	// Use this for initialization
 	void Start () {
         Transform[] children = GetComponentsInChildren<Transform>();
         foreach (Transform child in children) {
-            if (child.parent = transform) {
-                tents.Add(child.gameObject);
+            if (child.name.Contains("octoKnee")) {
+                TentacleLogic tl = child.gameObject.AddComponent<TentacleLogic>();
+                tl.Init(this);
             }
-        }
-        foreach(GameObject go in tents) {
-            go.transform.Rotate(-20, 180, 0);
         }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetButtonDown("P1_A")) {
             velocity += transform.forward*power;
+            flutter();
+            if (lastPressTime + twistDelay > Time.time) {
+                twist -=360;
+            }
+            lastPressTime = Time.time;
         }
+        float deltaTwist = CalculateTwist();
+        float levelOut = LevelOut();
+        float angle = Input.GetAxis("P1_LeftHorizontal");
+        transform.Rotate(levelOut, angle * Time.deltaTime*100, deltaTwist);
 
 
         transform.position += velocity * Time.deltaTime;
         velocity = velocity - (velocity * Time.deltaTime*friction);
 	}
+    float CalculateTwist() {
+
+        float old = twist;
+        twist += Time.deltaTime * 500;
+        twist = Mathf.Min(twist, 360);
+        return  old - twist;
+    }
+    float LevelOut() {
+        return Vector3.Dot(transform.forward, Vector3.up);
+    }
 }
