@@ -1,4 +1,6 @@
-﻿Shader "Custom/FIshSwim" {
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
+Shader "Custom/FIshSwim" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
@@ -28,7 +30,8 @@
 		fixed4 _Color;
 		void myvert(inout appdata_full v)
 		{
-			v.vertex.x += sin(_Time.x*50 + v.vertex.z);
+			float f = length	(float3(unity_ObjectToWorld[0].x, unity_ObjectToWorld[1].x, unity_ObjectToWorld[2].x))*500;
+			v.vertex.z += sin((_Time.x * (50 + sin(f)*20)) + v.vertex.x * 3+f*100)*0.1;
 		}
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {
@@ -38,7 +41,7 @@
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
-			o.Alpha = c.a;
+			o.Alpha = 0;
 		}
 		ENDCG
 	}
