@@ -20,7 +20,9 @@ public class NodeFish : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
- 
+        GameObject fish = Instantiate(Resources.Load("fish")) as GameObject;
+        fish.transform.position = transform.position;
+        fish.GetComponent<FishBehavior>().target = transform;
 	}
 	
 	// Update is called once per frame

@@ -4,16 +4,22 @@ using System.Collections.Generic;
 
 public class NodeManager : MonoBehaviour {
 
-	public int amountMainNode;
-	public int amountFishNOde;
-	public float distToInnerBound;
-	public float distToOuterBound;
+	int amountMainNode;
+	int amountFishNOde;
+	float distToInnerBound;
+	float distToOuterBound;
 
 	public Vector3 motherPos;
 
 	public IList<NodeMain> mainNodes = new List<NodeMain>();
 	// Use this for initialization
 	void Start () {
+        GameInfo gameInfo = GetComponent<GameInfo>();
+        amountMainNode = gameInfo.amountMainNodes;
+        amountFishNOde = Mathf.RoundToInt(gameInfo.amountFishToSpawn / amountMainNode);
+        distToInnerBound = gameInfo.distToInnerBound;
+        distToOuterBound = gameInfo.distToOuterBound;
+
 		NodePlacement ();
 	}
 	
@@ -29,7 +35,7 @@ public class NodeManager : MonoBehaviour {
             GameObject nodeGO = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             nodeGO.transform.position = pos;
             NodeMain nodeMain = nodeGO.AddComponent<NodeMain>();
-            nodeMain.Init(pos,10);
+            nodeMain.Init(pos,amountFishNOde);
             //    NodeMain nodeMain = new NodeMain (pos);
 			mainNodes.Add (nodeMain);
 		}
