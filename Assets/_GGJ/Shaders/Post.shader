@@ -40,7 +40,7 @@
 			sampler2D _MainTex;
 
 			fixed4 Sample(float2 uv,float x, float y) {
-				float size = 0.005;
+				float size = 0.01;
 				return max(tex2D(_MainTex, uv + float2(x, y)*size)-1,fixed4(0,0,0,0));
 			}
 			fixed4 frag (v2f i) : SV_Target

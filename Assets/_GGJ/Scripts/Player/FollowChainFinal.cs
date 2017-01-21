@@ -29,7 +29,7 @@ public class FollowChainFinal : MonoBehaviour {
         if (dist < distance) {
             transform.position = Prev.transform.position + dir * distance;
         }
-        dummy.transform.position = Vector3.Lerp(dummy.transform.position, Prev.transform.position + Prev.transform.TransformVector(offset), Time.deltaTime * 10 * stiffness);
+        dummy.transform.position = Vector3.Lerp(dummy.transform.position, Prev.transform.position + Prev.transform.TransformVector(offset), Time.deltaTime * 20 * stiffness);
         dummy.transform.rotation = Quaternion.LookRotation(dir,dummy.transform.up);
         float rDotu = Vector3.Dot(dummy.transform.right, Prev.transform.up);
         dummy.transform.Rotate(0, 0, -rDotu*Time.deltaTime*200*stiffness);

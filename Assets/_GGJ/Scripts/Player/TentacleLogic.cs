@@ -8,8 +8,8 @@ public class TentacleLogic : MonoBehaviour {
         get { return Mathf.Lerp(rotMin, rotMax, t); }
     }
     public float t = 0;
-    float rotMax = 100;
-    float rotMin=60;
+    float rotMax = 60;
+    float rotMin=100;
     public enum State {
         Contract,
         Expand
@@ -27,7 +27,7 @@ public class TentacleLogic : MonoBehaviour {
             t += Time.deltaTime;
         }
         t = Mathf.Clamp01(t);
-        Vector3 rot = transform.localRotation.eulerAngles;
+        Vector3 rot = transform.rotation.eulerAngles;
         rot.z = targetRot;
         Quaternion target = Quaternion.Euler(rot);
         transform.rotation = Quaternion.Lerp(transform.rotation, target, Time.deltaTime);
