@@ -15,8 +15,9 @@ public class NodeMain : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        transform.position += Vector3.forward * Mathf.Sin(Time.time) * 0.01f;
+        transform.position += Vector3.right * Mathf.Sin(Time.time) * 0.01f;
+    }
 
     public void Init(Vector3 origin, int amountFish) {
         float degree = 360 / amountFish;
@@ -24,6 +25,7 @@ public class NodeMain : MonoBehaviour {
             Vector3 temp = Tools.PointOnCircle(origin, degree * i, Random.Range(2,5));
             Vector3 assignedPos = new Vector3(temp.x, Random.Range(0, 5), temp.z);
             GameObject fishNodeGO = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            fishNodeGO.GetComponent<MeshRenderer>().enabled = false;
             fishNodeGO.transform.position = assignedPos;//new Vector3(temp.x, Random.Range(0, 5), temp.z);
             fishNodeGO.transform.localScale *= 0.5f;
 
