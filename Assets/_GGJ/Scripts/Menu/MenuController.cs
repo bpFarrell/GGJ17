@@ -20,16 +20,17 @@ public class MenuController : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		
+
 	}
 
 	public void PressedPlay()
 	{
 		Debug.Log ("Play Pressed.");
-		FadeInObject(fadePanel, 0.4f);
-		FadeInObject(loadingIcon, 1.0f);
 		// Fade to black
+		FadeInObject(fadePanel, 0.4f);
 		// Animate loading icon
+		FadeInObject(loadingIcon, 1.0f);
+		
 		// Wait arbitrary 5 seconds or so for loading screen
 		// LoadSceneAdditively the game screen and start initializations
 	}
