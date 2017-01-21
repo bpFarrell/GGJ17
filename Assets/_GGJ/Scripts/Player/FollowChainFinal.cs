@@ -25,9 +25,10 @@ public class FollowChainFinal : MonoBehaviour {
             transform.position = Prev.transform.position + dir * distance;
         }
         transform.position = Vector3.Lerp(transform.position, Prev.transform.position + Prev.transform.TransformVector(offset), Time.deltaTime * 10);
-       // transform.rotation = Quaternion.LookRotation(dir,transform.up);
-        float rDotu = Vector3.Dot(transform.right, Prev.transform.up);
-        //transform.Rotate(0, 0, -rDotu*Time.deltaTime*200);
+        transform.rotation = Quaternion.LookRotation(dir,transform.up);
+        transform.Rotate(0, -90, 0);
+        float rDotu = Vector3.Dot(transform.forward, Prev.transform.up);
+        transform.Rotate(0, 0, rDotu*Time.deltaTime*200);
     }
     public void Spawn(FollowChainFinal from) {
         if(Prev!= null) {
