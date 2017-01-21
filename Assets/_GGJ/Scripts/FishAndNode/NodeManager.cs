@@ -25,17 +25,14 @@ public class NodeManager : MonoBehaviour {
 	void NodePlacement(){
 		float sliceDegree = 360.0f / amountMainNode;
 		for (int i = 0; i < amountMainNode; i++) {
-			Vector3 pos = PointOnCircle (motherPos, sliceDegree * i, Random.Range (distToInnerBound, distToOuterBound));
-			GameObject node = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-			node.transform.position = pos;
-			NodeMain nodeMain = new NodeMain ();
+			Vector3 pos = Tools.PointOnCircle (motherPos, sliceDegree * i, Random.Range (distToInnerBound, distToOuterBound));
+            GameObject nodeGO = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            nodeGO.transform.position = pos;
+            NodeMain nodeMain = nodeGO.AddComponent<NodeMain>();
+            nodeMain.Init(pos,10);
+            //    NodeMain nodeMain = new NodeMain (pos);
 			mainNodes.Add (nodeMain);
 		}
 	}
 
-	Vector3 PointOnCircle(Vector3 origin, float angleInDegrees, float radius){
-		float x = (float)(radius * Mathf.Cos(angleInDegrees * Mathf.PI / 180F)) + origin.x;
-		float z = (float)(radius * Mathf.Sin(angleInDegrees * Mathf.PI / 180F)) + origin.z;
-		return new Vector3 (x,origin.y,z);
-	}
 }
