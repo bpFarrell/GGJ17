@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427147, b: 0.56452364, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -31017,6 +31017,89 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7213e41cdef17a4499ad3d5db0f321b0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1162876185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1162876189}
+  - component: {fileID: 1162876188}
+  - component: {fileID: 1162876187}
+  - component: {fileID: 1162876186}
+  m_Layer: 0
+  m_Name: iconStop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1162876186
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1162876185}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!64 &1162876187
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1162876185}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &1162876188
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1162876185}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1162876189
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1162876185}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 349.10895, y: 92.18, z: 331.4689}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1163451212
 Prefab:
   m_ObjectHideFlags: 0
@@ -33257,6 +33340,73 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 310df689acfbe864eb2a5bdf9dd653f4, type: 3}
   m_PrefabInternal: {fileID: 797880052}
+--- !u!1001 &1257979002
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 349.10895
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 92.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 321.4689
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 199865701844954364, guid: 91281b20143ebe347bb3f3cd0a0f25af,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199865701844954364, guid: 91281b20143ebe347bb3f3cd0a0f25af,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 198977848999331478, guid: 91281b20143ebe347bb3f3cd0a0f25af,
+        type: 2}
+      propertyPath: scalingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198977848999331478, guid: 91281b20143ebe347bb3f3cd0a0f25af,
+        type: 2}
+      propertyPath: randomSeed
+      value: 824639053
+      objectReference: {fileID: 0}
+    - target: {fileID: 198977848999331478, guid: 91281b20143ebe347bb3f3cd0a0f25af,
+        type: 2}
+      propertyPath: UVModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1257998290
 Prefab:
   m_ObjectHideFlags: 0
@@ -36730,7 +36880,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountMainNodes: 12
   amountFishToWin: 1000
-  amountFishToSpawn: 3000
+  amountFishToSpawn: 1000
+  amountFishDelta: 0
   distToInnerBound: 110
   distToOuterBound: 160
   pOneFish: 0
