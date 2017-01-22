@@ -110,6 +110,7 @@ public class PlayerController : MonoBehaviour {
         {
             psTime = Time.time;
             GameObject ps = Instantiate(Resources.Load("psStop")) as GameObject;
+            ps.transform.rotation = Quaternion.AngleAxis(yRotate, Vector3.up);// (Vector3.up, yRotate);
        //     ParticleSystem.MainModule mainMod = ps.GetComponent<ParticleSystem>().main;
        //     mainMod.startRotation3D = true;
        //     mainMod.startRotationY = yRotate;
