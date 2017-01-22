@@ -52,6 +52,7 @@ public class NodeMain : MonoBehaviour {
                 {
                     //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
                     fishNodes[i].state = NodeFish.State.neutral;
+                    fishNodes[i].fishControl.SetColor(0);
                 }
                 Debug.Log(state);
             }
@@ -98,15 +99,27 @@ public class NodeMain : MonoBehaviour {
         Debug.Log(col.name);
         trackTarget = col.transform;
         state = State.travel;
-        for (int i = 0; i < fishNodes.Count; i++) {
-            //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
-            fishNodes[i].state = NodeFish.State.travel;
-        }
+
         if (col.GetComponent<PlayerController>().isPlayerOne)
         {
             isPlayerOne = true;
+            for (int i = 0; i < fishNodes.Count; i++)
+            {
+                //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
+                fishNodes[i].state = NodeFish.State.travel;
+                fishNodes[i].fishControl.SetColor(1);
+            }
         }
-        else isPlayerOne = false;
+        else
+        {
+            isPlayerOne = false;
+            for (int i = 0; i < fishNodes.Count; i++)
+            {
+                //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
+                fishNodes[i].state = NodeFish.State.travel;
+                fishNodes[i].fishControl.SetColor(2);
+            }
+        }
     }
  //   void OnTriggerLeave(Collider col) {
  //       if (col.tag == "Player")
