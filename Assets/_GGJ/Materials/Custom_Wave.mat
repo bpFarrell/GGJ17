@@ -24,11 +24,11 @@ Material:
     m_Floats:
     - first:
         name: _Glossiness
-      second: 0.5
+      second: 1
     - first:
         name: _Metallic
       second: 0
     m_Colors:
     - first:
         name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0.8235294, g: 0.5368811, b: 0.35121107, a: 1}

@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
     void Awake() {
         roll = transform.GetChild(0).gameObject;
+        Animation[] anim = GetComponentsInChildren<Animation>();
+        for(int x = 0; x < anim.Length; x++) {
+            anim[x].Play();
+        }
     }
 	void Start () {
         Transform[] children = GetComponentsInChildren<Transform>();
