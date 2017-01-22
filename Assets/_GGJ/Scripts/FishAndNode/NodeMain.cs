@@ -25,11 +25,19 @@ public class NodeMain : MonoBehaviour {
     public ParticleSystem.MainModule psMain;
     float dropTime;
     float coolDown = 3;
+
+    Transform intruder;
+    float intrudeTimeStart;
+    bool isIntrude;
+    float radius;
 	// Use this for initialization
 	void Start () {
         //  Init(pos);
         particle = GetComponentInChildren<ParticleSystem>();
         psMain = particle.main;
+
+        radius = GetComponent<SphereCollider>().radius;
+        Debug.Log(radius);
 	}
 	
 	// Update is called once per frame
@@ -47,14 +55,7 @@ public class NodeMain : MonoBehaviour {
             transform.LookAt(trackTarget);
             transform.position += transform.forward * travelSpeed * Time.deltaTime;
             if ((trackTarget.position - transform.position).magnitude > 20) {
-                state = State.neutral;
-                for (int i = 0; i < fishNodes.Count; i++)
-                {
-                    //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
-                    fishNodes[i].state = NodeFish.State.neutral;
-                    fishNodes[i].fishControl.SetColor(0);
-                }
-                Debug.Log(state);
+                SetToNeutralState();
             }
         }
 
@@ -72,8 +73,22 @@ public class NodeMain : MonoBehaviour {
                 psMain.startColor = new Color(1f, 0.0f, 0.0f, 0.15f);
             }
         }
+
+        if (isIntrude) {
+            IntruderStay();
+        }
     }
 
+    public void SetToNeutralState() {
+        state = State.neutral;
+        for (int i = 0; i < fishNodes.Count; i++)
+        {
+            //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
+            fishNodes[i].state = NodeFish.State.neutral;
+            fishNodes[i].fishControl.SetColor(0);
+        }
+        Debug.Log(state);
+    }
     public void Init(Vector3 origin, int amountFish, Transform rootParent, Transform fishParent) {
         float degree = 360 / amountFish;
         for (int i = 0; i < amountFish; i++) {
@@ -99,7 +114,13 @@ public class NodeMain : MonoBehaviour {
         Debug.Log(col.name);
         trackTarget = col.transform;
         state = State.travel;
-
+        if (state == State.travel) {
+            if (isPlayerOne != col.GetComponent<PlayerController>().isPlayerOne) {
+                intruder = col.transform;
+                intrudeTimeStart = Time.time;
+                isIntrude = true;
+            }
+        }
         if (col.GetComponent<PlayerController>().isPlayerOne)
         {
             isPlayerOne = true;
@@ -119,6 +140,20 @@ public class NodeMain : MonoBehaviour {
                 fishNodes[i].state = NodeFish.State.travel;
                 fishNodes[i].fishControl.SetColor(2);
             }
+        }
+    }
+
+    void IntruderStay() {
+        float dist = (intruder.position - transform.position).magnitude;
+
+        if (dist > radius) {
+            isIntrude = false;
+            Debug.Log("failed to steal");
+            return;
+        }
+        if (Time.time > intrudeTimeStart + 2.0f) {
+            // drop the node;
+            SetToNeutralState();
         }
     }
  //   void OnTriggerLeave(Collider col) {
