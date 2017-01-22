@@ -38,13 +38,13 @@
 			float3 dir2Cam = normalize(IN.worldPos - _WorldSpaceCameraPos);
 			fixed spot = tex2D(_Spots, IN.uv_MainTex*0.5);
 			fixed caustics =
-				tex2D(_Caustics, IN.uv_MainTex * 2 + fixed2(_Time.x*0.5, 0))+
-				tex2D(_Caustics, IN.uv_MainTex * 2 + fixed2(0, _Time.x*0.5));
+				tex2D(_Caustics, IN.uv_MainTex * 1 + fixed2(_Time.x*0.2, 0))+
+				tex2D(_Caustics, IN.uv_MainTex * 2 + fixed2(0, _Time.x*0.1));
 			fixed3 normal = normalize((tex2D(_Flake, IN.uv_MainTex*30)*2-1)+IN.worldNormal);
 			float3 ref = normalize(reflect(normal,dir2Cam));
 			float d = max(pow(dot(ref, normalize(fixed3(1, -1, 1))),2),0)*0.5;
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-			o.Albedo = c+(d*spot)*fixed3(0.9,1,1.5)+caustics*0.1;
+			o.Albedo = c+(d*spot)*fixed3(0.9,1,1.5)+caustics*0.2;
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
