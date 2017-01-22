@@ -16,6 +16,12 @@ Material:
     serializedVersion: 2
     m_TexEnvs:
     - first:
+        name: _GlowMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
         name: _MainTex
       second:
         m_Texture: {fileID: 0}
@@ -32,3 +38,12 @@ Material:
     - first:
         name: _Color
       second: {r: 1, g: 0.6827586, b: 0, a: 1}
+    - first:
+        name: _Color1
+      second: {r: 0, g: 0.21379304, b: 1, a: 1}
+    - first:
+        name: _Color2
+      second: {r: 1, g: 0.43448272, b: 0, a: 1}
+    - first:
+        name: _GlowColor
+      second: {r: 0, g: 0, b: 0, a: 1}

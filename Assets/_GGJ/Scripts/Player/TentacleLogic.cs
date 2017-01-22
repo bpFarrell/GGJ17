@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class TentacleLogic : MonoBehaviour {
     PlayerController pc;
-    float targetRot {
-        get { return Mathf.Lerp(rotMin, rotMax, t); }
+    Quaternion targetRot {
+        get { return Quaternion.Lerp(rotMin, rotMax, t); }
     }
     public float t = 0;
-    float rotMax = 60;
-    float rotMin=100;
+    Quaternion rotMax;
+    Quaternion rotMin;
     public enum State {
         Contract,
         Expand
@@ -17,9 +17,16 @@ public class TentacleLogic : MonoBehaviour {
     public State state = State.Expand;
 	// Use this for initialization
 	// Update is called once per frame
+    void Awake() {
+        Vector3 rot = transform.localRotation.eulerAngles;
+        rot.z = 60;
+        rotMax = Quaternion.Euler(rot);
+        rot.z = 100;
+        rotMin = Quaternion.Euler(rot);
+    }
 	void Update () {
         if (state == State.Contract) {
-            t -= Time.deltaTime*5;
+            t -= Time.deltaTime*2;
             if (t < 0) {
                 state = State.Expand;
             }
@@ -27,10 +34,7 @@ public class TentacleLogic : MonoBehaviour {
             t += Time.deltaTime;
         }
         t = Mathf.Clamp01(t);
-        Vector3 rot = transform.rotation.eulerAngles;
-        rot.z = targetRot;
-        Quaternion target = Quaternion.Euler(rot);
-        transform.rotation = Quaternion.Lerp(transform.rotation, target, Time.deltaTime);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRot, Time.deltaTime*100);
     }
     public void Init(PlayerController pc) {
         this.pc = pc;
@@ -38,9 +42,6 @@ public class TentacleLogic : MonoBehaviour {
     }
     public void Flutter() {
         state = State.Contract;
-        Vector3 rot = transform.rotation.eulerAngles;
-        rot.z = targetRot;
-        transform.rotation = Quaternion.Euler(rot);
     }
 
 }
