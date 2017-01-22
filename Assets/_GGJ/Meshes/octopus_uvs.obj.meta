@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 1bdcb90232ac83147a2c5bd4ed86f904
-timeCreated: 1485032052
+guid: 87dc4bf6a860f9745a37600bf703c5e0
+timeCreated: 1485036081
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Group50778
-    400000: //RootNode
-    400002: Group50778
-    2300000: Group50778
-    3300000: Group50778
-    4300000: Group50778
+    100000: octo2:octopus_low
+    100002: //RootNode
+    400000: octo2:octopus_low
+    400002: //RootNode
+    2300000: octo2:octopus_low
+    3300000: octo2:octopus_low
+    4300000: octo2:octopus_low
   materials:
     importMaterials: 1
     materialName: 0
