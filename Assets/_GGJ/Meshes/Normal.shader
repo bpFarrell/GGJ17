@@ -50,7 +50,8 @@
 			fixed4 frag (v2f i) : SV_Target
 			{
 				// sample the texture
-				//	return fixed4(i.uv,0,1);
+				return fixed4(1,1,i.uv.x,1);
+					return fixed4(i.uv,0,1);
 				return fixed4(normalize(i.normal)*0.5 + 0.5,1);
 				fixed4 col = tex2D(_MainTex, i.uv);
 				// apply fog

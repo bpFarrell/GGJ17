@@ -39,27 +39,37 @@
 			
 			sampler2D _MainTex;
 
-			fixed4 Sample(float2 uv,float x, float y) {
-				float size = 0.003;
+			sampler2D_float _CameraDepthTexture;
+			half4 _CameraDepthTexture_ST;
+			fixed4 Sample(float depth, float2 uv,float x, float y) {
+				float size = 0.00005+0.01*depth;
 				return max(tex2D(_MainTex, uv + float2(x, y)*size)-1,fixed4(0,0,0,0));
 			}
 			fixed4 frag (v2f i) : SV_Target
 			{
-				fixed4 col = tex2D(_MainTex, i.uv);
-			col += Sample(i.uv, +0, +1);
-			col += Sample(i.uv, +1, +0);
-			col += Sample(i.uv, +0, -1);
-			col += Sample(i.uv, -1, +0);
-			col += Sample(i.uv, +1, +1);
-			col += Sample(i.uv, -1, -1);
-			col += Sample(i.uv, +1, -1);
-			col += Sample(i.uv, -1, +1);
 
-			col += Sample(i.uv, +0, +2)*0.2;
-			col += Sample(i.uv, +2, +0)*0.2;
-			col += Sample(i.uv, +0, -2)*0.2;
-			col += Sample(i.uv, -2, +0)*0.2;
-				return col;
+				float d = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, i.uv));
+				fixed4 col = tex2D(_MainTex, i.uv);
+			col += Sample(d,i.uv, +0, +1);
+			col += Sample(d,i.uv, +1, +0);
+			col += Sample(d,i.uv, +0, -1);
+			col += Sample(d,i.uv, -1, +0);
+			col += Sample(d,i.uv, +1, +1);
+			col += Sample(d,i.uv, -1, -1);
+			col += Sample(d,i.uv, +1, -1);
+			col += Sample(d,i.uv, -1, +1);
+
+			col += Sample(d,i.uv, +0, +2)*0.2;
+			col += Sample(d,i.uv, +2, +0)*0.2;
+			col += Sample(d,i.uv, +0, -2)*0.2;
+			col += Sample(d,i.uv, -2, +0)*0.2;
+
+			float fog = saturate((d * 10) - 0.5);
+			fixed4 fogColA = fixed4(0.8, 0.95, 0.95, 1);
+			fixed4 fogColB = fixed4(0.2, 0.5, 0.45, 1);
+
+
+			return col*lerp(fogColA,fogColB,fog);
 			}
 			ENDCG
 		}
