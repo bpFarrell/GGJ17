@@ -5,7 +5,7 @@ using UnityEngine;
 public class TentacleLogic : MonoBehaviour {
     PlayerController pc;
     Quaternion targetRot {
-        get { return Quaternion.Lerp(rotMin, rotMax, t); }
+        get { return Quaternion.LerpUnclamped(rotMin, rotMax, t+(Mathf.Cos(Time.time*1.3f))*0.5f); }
     }
     public float t = 0;
     Quaternion rotMax;

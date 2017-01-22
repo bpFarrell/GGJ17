@@ -12,7 +12,8 @@ public class FollowChainFinal : MonoBehaviour {
     public FollowChainFinal Prev;
     public GameObject joint;
     public GameObject dummy;
-    public float stiffness = 1;
+    public float transStiffness = 1;
+    public float rotStiffness = 1;
     public Vector3 offset;
     void Awake() {
         if (rootNode == null) {
@@ -29,10 +30,10 @@ public class FollowChainFinal : MonoBehaviour {
         if (dist < distance) {
             transform.position = Prev.transform.position + dir * distance;
         }
-        dummy.transform.position = Vector3.Lerp(dummy.transform.position, Prev.transform.position + Prev.transform.TransformVector(offset), Time.deltaTime * 20 * stiffness);
+        dummy.transform.position = Vector3.Lerp(dummy.transform.position, Prev.transform.position + Prev.transform.TransformVector(offset), Time.deltaTime * 20 * transStiffness);
         dummy.transform.rotation = Quaternion.LookRotation(dir,dummy.transform.up);
         float rDotu = Vector3.Dot(dummy.transform.right, Prev.transform.up);
-        dummy.transform.Rotate(0, 0, -rDotu*Time.deltaTime*200*stiffness);
+        dummy.transform.Rotate(0, 0, -rDotu*Time.deltaTime*200*rotStiffness);
     }
     public void Spawn(FollowChainFinal from) {
         if(Prev!= null) {
@@ -41,7 +42,8 @@ public class FollowChainFinal : MonoBehaviour {
             dummy.transform.position = transform.position;
             dummy.transform.rotation= Quaternion.LookRotation(transform.position-Prev.transform.position, Vector3.up);
             offset = transform.localPosition;
-            stiffness = Prev.stiffness;
+            transStiffness = Prev.transStiffness;
+            rotStiffness = Prev.rotStiffness;
             transform.parent = dummy.transform;
         }
         //GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
