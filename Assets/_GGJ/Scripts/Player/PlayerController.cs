@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    float psTime;
     public bool isPlayerOne;
 	public string playerPrefix = "P1_";
     public Vector3 velocity = new Vector3();
@@ -88,16 +89,32 @@ public class PlayerController : MonoBehaviour {
     void BoundCheck() {
         float force=50;
         if (transform.position.x < 50) {
+            ForceParticle(90);
             velocity.x += Time.deltaTime * force;
         }
         if (transform.position.z < 50) {
+            ForceParticle(0);
             velocity.z += Time.deltaTime * force;
         }
         if (transform.position.x > 450) {
+            ForceParticle(90);
             velocity.x -= Time.deltaTime * force;
         }
         if (transform.position.z > 450) {
+            ForceParticle(0);
             velocity.z -= Time.deltaTime * force;
+        }
+    }
+    void ForceParticle(float yRotate) {
+        if (Time.time > psTime + 1.0f)
+        {
+            psTime = Time.time;
+            GameObject ps = Instantiate(Resources.Load("psStop")) as GameObject;
+       //     ParticleSystem.MainModule mainMod = ps.GetComponent<ParticleSystem>().main;
+       //     mainMod.startRotation3D = true;
+       //     mainMod.startRotationY = yRotate;
+            ps.transform.position = transform.position;
+
         }
     }
 }
