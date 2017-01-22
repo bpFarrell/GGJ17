@@ -43,6 +43,9 @@ public class NodeManager : MonoBehaviour {
             //    Debug.Log("circ p "+pos);
             GameObject nodeGO = new GameObject("MainNode");
             nodeGO.transform.position = pos;
+            Rigidbody rigid = nodeGO.AddComponent<Rigidbody>();
+            rigid.isKinematic = true;
+            rigid.useGravity = false;
             SphereCollider sphCol = nodeGO.AddComponent<SphereCollider>();
             sphCol.isTrigger = true;
             sphCol.radius = 10;
