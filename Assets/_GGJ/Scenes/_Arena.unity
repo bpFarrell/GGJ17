@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427147, b: 0.56452364, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667546, g: 0.48427135, b: 0.5645225, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -428,7 +428,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 29134524}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,6 +454,11 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: a7782806ead43c24b8b9deb103df2f33, type: 3}
   m_PrefabInternal: {fileID: 638961135}
+--- !u!4 &31812337 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad,
+    type: 2}
+  m_PrefabInternal: {fileID: 36944705}
 --- !u!1 &33658560
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,7 +468,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 33658561}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMid3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +560,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1340010690}
     m_Modifications:
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalPosition.x
@@ -563,15 +568,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 28.9
+      value: 27.9
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 409.5
+      value: 419.5
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalRotation.y
@@ -587,7 +592,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 707
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalScale.x
@@ -1111,7 +1116,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 53211864}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1145,7 +1150,7 @@ GameObject:
   - component: {fileID: 61988412}
   - component: {fileID: 61988414}
   - component: {fileID: 61988415}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1238,7 +1243,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 62213865}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1833,7 +1838,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 81939658}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1873,7 +1878,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 86063191}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2651,7 +2656,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1340010690}
     m_Modifications:
     - target: {fileID: 4292952436183606, guid: b7b7f4c1059734d488dcc2b0994f6de1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2659,15 +2664,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4292952436183606, guid: b7b7f4c1059734d488dcc2b0994f6de1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 26.317713
+      value: 25.317713
       objectReference: {fileID: 0}
     - target: {fileID: 4292952436183606, guid: b7b7f4c1059734d488dcc2b0994f6de1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 399.33075
+      value: 409.33075
       objectReference: {fileID: 0}
     - target: {fileID: 4292952436183606, guid: b7b7f4c1059734d488dcc2b0994f6de1, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4292952436183606, guid: b7b7f4c1059734d488dcc2b0994f6de1, type: 2}
       propertyPath: m_LocalRotation.y
@@ -2683,7 +2688,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4292952436183606, guid: b7b7f4c1059734d488dcc2b0994f6de1, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 704
       objectReference: {fileID: 0}
     - target: {fileID: 23231597486482056, guid: b7b7f4c1059734d488dcc2b0994f6de1,
         type: 2}
@@ -2698,6 +2703,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854,
     type: 2}
   m_PrefabInternal: {fileID: 133435780}
+--- !u!4 &109339673 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36,
+    type: 2}
+  m_PrefabInternal: {fileID: 1068078077}
 --- !u!4 &111005779 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854,
@@ -2781,7 +2791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 114094686}
   - component: {fileID: 114094687}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2832,7 +2842,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 114324903}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2923,7 +2933,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 114868063}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTorso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2952,6 +2962,11 @@ Transform:
   m_Father: {fileID: 62213865}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &115347312 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854,
+    type: 2}
+  m_PrefabInternal: {fileID: 244933267}
 --- !u!1001 &116951239
 Prefab:
   m_ObjectHideFlags: 0
@@ -3078,7 +3093,7 @@ GameObject:
   m_Component:
   - component: {fileID: 118017424}
   - component: {fileID: 118017425}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3333,7 +3348,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 124997795}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3363,7 +3378,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 127617289}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4116,7 +4131,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 145135604}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMid5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4679,7 +4694,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 172856805}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4714,7 +4729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 175793417}
   - component: {fileID: 175793418}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5248,7 +5263,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 192666244}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5278,7 +5293,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 194654328}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMid6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6182,7 +6197,7 @@ Transform:
   - {fileID: 1506697081}
   - {fileID: 1341529227}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &225558383
 Prefab:
@@ -6590,7 +6605,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 237812790}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6630,7 +6645,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1340010690}
     m_Modifications:
     - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
       propertyPath: m_LocalPosition.x
@@ -6638,11 +6653,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 25.8
+      value: 24.8
       objectReference: {fileID: 0}
     - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 400.28912
+      value: 410.28912
       objectReference: {fileID: 0}
     - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
       propertyPath: m_LocalRotation.x
@@ -6662,7 +6677,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 702
       objectReference: {fileID: 0}
     - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6681,6 +6696,18 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f40a9987f0e0b324199ee363fd7e3422, type: 2}
+    - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2.3845825
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2.3845828
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2.3845828
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
   m_IsPrefabParent: 0
@@ -6698,7 +6725,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 245682596}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Roll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6800,7 +6827,7 @@ GameObject:
   m_Component:
   - component: {fileID: 254463444}
   - component: {fileID: 254463445}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7196,7 +7223,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1340010690}
     m_Modifications:
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalPosition.x
@@ -7204,11 +7231,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 24.588463
+      value: 23.588463
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 409.7945
+      value: 419.7945
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalRotation.x
@@ -7228,11 +7255,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 712
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalScale.x
-      value: 5.423492
+      value: 5.4234943
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalScale.y
@@ -7240,7 +7267,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalScale.z
-      value: 5.423492
+      value: 5.4234943
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7471,7 +7498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 275464671}
   - component: {fileID: 275464672}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7573,6 +7600,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &281779335 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36,
+    type: 2}
+  m_PrefabInternal: {fileID: 354746433}
 --- !u!1001 &282156865
 Prefab:
   m_ObjectHideFlags: 0
@@ -7907,7 +7939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 289793337}
   - component: {fileID: 289793338}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: OctoRiggedActualSmooth2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8094,7 +8126,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 294242615}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMid5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8826,7 +8858,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 321274847}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMid7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9016,7 +9048,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 346050988}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9106,7 +9138,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1340010690}
     m_Modifications:
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalPosition.x
@@ -9114,11 +9146,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 23.5
+      value: 22.5
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 415.3
+      value: 425.3
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalRotation.x
@@ -9138,19 +9170,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 713
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalScale.x
-      value: 4.6378837
+      value: 4.6378865
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalScale.y
-      value: 4.637884
+      value: 4.637885
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalScale.z
-      value: 4.637884
+      value: 4.637886
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9324,7 +9356,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 360972770}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10746,7 +10778,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 404994421}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10835,7 +10867,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 408607015}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11440,7 +11472,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1340010690}
     m_Modifications:
     - target: {fileID: 4292952436183606, guid: b7b7f4c1059734d488dcc2b0994f6de1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -11448,15 +11480,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4292952436183606, guid: b7b7f4c1059734d488dcc2b0994f6de1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 24.565554
+      value: 23.565554
       objectReference: {fileID: 0}
     - target: {fileID: 4292952436183606, guid: b7b7f4c1059734d488dcc2b0994f6de1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 411.4599
+      value: 421.4599
       objectReference: {fileID: 0}
     - target: {fileID: 4292952436183606, guid: b7b7f4c1059734d488dcc2b0994f6de1, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4292952436183606, guid: b7b7f4c1059734d488dcc2b0994f6de1, type: 2}
       propertyPath: m_LocalRotation.y
@@ -11472,7 +11504,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4292952436183606, guid: b7b7f4c1059734d488dcc2b0994f6de1, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 703
       objectReference: {fileID: 0}
     - target: {fileID: 1568141205086082, guid: b7b7f4c1059734d488dcc2b0994f6de1, type: 2}
       propertyPath: m_Name
@@ -11783,7 +11815,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 442282812}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11895,7 +11927,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 449911850}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12549,7 +12581,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 482583225}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13299,6 +13331,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &498492316 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4292952436183606, guid: b7b7f4c1059734d488dcc2b0994f6de1,
+    type: 2}
+  m_PrefabInternal: {fileID: 108342384}
 --- !u!4 &499074979 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad,
@@ -13328,7 +13365,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 505170416}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13638,7 +13675,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 511603892}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoCranium1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14967,7 +15004,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 561945750}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15426,7 +15463,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 573144239}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16143,7 +16180,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 600079990}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMid7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16174,7 +16211,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 602500497}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16743,7 +16780,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 620271011}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16765,6 +16802,11 @@ Transform:
   m_Father: {fileID: 1867277692}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &621236979 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36,
+    type: 2}
+  m_PrefabInternal: {fileID: 266985474}
 --- !u!1001 &621275433
 Prefab:
   m_ObjectHideFlags: 0
@@ -17550,7 +17592,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1340010690}
     m_Modifications:
     - target: {fileID: 4924536420628934, guid: c60d90f0a00d71947b4723cc9f6ca312, type: 2}
       propertyPath: m_LocalPosition.x
@@ -17558,11 +17600,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4924536420628934, guid: c60d90f0a00d71947b4723cc9f6ca312, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.6
+      value: 8.6
       objectReference: {fileID: 0}
     - target: {fileID: 4924536420628934, guid: c60d90f0a00d71947b4723cc9f6ca312, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 251.2
+      value: 261.2
       objectReference: {fileID: 0}
     - target: {fileID: 4924536420628934, guid: c60d90f0a00d71947b4723cc9f6ca312, type: 2}
       propertyPath: m_LocalRotation.x
@@ -17582,7 +17624,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4924536420628934, guid: c60d90f0a00d71947b4723cc9f6ca312, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 711
       objectReference: {fileID: 0}
     - target: {fileID: 137930368779487202, guid: c60d90f0a00d71947b4723cc9f6ca312,
         type: 2}
@@ -18500,7 +18542,7 @@ GameObject:
   - component: {fileID: 701549013}
   - component: {fileID: 701549014}
   - component: {fileID: 701549015}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -18828,7 +18870,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 719927248}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19034,6 +19076,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4760659256947834, guid: d3aca2b3441967a449505ce2345cf534,
     type: 2}
   m_PrefabInternal: {fileID: 2050773033}
+--- !u!4 &729477885 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad,
+    type: 2}
+  m_PrefabInternal: {fileID: 1117434613}
 --- !u!4 &729750527 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4724233823982664, guid: 7213e41cdef17a4499ad3d5db0f321b0,
@@ -19254,7 +19301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 744352398}
   - component: {fileID: 744352399}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19397,7 +19444,7 @@ Transform:
   - {fileID: 1705019947}
   - {fileID: 308469046}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &745375599
 Prefab:
@@ -20502,7 +20549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 784568242}
   - component: {fileID: 784568243}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21158,7 +21205,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 807615044}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMId2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21456,7 +21503,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 811752168}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21680,6 +21727,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7213e41cdef17a4499ad3d5db0f321b0, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &814836296 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4262970546777826, guid: 964290c51f912f54ba700fe7834b345e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1966108496}
 --- !u!4 &814938926 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4724233823982664, guid: 7213e41cdef17a4499ad3d5db0f321b0,
@@ -21998,7 +22050,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 828939205}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22420,7 +22472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 835690744}
   - component: {fileID: 835690745}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoCranium0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22663,6 +22715,48 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: a7782806ead43c24b8b9deb103df2f33, type: 3}
   m_PrefabInternal: {fileID: 1048028216}
+--- !u!1001 &851406082
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4971867086977942, guid: 7a7dd6335054ce444ba41a8c3509a2ee, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971867086977942, guid: 7a7dd6335054ce444ba41a8c3509a2ee, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971867086977942, guid: 7a7dd6335054ce444ba41a8c3509a2ee, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971867086977942, guid: 7a7dd6335054ce444ba41a8c3509a2ee, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971867086977942, guid: 7a7dd6335054ce444ba41a8c3509a2ee, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971867086977942, guid: 7a7dd6335054ce444ba41a8c3509a2ee, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971867086977942, guid: 7a7dd6335054ce444ba41a8c3509a2ee, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971867086977942, guid: 7a7dd6335054ce444ba41a8c3509a2ee, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7a7dd6335054ce444ba41a8c3509a2ee, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &853258100
 GameObject:
   m_ObjectHideFlags: 0
@@ -22672,7 +22766,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 853258101}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMId2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23018,7 +23112,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 872618175}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23493,7 +23587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 901368946}
   - component: {fileID: 901368947}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24723,7 +24817,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 950388437}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMid0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25453,6 +25547,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4724233823982664, guid: 7213e41cdef17a4499ad3d5db0f321b0,
     type: 2}
   m_PrefabInternal: {fileID: 1713726125}
+--- !u!4 &986026928 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854,
+    type: 2}
+  m_PrefabInternal: {fileID: 1207094714}
 --- !u!1 &986521000
 GameObject:
   m_ObjectHideFlags: 0
@@ -25463,7 +25562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 986521001}
   - component: {fileID: 986521002}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: OctoRiggedActualSmooth2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25597,7 +25696,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 993299149}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26625,7 +26724,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1020020229}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26873,7 +26972,7 @@ GameObject:
   - component: {fileID: 1029534275}
   - component: {fileID: 1029534277}
   - component: {fileID: 1029534276}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octopus_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28024,7 +28123,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1061973997}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28272,7 +28371,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1340010690}
     m_Modifications:
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalPosition.x
@@ -28280,11 +28379,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 26.9
+      value: 25.9
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 404.2
+      value: 414.2
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalRotation.x
@@ -28304,7 +28403,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 708
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalScale.x
@@ -28312,11 +28411,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalScale.y
-      value: 5.423492
+      value: 5.4234924
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalScale.z
-      value: 5.423492
+      value: 5.423491
       objectReference: {fileID: 0}
     - target: {fileID: 4061181477456466, guid: 490db5273c3365c44aa81699023b2d36, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -29509,7 +29608,7 @@ GameObject:
   - component: {fileID: 1113638538}
   - component: {fileID: 1113638540}
   - component: {fileID: 1113638539}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octopus_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29689,7 +29788,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1340010690}
     m_Modifications:
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalPosition.x
@@ -29697,15 +29796,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 27.355
+      value: 26.355
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 403.08063
+      value: 413.08063
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalRotation.y
@@ -29721,7 +29820,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 706
       objectReference: {fileID: 0}
     - target: {fileID: 1118826466320844, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_Name
@@ -30015,7 +30114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1140252715}
   - component: {fileID: 1140252716}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30347,7 +30446,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1153268870}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMid3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31017,89 +31116,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7213e41cdef17a4499ad3d5db0f321b0, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1162876185
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1162876189}
-  - component: {fileID: 1162876188}
-  - component: {fileID: 1162876187}
-  - component: {fileID: 1162876186}
-  m_Layer: 0
-  m_Name: iconStop
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &1162876186
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1162876185}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!64 &1162876187
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1162876185}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &1162876188
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1162876185}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1162876189
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1162876185}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 349.10895, y: 92.18, z: 331.4689}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1163451212
 Prefab:
   m_ObjectHideFlags: 0
@@ -32134,7 +32150,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1340010690}
     m_Modifications:
     - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
       propertyPath: m_LocalPosition.x
@@ -32142,15 +32158,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 31.179
+      value: 30.179
       objectReference: {fileID: 0}
     - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 310.69
+      value: 320.69
       objectReference: {fileID: 0}
     - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
       propertyPath: m_LocalRotation.y
@@ -32166,7 +32182,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 710
       objectReference: {fileID: 0}
     - target: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854, type: 2}
       propertyPath: m_LocalScale.x
@@ -32273,7 +32289,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1213169629}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMid6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33340,73 +33356,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 310df689acfbe864eb2a5bdf9dd653f4, type: 3}
   m_PrefabInternal: {fileID: 797880052}
---- !u!1001 &1257979002
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 349.10895
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 92.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 321.4689
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117423534711224, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
-      propertyPath: m_RootOrder
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 199865701844954364, guid: 91281b20143ebe347bb3f3cd0a0f25af,
-        type: 2}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 199865701844954364, guid: 91281b20143ebe347bb3f3cd0a0f25af,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
-    - target: {fileID: 198977848999331478, guid: 91281b20143ebe347bb3f3cd0a0f25af,
-        type: 2}
-      propertyPath: scalingMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198977848999331478, guid: 91281b20143ebe347bb3f3cd0a0f25af,
-        type: 2}
-      propertyPath: randomSeed
-      value: 824639053
-      objectReference: {fileID: 0}
-    - target: {fileID: 198977848999331478, guid: 91281b20143ebe347bb3f3cd0a0f25af,
-        type: 2}
-      propertyPath: UVModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 91281b20143ebe347bb3f3cd0a0f25af, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1257998290
 Prefab:
   m_ObjectHideFlags: 0
@@ -33826,6 +33775,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b91d42354998ebd4395c1fb647224add, type: 2}
+    - target: {fileID: 100000, guid: 82e3ad78ae5090a49bb1b2d70f17b447, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 82e3ad78ae5090a49bb1b2d70f17b447, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82e3ad78ae5090a49bb1b2d70f17b447, type: 3}
   m_IsPrefabParent: 0
@@ -34058,7 +34015,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1288217172}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMid4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34287,7 +34244,7 @@ Transform:
   m_Children:
   - {fileID: 1695030223}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1301186695 stripped
 Transform:
@@ -35004,7 +34961,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1316281330}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35308,7 +35265,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1332417004}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMid4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36264,6 +36221,19 @@ Transform:
   - {fileID: 1834371784}
   - {fileID: 1677169913}
   - {fileID: 1167589351}
+  - {fileID: 2040654984}
+  - {fileID: 115347312}
+  - {fileID: 1973168170}
+  - {fileID: 498492316}
+  - {fileID: 814836296}
+  - {fileID: 729477885}
+  - {fileID: 31812337}
+  - {fileID: 109339673}
+  - {fileID: 1917988748}
+  - {fileID: 986026928}
+  - {fileID: 1811745467}
+  - {fileID: 621236979}
+  - {fileID: 281779335}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -36314,7 +36284,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1348482603}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Roll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36803,7 +36773,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1363912141}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36880,7 +36850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountMainNodes: 12
   amountFishToWin: 1000
-  amountFishToSpawn: 1000
+  amountFishToSpawn: 3000
   amountFishDelta: 0
   distToInnerBound: 110
   distToOuterBound: 160
@@ -36897,7 +36867,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1366315538
 CapsuleCollider:
@@ -37286,7 +37256,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1340010690}
     m_Modifications:
     - target: {fileID: 4743845678790076, guid: 67d443b9f1cc83d4f9ed17dd6a854c8b, type: 2}
       propertyPath: m_LocalPosition.x
@@ -37294,11 +37264,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4743845678790076, guid: 67d443b9f1cc83d4f9ed17dd6a854c8b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 28.17
+      value: 27.17
       objectReference: {fileID: 0}
     - target: {fileID: 4743845678790076, guid: 67d443b9f1cc83d4f9ed17dd6a854c8b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 396.3
+      value: 406.3
       objectReference: {fileID: 0}
     - target: {fileID: 4743845678790076, guid: 67d443b9f1cc83d4f9ed17dd6a854c8b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -37318,7 +37288,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4743845678790076, guid: 67d443b9f1cc83d4f9ed17dd6a854c8b, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 709
       objectReference: {fileID: 0}
     - target: {fileID: 4743845678790076, guid: 67d443b9f1cc83d4f9ed17dd6a854c8b, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -37334,15 +37304,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4743845678790076, guid: 67d443b9f1cc83d4f9ed17dd6a854c8b, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1.2849978
+      value: 1.2849979
       objectReference: {fileID: 0}
     - target: {fileID: 4743845678790076, guid: 67d443b9f1cc83d4f9ed17dd6a854c8b, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.279017
+      value: 1.2790172
       objectReference: {fileID: 0}
     - target: {fileID: 4743845678790076, guid: 67d443b9f1cc83d4f9ed17dd6a854c8b, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.2790169
+      value: 1.2790171
       objectReference: {fileID: 0}
     - target: {fileID: 23433511614213584, guid: 67d443b9f1cc83d4f9ed17dd6a854c8b,
         type: 2}
@@ -37842,7 +37812,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1407811183}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38013,7 +37983,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1412667143}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38485,7 +38455,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4758356947323990, guid: 5e86ebe790a43f54d9b25acc8b6eadc0, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e86ebe790a43f54d9b25acc8b6eadc0, type: 2}
@@ -40515,7 +40485,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.5
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -40562,7 +40532,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1507023820}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40992,6 +40962,14 @@ Prefab:
       propertyPath: m_Name
       value: eyes_low (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 82e3ad78ae5090a49bb1b2d70f17b447, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 82e3ad78ae5090a49bb1b2d70f17b447, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 82e3ad78ae5090a49bb1b2d70f17b447, type: 3}
   m_IsPrefabParent: 0
@@ -41357,7 +41335,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1533616512}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41966,7 +41944,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1539449637}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42424,7 +42402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1563478780}
   - component: {fileID: 1563478781}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43089,7 +43067,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1587367196}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43905,7 +43883,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1625645902}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44298,7 +44276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1643733888}
   - component: {fileID: 1643733889}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44544,7 +44522,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1648353703}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44787,7 +44765,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1655985832}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45148,6 +45126,22 @@ Transform:
   m_PrefabParentObject: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad,
     type: 2}
   m_PrefabInternal: {fileID: 1380094740}
+--- !u!1 &1681749770 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1559157168971722, guid: 7a7dd6335054ce444ba41a8c3509a2ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 851406082}
+--- !u!114 &1681749771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1681749770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588d641168094e34bb381cff37e2eb46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1684618883
 Prefab:
   m_ObjectHideFlags: 0
@@ -45762,9 +45756,9 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.5
+    x: 0
     y: 0
-    width: 0.5
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -45777,7 +45771,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_OcclusionCulling: 1
@@ -46942,7 +46936,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1745697684}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTipMid0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47673,7 +47667,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1775142828}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48005,7 +47999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1785461823}
   - component: {fileID: 1785461824}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoCranium0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48764,6 +48758,11 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f7c19b16795f9e348be04329bcdf5228, type: 3}
   m_PrefabInternal: {fileID: 808434947}
+--- !u!4 &1811745467 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4924536420628934, guid: c60d90f0a00d71947b4723cc9f6ca312,
+    type: 2}
+  m_PrefabInternal: {fileID: 649867716}
 --- !u!1001 &1814069855
 Prefab:
   m_ObjectHideFlags: 0
@@ -49467,7 +49466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1835738837}
   - component: {fileID: 1835738838}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49522,7 +49521,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1836730454}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50027,7 +50026,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1860141112}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50062,7 +50061,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1860439971}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoCranium1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50236,7 +50235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1867277692}
   - component: {fileID: 1867277693}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50442,7 +50441,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1871964600}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51017,7 +51016,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1893800912}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBase2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51370,6 +51369,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad,
     type: 2}
   m_PrefabInternal: {fileID: 1791435707}
+--- !u!4 &1917988748 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4743845678790076, guid: 67d443b9f1cc83d4f9ed17dd6a854c8b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1381804078}
 --- !u!4 &1918284280 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: a7782806ead43c24b8b9deb103df2f33, type: 3}
@@ -52542,7 +52546,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1340010690}
     m_Modifications:
     - target: {fileID: 4262970546777826, guid: 964290c51f912f54ba700fe7834b345e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -52550,15 +52554,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4262970546777826, guid: 964290c51f912f54ba700fe7834b345e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 26.187
+      value: 25.187
       objectReference: {fileID: 0}
     - target: {fileID: 4262970546777826, guid: 964290c51f912f54ba700fe7834b345e, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 390.1735
+      value: 400.1735
       objectReference: {fileID: 0}
     - target: {fileID: 4262970546777826, guid: 964290c51f912f54ba700fe7834b345e, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4262970546777826, guid: 964290c51f912f54ba700fe7834b345e, type: 2}
       propertyPath: m_LocalRotation.y
@@ -52574,7 +52578,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4262970546777826, guid: 964290c51f912f54ba700fe7834b345e, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 705
       objectReference: {fileID: 0}
     - target: {fileID: 4262970546777826, guid: 964290c51f912f54ba700fe7834b345e, type: 2}
       propertyPath: m_LocalScale.x
@@ -52867,6 +52871,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad,
     type: 2}
   m_PrefabInternal: {fileID: 596744458}
+--- !u!4 &1973168170 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4292952436183606, guid: b7b7f4c1059734d488dcc2b0994f6de1,
+    type: 2}
+  m_PrefabInternal: {fileID: 428045900}
 --- !u!4 &1973897525 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: a7782806ead43c24b8b9deb103df2f33, type: 3}
@@ -53013,7 +53022,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1985845645}
   - component: {fileID: 1985845646}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53220,7 +53229,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1988809443}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53250,7 +53259,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1988873734}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53394,7 +53403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1995514450}
   - component: {fileID: 1995514451}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53959,7 +53968,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1340010690}
     m_Modifications:
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalPosition.x
@@ -53967,15 +53976,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 22.58
+      value: 21.58
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 394.58
+      value: 404.58
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_LocalRotation.y
@@ -53991,7 +54000,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 701
       objectReference: {fileID: 0}
     - target: {fileID: 1118826466320844, guid: 6203daeb7c6b2644fa42358cb71ce1ad, type: 2}
       propertyPath: m_Name
@@ -54103,7 +54112,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2019862034}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54895,6 +54904,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4724233823982664, guid: 7213e41cdef17a4499ad3d5db0f321b0,
     type: 2}
   m_PrefabInternal: {fileID: 1963226811}
+--- !u!4 &2040654984 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4534198726944582, guid: 6203daeb7c6b2644fa42358cb71ce1ad,
+    type: 2}
+  m_PrefabInternal: {fileID: 2015741695}
 --- !u!1001 &2041450038
 Prefab:
   m_ObjectHideFlags: 0
@@ -55374,7 +55388,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2056817799}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTip2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55826,7 +55840,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2070863564}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoTorso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57078,7 +57092,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2104620094}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57240,7 +57254,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2112195481}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoBaseMid5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57657,7 +57671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2136486280}
   - component: {fileID: 2136486281}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: octoKnee4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
