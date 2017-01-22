@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
     public event func flutter;
 	// Use this for initialization
     void Awake() {
+        Mesh mesh;
         roll = transform.GetChild(0).gameObject;
         Animation[] anim = GetComponentsInChildren<Animation>();
         for(int x = 0; x < anim.Length; x++) {
