@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class NodeMain : MonoBehaviour {
 
@@ -8,6 +9,10 @@ public class NodeMain : MonoBehaviour {
 		travel,
 		mother
 	}
+
+    IList<NodeFish> fishNodes = new List<NodeFish>();
+    public float offsetDistToCore = 1;
+    public bool stateChange;
 	// Use this for initialization
 	void Start () {
       //  Init(pos);
@@ -17,9 +22,15 @@ public class NodeMain : MonoBehaviour {
 	void Update () {
         transform.position += Vector3.forward * Mathf.Sin(Time.time) * 0.01f;
         transform.position += Vector3.right * Mathf.Sin(Time.time) * 0.01f;
+        if (stateChange) {
+            stateChange = false;
+            for (int i = 0; i < fishNodes.Count; i++) {
+                fishNodes[i].dist = fishNodes[i].defaultDist * offsetDistToCore;
+            }
+        }
     }
 
-    public void Init(Vector3 origin, int amountFish, Transform rootParent) {
+    public void Init(Vector3 origin, int amountFish, Transform rootParent, Transform fishParent) {
         float degree = 360 / amountFish;
         for (int i = 0; i < amountFish; i++) {
             Vector3 temp = Tools.PointOnCircle(origin, degree * i, Random.Range(2,5));
@@ -31,8 +42,9 @@ public class NodeMain : MonoBehaviour {
 
             fishNodeGO.transform.SetParent(rootParent);
             NodeFish fish = fishNodeGO.AddComponent<NodeFish>();
-            fish.Init(transform, assignedPos);
+            fish.Init(transform, assignedPos, fishParent);
 
+            fishNodes.Add(fish);
         }
     }
 }
