@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: New Material 3
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: d0bc9d82bf6cfc9488d4995cb2d622af, type: 3}
   m_ShaderKeywords: _DETAIL_MULX2 _EMISSION _NORMALMAP
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -41,6 +41,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     - first:
         name: _EmissionMap
+      second:
+        m_Texture: {fileID: 2800000, guid: 4c5a07dbc18594b40b7e1040f71274f5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _GlowMap
       second:
         m_Texture: {fileID: 2800000, guid: 4c5a07dbc18594b40b7e1040f71274f5, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -124,4 +130,7 @@ Material:
       second: {r: 0.22352943, g: 0.22352943, b: 0.22352943, a: 1}
     - first:
         name: _EmissionColor
+      second: {r: 7.39, g: 0.45868966, b: 0, a: 1}
+    - first:
+        name: _GlowColor
       second: {r: 7.39, g: 0.45868966, b: 0, a: 1}

@@ -16,9 +16,11 @@ public class PlayerController : MonoBehaviour {
     public delegate void func();
     float twist = 360;
     public event func flutter;
+    public static bool locked;
 	// Use this for initialization
     void Awake() {
         Mesh mesh;
+        locked = false;
         roll = transform.GetChild(0).gameObject;
         Animation[] anim = GetComponentsInChildren<Animation>();
         for(int x = 0; x < anim.Length; x++) {
@@ -37,22 +39,25 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown(playerPrefix + "A")||Input.GetKeyDown(KeyCode.Space)) {
-            velocity += transform.forward*power;
-            flutter();
-            if (lastPressTime + twistDelay > Time.time) {
-                if(twist>0)
-                    twist -=360;
+        float angle = 0;
+        if (!locked) {
+            if (Input.GetButtonDown(playerPrefix + "A") || Input.GetKeyDown(KeyCode.Space)) {
+                velocity += transform.forward * power;
+                flutter();
+                if (lastPressTime + twistDelay > Time.time) {
+                    if (twist > 0)
+                        twist -= 360;
+                }
+                lastPressTime = Time.time;
             }
-            lastPressTime = Time.time;
+            angle = Input.GetAxis(playerPrefix + "LeftHorizontal");
+            if (Input.GetKey(KeyCode.A)) angle = -1;
+            if (Input.GetKey(KeyCode.D)) angle = 1;
         }
         CalculateIdle();
         BoundCheck();
         float deltaTwist = CalculateTwist();
         float levelOut = LevelOut();
-        float angle = Input.GetAxis(playerPrefix + "LeftHorizontal");
-        if (Input.GetKey(KeyCode.A)) angle = -1;
-        if (Input.GetKey(KeyCode.D)) angle = 1;
         transform.Rotate(0, angle * Time.deltaTime*100, 0);
         roll.transform.Rotate(0, 0, deltaTwist);
         

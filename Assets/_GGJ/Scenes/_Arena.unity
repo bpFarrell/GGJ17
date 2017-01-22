@@ -1106,7 +1106,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 61988410}
   m_LocalRotation: {x: 3.5400383e-15, y: -1, z: 0.000000119209275, w: -0.000000029802319}
-  m_LocalPosition: {x: 251.45569, y: 40.1, z: 211.58974}
+  m_LocalPosition: {x: 251.45569, y: 40.1, z: 204.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 245682596}
@@ -1148,6 +1148,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   friction: 1
   power: 20
+  locked: 0
 --- !u!54 &61988414
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18174,6 +18175,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   friction: 1
   power: 20
+  locked: 0
 --- !u!4 &701549012
 Transform:
   m_ObjectHideFlags: 0
@@ -36254,9 +36256,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13cd086b91c35bc4483f577e0c43bcaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountMainNodes: 10
+  amountMainNodes: 12
   amountFishToWin: 1000
-  amountFishToSpawn: 1500
+  amountFishToSpawn: 3000
   distToInnerBound: 110
   distToOuterBound: 160
   pOneFish: 0
@@ -44987,7 +44989,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1705019946}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.5200043, y: 5.2157373, z: -19.229979}
+  m_LocalPosition: {x: 221, y: 5.2157373, z: 265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 744495375}

@@ -1,9 +1,8 @@
-﻿Shader "Custom/Glow" {
+﻿Shader "Custom/GlowFish" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
 		_GlowMap("GlowMap", 2D) = "Black" {}
-		[HDR]
 		_GlowColor("GlowColor", Color) = (1,1,1,1)
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
 		_Metallic ("Metallic", Range(0,1)) = 0.0
@@ -45,9 +44,8 @@
 			// Albedo comes from a texture tinted by color
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
 			fixed4 g = tex2D(_GlowMap, IN.uv_MainTex)*_GlowColor;
-			float sweep = sin(IN.uv_MainTex.x*20 + _Time.x*-150)*0.5+1;
 			o.Albedo = c.rgb;
-			o.Emission= g.rgb*sweep;
+			o.Emission= g.rgb;
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
