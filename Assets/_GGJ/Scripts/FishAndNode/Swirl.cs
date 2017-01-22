@@ -14,20 +14,20 @@ public class Swirl : MonoBehaviour {
 
     public float radius = 20;
     public float speed = 20;
-    GameObject swirl;
+//    GameObject swirl;
     GameObject pivot;
     public Transform trackme {
         get {
-            return swirl.transform;
+            return pivot.transform;
         }
     }
 	// Use this for initialization
 	void Start () {
-        pivot = GameObject.CreatePrimitive(PrimitiveType.Sphere);// new GameObject("pivot");
-        swirl = GameObject.CreatePrimitive(PrimitiveType.Cube);// new GameObject("swirl");
+        pivot = new GameObject("pivot");//GameObject.CreatePrimitive(PrimitiveType.Sphere);// new GameObject("pivot");
+        //    swirl = GameObject.CreatePrimitive(PrimitiveType.Cube);// new GameObject("swirl");
         pivot.transform.position = transform.position;
-        swirl.transform.position = pivot.transform.position + (Vector3.forward * radius);
-        swirl.transform.SetParent(pivot.transform);
+    //    swirl.transform.position = pivot.transform.position + (Vector3.forward * radius);
+    //    swirl.transform.SetParent(pivot.transform);
         Debug.Log(pivot.transform.position);
 	}
 	

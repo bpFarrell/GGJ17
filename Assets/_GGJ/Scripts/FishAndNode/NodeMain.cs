@@ -53,14 +53,15 @@ public class NodeMain : MonoBehaviour {
         }
 
         if (state == State.mother) {
-            transform.LookAt(trackTarget);
-            transform.position += transform.forward * travelSpeed * Time.deltaTime;
+         //   transform.LookAt(trackTarget);
+         //   transform.position += transform.forward * travelSpeed * Time.deltaTime;
+
             if (isPlayerOne)
             {
-                psMain.startColor = new Color(0.5f, 0.5f, 1.0f, 1.0f);
+                psMain.startColor = new Color(0f, 0.5f, 1.0f, 1.0f);
             }
             else {
-                psMain.startColor = new Color(1f, 0.5f, 0.5f, 1.0f);
+                psMain.startColor = new Color(1f, 0.0f, 0.0f, 1.0f);
             }
         }
     }

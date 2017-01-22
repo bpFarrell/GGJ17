@@ -35773,7 +35773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   radius: 20
-  speed: 30
+  speed: 20
 --- !u!4 &1366598846 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4724233823982664, guid: 7213e41cdef17a4499ad3d5db0f321b0,
