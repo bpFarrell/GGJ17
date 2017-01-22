@@ -53,7 +53,7 @@ public class NodeFish : MonoBehaviour {
         }
         if (state == State.mother) {
             dist = defaultDist * 0.5f;
-            fishControl.fwdSpeed = Random.Range(5, 7);
+            fishControl.fwdSpeed = Random.Range(5, 15);
         }
     }
 }

@@ -59,10 +59,11 @@ Shader "Custom/FIshSwim" {
 			}*
 			float div = l1 + l2;
 			l1 /= div;*/
+			float sweep = pow(sin(IN.uv_MainTex.x * 20 + _Time.x*-150)*0.5 + 0.5,5)+0.1;
 			fixed4 g = tex2D(_GlowMap, IN.uv_MainTex)*_GlowColor;
 			fixed4 c = tex2D(_MainTex, IN.uv_MainTex)*_Color;
 			o.Albedo = c.rgb;
-			o.Emission = g.xyz;
+			o.Emission = g.xyz*sweep;
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
 			o.Alpha = c.a;
