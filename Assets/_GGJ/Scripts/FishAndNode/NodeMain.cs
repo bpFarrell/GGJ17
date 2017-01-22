@@ -4,25 +4,32 @@ using System.Collections.Generic;
 
 public class NodeMain : MonoBehaviour {
 
-	enum State{
+	public enum State{
 		neutral,
 		travel,
 		mother
 	}
 
-    State state;
+    public State state;
 
-    IList<NodeFish> fishNodes = new List<NodeFish>();
+    public IList<NodeFish> fishNodes = new List<NodeFish>();
     public float offsetDistToCore = 1;
     public bool stateChange;
 
-    bool isPlayerOne;
-    Transform player;
+    public bool isPlayerOne;
+    public Transform trackTarget;
 
     public float travelSpeed = 10;
+
+    public ParticleSystem particle;
+    public ParticleSystem.MainModule psMain;
+    float dropTime;
+    float coolDown = 3;
 	// Use this for initialization
 	void Start () {
-      //  Init(pos);
+        //  Init(pos);
+        particle = GetComponentInChildren<ParticleSystem>();
+        psMain = particle.main;
 	}
 	
 	// Update is called once per frame
@@ -37,8 +44,32 @@ public class NodeMain : MonoBehaviour {
         }
 
         if (state == State.travel) {
-            transform.LookAt(player);
+            transform.LookAt(trackTarget);
             transform.position += transform.forward * travelSpeed * Time.deltaTime;
+            if ((trackTarget.position - transform.position).magnitude > 20) {
+                state = State.neutral;
+                for (int i = 0; i < fishNodes.Count; i++)
+                {
+                    //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
+                    fishNodes[i].state = NodeFish.State.neutral;
+                }
+                Debug.Log(state);
+            }
+        }
+
+        if (state == State.mother) {
+            transform.LookAt(trackTarget);
+            if ((transform.position - trackTarget.position).magnitude > 10)
+            {
+                transform.position += transform.forward * travelSpeed * Time.deltaTime;
+            }
+            if (isPlayerOne)
+            {
+                psMain.startColor = new Color(0f, 0.5f, 1.0f, 1.0f);
+            }
+            else {
+                psMain.startColor = new Color(1f, 0.0f, 0.0f, 1.0f);
+            }
         }
     }
 
@@ -62,21 +93,26 @@ public class NodeMain : MonoBehaviour {
     }
     void OnTriggerEnter(Collider col) {
         Debug.Log(col.tag);
-        if (col.tag != "Player") return;
+        if (col.tag != "Player" ||
+            state == State.mother) return;
         Debug.Log(col.name);
-        player = col.transform;
+        trackTarget = col.transform;
         state = State.travel;
+        for (int i = 0; i < fishNodes.Count; i++) {
+            //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
+            fishNodes[i].state = NodeFish.State.travel;
+        }
         if (col.GetComponent<PlayerController>().isPlayerOne)
         {
             isPlayerOne = true;
         }
         else isPlayerOne = false;
     }
-    void OnTriggerLeave(Collider col) {
-        if (col.tag == "Player")
-        {
-            Debug.Log("Leavingggggggggggggggg");
-            state = State.neutral;
-        }
-    }
+ //   void OnTriggerLeave(Collider col) {
+ //       if (col.tag == "Player")
+ //       {
+ //           Debug.Log("Leavingggggggggggggggg");
+ //           state = State.neutral;
+ //       }
+ //   }
 }

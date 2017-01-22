@@ -43,16 +43,22 @@ public class NodeManager : MonoBehaviour {
             //    Debug.Log("circ p "+pos);
             GameObject nodeGO = new GameObject("MainNode");
             nodeGO.transform.position = pos;
+            Rigidbody rigid = nodeGO.AddComponent<Rigidbody>();
+            rigid.isKinematic = true;
+            rigid.useGravity = false;
             SphereCollider sphCol = nodeGO.AddComponent<SphereCollider>();
             sphCol.isTrigger = true;
             sphCol.radius = 10;
+            
+            NodeMain nodeMain = nodeGO.AddComponent<NodeMain>();
+            nodeMain.Init(pos,amountFishNOde, rootParent.transform, fishParent.transform);
+
             GameObject ps = Instantiate(Resources.Load("psPickup")) as GameObject; //GameObject.CreatePrimitive(PrimitiveType.Sphere);
             ps.transform.SetParent(nodeGO.transform);
             ps.transform.localPosition = Vector3.up;
-            NodeMain nodeMain = nodeGO.AddComponent<NodeMain>();
-            nodeMain.Init(pos,amountFishNOde, rootParent.transform, fishParent.transform);
-            //    NodeMain nodeMain = new NodeMain (pos);
-			mainNodes.Add (nodeMain);
+            nodeMain.particle = ps.GetComponent<ParticleSystem>();
+
+            mainNodes.Add (nodeMain);
             nodeGO.transform.SetParent(rootParent.transform);
 		}
 	}

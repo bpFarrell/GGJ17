@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: New Material 2
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: FishNeutral
+  m_Shader: {fileID: 4800000, guid: d0d8e8b61ad730041a8bfd9932b650e5, type: 3}
   m_ShaderKeywords: _DETAIL_MULX2 _EMISSION _NORMALMAP
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -42,7 +42,13 @@ Material:
     - first:
         name: _EmissionMap
       second:
-        m_Texture: {fileID: 2800000, guid: 4c5a07dbc18594b40b7e1040f71274f5, type: 3}
+        m_Texture: {fileID: 2800000, guid: dc1337e1c8b65d841bedae17f7e2f332, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _GlowMap
+      second:
+        m_Texture: {fileID: 2800000, guid: dc1337e1c8b65d841bedae17f7e2f332, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -123,5 +129,14 @@ Material:
         name: _Color
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
+        name: _Color1
+      second: {r: 0.36551714, g: 0, b: 1, a: 1}
+    - first:
+        name: _Color2
+      second: {r: 1, g: 0.6413793, b: 0, a: 1}
+    - first:
         name: _EmissionColor
-      second: {r: 0.73008597, g: 0.591022, b: 8.830564, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _GlowColor
+      second: {r: 2, g: 2, b: 2, a: 1}

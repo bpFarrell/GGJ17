@@ -2,10 +2,13 @@
 
 Shader "Custom/FIshSwim" {
 	Properties {
-		_Color ("Color", Color) = (1,1,1,1)
-		_MainTex ("Albedo (RGB)", 2D) = "white" {}
-		_Glossiness ("Smoothness", Range(0,1)) = 0.5
-		_Metallic ("Metallic", Range(0,1)) = 0.0
+		_Color("Color", Color) = (1,1,1,1)
+		_MainTex("Albedo (RGB)", 2D) = "white" {}
+		_GlowMap("GlowMap", 2D) = "Black" {}
+		[HDR]
+		_GlowColor("GlowColor", Color) = (1,1,1,1)
+		_Glossiness("Smoothness", Range(0,1)) = 0.5
+		_Metallic("Metallic", Range(0,1)) = 0.0
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }
@@ -23,25 +26,46 @@ Shader "Custom/FIshSwim" {
 
 		struct Input {
 			float2 uv_MainTex;
+			float3 worldPos;
 		};
 
 		half _Glossiness;
 		half _Metallic;
 		fixed4 _Color;
+		fixed4 _Pos1;
+		fixed4 _Pos2;
+		fixed4 _Color1;
+		fixed4 _Color2;
+		sampler2D _GlowMap;
+		fixed4 _GlowColor;
 		void myvert(inout appdata_full v)
 		{
 			float f = length	(float3(unity_ObjectToWorld[0].x, unity_ObjectToWorld[1].x, unity_ObjectToWorld[2].x))*500;
-			v.vertex.z += sin((_Time.x * (50 + sin(f)*20)) + v.vertex.x * 3+f*100)*0.1;
+			v.vertex.x += sin((_Time.x * (50 + sin(f)*20)) + v.vertex.z * 3+f*100)*0.1;
 		}
 
-		void surf (Input IN, inout SurfaceOutputStandard o) {
-			// Albedo comes from a texture tinted by color
-			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
+		void surf (Input IN, inout SurfaceOutputStandard o) {/*
+			float l1 = distance(_Pos1.xyz, IN.worldPos);
+			float l2 = distance(_Pos2.xyz, IN.worldPos);
+			fixed4 pColor;
+			if (l1 < 30 && l1<l2) {
+				pColor = _Color1;
+			}
+			else if (l2 < 30) {
+				pColor = _Color2;
+			}
+			else {
+				pColor = _GlowColor;
+			}*
+			float div = l1 + l2;
+			l1 /= div;*/
+			fixed4 g = tex2D(_GlowMap, IN.uv_MainTex)*_GlowColor;
+			fixed4 c = tex2D(_MainTex, IN.uv_MainTex)*_Color;
 			o.Albedo = c.rgb;
-			// Metallic and smoothness come from slider variables
+			o.Emission = g.xyz;
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
-			o.Alpha = 0;
+			o.Alpha = c.a;
 		}
 		ENDCG
 	}

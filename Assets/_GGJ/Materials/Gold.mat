@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: New Material 2
+  m_Name: Gold
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _DETAIL_MULX2 _EMISSION _NORMALMAP
+  m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -36,13 +36,13 @@ Material:
     - first:
         name: _DetailNormalMap
       second:
-        m_Texture: {fileID: 2800000, guid: 83e61bea4f320b84d92902ec9026c94b, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _EmissionMap
       second:
-        m_Texture: {fileID: 2800000, guid: 4c5a07dbc18594b40b7e1040f71274f5, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -87,13 +87,13 @@ Material:
       second: 1
     - first:
         name: _Glossiness
-      second: 0
+      second: 0.664
     - first:
         name: _GlossyReflections
       second: 1
     - first:
         name: _Metallic
-      second: 0
+      second: 1
     - first:
         name: _Mode
       second: 0
@@ -121,7 +121,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0, g: 0, b: 0, a: 1}
+      second: {r: 0.6838235, g: 0.6838235, b: 0.6838235, a: 1}
     - first:
         name: _EmissionColor
-      second: {r: 0.73008597, g: 0.591022, b: 8.830564, a: 1}
+      second: {r: 0, g: 0, b: 0, a: 1}

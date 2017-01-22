@@ -47,7 +47,7 @@
 			}
 			fixed4 frag (v2f i) : SV_Target
 			{
-
+				float v = 1-distance(i.uv,fixed2(0.5,0.5));
 				float d = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, i.uv));
 				fixed4 col = tex2D(_MainTex, i.uv);
 			col += Sample(d,i.uv, +0, +1);
@@ -69,7 +69,7 @@
 			fixed4 fogColB = fixed4(0.2, 0.5, 0.45, 1);
 
 
-			return col*lerp(fogColA,fogColB,fog);
+			return col*lerp(fogColA,fogColB,fog)*saturate(v+0.2);
 			}
 			ENDCG
 		}
