@@ -11,12 +11,14 @@ public class FishControl : MonoBehaviour {
     public float dotFwd;
     public Vector3 testVec = Vector3.right;
     public bool test;
+    public MeshRenderer mr;
 
     public Transform debugObj;
     // Use this for initialization
     void Start () {
         test = true;
         debugObj = GetComponent<FishBehavior>().target;
+        SetColor(0);
 	}
 	
 	// Update is called once per frame
@@ -64,5 +66,18 @@ public class FishControl : MonoBehaviour {
             return true;
         }
         return false;
+    }
+    /// <summary>
+    /// 0 is neutral 1 is P1 and 2 is P2
+    /// </summary>
+    /// <param name="player"></param>
+    public void SetColor(int player) {
+        if(player == 0) {
+            mr.material = FishMaterials.Neutral;
+        } else if (player == 1) {
+            mr.material = FishMaterials.P1;
+        }else if (player == 2) {
+            mr.material = FishMaterials.P2;
+        }
     }
 }
