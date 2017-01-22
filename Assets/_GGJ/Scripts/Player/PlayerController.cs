@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+
+	public string playerPrefix = "P1_";
     public Vector3 velocity = new Vector3();
     public float friction = 1;
     public float power = 5;
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("P1_A")||Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetButtonDown(playerPrefix + "A")||Input.GetKeyDown(KeyCode.Space)) {
             velocity += transform.forward*power;
             flutter();
             if (lastPressTime + twistDelay > Time.time) {
@@ -44,7 +46,7 @@ public class PlayerController : MonoBehaviour {
         }
         float deltaTwist = CalculateTwist();
         float levelOut = LevelOut();
-        float angle = Input.GetAxis("P1_LeftHorizontal");
+        float angle = Input.GetAxis(playerPrefix + "LeftHorizontal");
         if (Input.GetKey(KeyCode.A)) angle = -1;
         if (Input.GetKey(KeyCode.D)) angle = 1;
         transform.Rotate(0, angle * Time.deltaTime*100, 0);
