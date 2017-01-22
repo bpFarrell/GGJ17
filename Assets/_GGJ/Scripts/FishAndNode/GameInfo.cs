@@ -11,4 +11,5 @@ public class GameInfo : MonoBehaviour {
     public float distToInnerBound = 20;
     public float distToOuterBound = 40;
 
+
 }

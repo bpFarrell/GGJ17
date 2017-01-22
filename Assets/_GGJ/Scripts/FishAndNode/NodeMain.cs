@@ -20,6 +20,10 @@ public class NodeMain : MonoBehaviour {
     Transform player;
 
     public float travelSpeed = 10;
+
+    public ParticleSystem particle;
+    float dropTime;
+    float coolDown = 3;
 	// Use this for initialization
 	void Start () {
       //  Init(pos);
@@ -39,6 +43,10 @@ public class NodeMain : MonoBehaviour {
         if (state == State.travel) {
             transform.LookAt(player);
             transform.position += transform.forward * travelSpeed * Time.deltaTime;
+            if ((player.position - transform.position).magnitude > 20) {
+                state = State.neutral;
+                Debug.Log(state);
+            }
         }
     }
 
@@ -66,17 +74,21 @@ public class NodeMain : MonoBehaviour {
         Debug.Log(col.name);
         player = col.transform;
         state = State.travel;
+        for (int i = 0; i < fishNodes.Count; i++) {
+            //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
+            fishNodes[i].state = NodeFish.State.travel;
+        }
         if (col.GetComponent<PlayerController>().isPlayerOne)
         {
             isPlayerOne = true;
         }
         else isPlayerOne = false;
     }
-    void OnTriggerLeave(Collider col) {
-        if (col.tag == "Player")
-        {
-            Debug.Log("Leavingggggggggggggggg");
-            state = State.neutral;
-        }
-    }
+ //   void OnTriggerLeave(Collider col) {
+ //       if (col.tag == "Player")
+ //       {
+ //           Debug.Log("Leavingggggggggggggggg");
+ //           state = State.neutral;
+ //       }
+ //   }
 }

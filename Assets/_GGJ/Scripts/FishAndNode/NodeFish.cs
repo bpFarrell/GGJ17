@@ -3,7 +3,16 @@ using System.Collections;
 
 public class NodeFish : MonoBehaviour {
 
+    public enum State {
+        neutral,
+        travel,
+        mother
+    }
+    public State state;
+
     Transform parentNode;
+    public FishControl fishControl;
+
     Vector3 dir;
     public float dist;
     public float defaultDist;
@@ -22,6 +31,7 @@ public class NodeFish : MonoBehaviour {
         fish.transform.position = transform.position;
         fish.transform.localScale *= Random.Range(0.8001f, 1.2001f);
         fish.GetComponent<FishBehavior>().target = transform;
+        fishControl = fish.GetComponent<FishControl>();
         fish.transform.SetParent(fishParent);
     }
 	// Use this for initialization
@@ -32,6 +42,17 @@ public class NodeFish : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
      //   Debug.Log(dir + " : " + dist);
-        transform.position = Vector3.Lerp(transform.position, desiredPos, Time.deltaTime);
-	}
+        transform.position = Vector3.Lerp(transform.position, desiredPos, 20*Time.deltaTime);
+        if (state == State.travel) {
+            dist = defaultDist * 0.5f;
+            fishControl.fwdSpeed = Random.Range(3,5);
+        }
+        if (state == State.neutral) {
+            dist = defaultDist * 1.5f;
+            fishControl.fwdSpeed = fishControl.rotSpeed = Random.Range(0.75f,1.5f);
+        }
+        if (state == State.mother) {
+
+        }
+    }
 }

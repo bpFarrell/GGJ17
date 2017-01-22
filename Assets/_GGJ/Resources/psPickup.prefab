@@ -127,7 +127,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -835211470
+  randomSeed: -719216280
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -949,10 +949,10 @@ ParticleSystem:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 16777215
+          rgba: 11842740
         key1:
           serializedVersion: 2
-          rgba: 4278255615
+          rgba: 2569567356
         key2:
           serializedVersion: 2
           rgba: 0
