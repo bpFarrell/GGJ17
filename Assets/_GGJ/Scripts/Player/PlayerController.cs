@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour {
             }
             lastPressTime = Time.time;
         }
+        CalculateIdle();
+        BoundCheck();
         float deltaTwist = CalculateTwist();
         float levelOut = LevelOut();
         float angle = Input.GetAxis(playerPrefix + "LeftHorizontal");
@@ -67,5 +69,30 @@ public class PlayerController : MonoBehaviour {
     }
     float LevelOut() {
         return Vector3.Dot(transform.forward, Vector3.up);
+    }
+    void CalculateIdle() {
+        float scale = 1;
+        float speed = 1;
+        Vector3 offset = new Vector3(
+            Mathf.Sin(Time.time * speed) * scale,
+            Mathf.Cos(Time.time * speed*1.3f) * scale,
+            - Mathf.Cos(Time.time * speed) * scale
+            );
+        roll.transform.localPosition = offset;
+    }
+    void BoundCheck() {
+        float force=50;
+        if (transform.position.x < 50) {
+            velocity.x += Time.deltaTime * force;
+        }
+        if (transform.position.z < 50) {
+            velocity.z += Time.deltaTime * force;
+        }
+        if (transform.position.x > 450) {
+            velocity.x -= Time.deltaTime * force;
+        }
+        if (transform.position.z > 450) {
+            velocity.z -= Time.deltaTime * force;
+        }
     }
 }
