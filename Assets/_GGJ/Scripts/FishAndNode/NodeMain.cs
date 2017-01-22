@@ -66,10 +66,10 @@ public class NodeMain : MonoBehaviour {
             }
             if (isPlayerOne)
             {
-                psMain.startColor = new Color(0f, 0.5f, 1.0f, 1.0f);
+                psMain.startColor = new Color(0f, 0.5f, 1.0f, 0.1f);
             }
             else {
-                psMain.startColor = new Color(1f, 0.0f, 0.0f, 1.0f);
+                psMain.startColor = new Color(1f, 0.0f, 0.0f, 0.1f);
             }
         }
     }
