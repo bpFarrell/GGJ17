@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    public bool isPlayerOne;
 	public string playerPrefix = "P1_";
     public Vector3 velocity = new Vector3();
     public float friction = 1;

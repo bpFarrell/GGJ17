@@ -40,9 +40,15 @@ public class NodeManager : MonoBehaviour {
 		for (int i = 0; i < amountMainNode; i++) {
          //   Debug.Log("mother "+motherPos);
 			Vector3 pos = Tools.PointOnCircle (motherPos, sliceDegree * i, Random.Range (distToInnerBound, distToOuterBound));
-        //    Debug.Log("circ p "+pos);
-            GameObject nodeGO = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            //    Debug.Log("circ p "+pos);
+            GameObject nodeGO = new GameObject("MainNode");
             nodeGO.transform.position = pos;
+            SphereCollider sphCol = nodeGO.AddComponent<SphereCollider>();
+            sphCol.isTrigger = true;
+            sphCol.radius = 10;
+            GameObject ps = Instantiate(Resources.Load("psPickup")) as GameObject; //GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            ps.transform.SetParent(nodeGO.transform);
+            ps.transform.localPosition = Vector3.up;
             NodeMain nodeMain = nodeGO.AddComponent<NodeMain>();
             nodeMain.Init(pos,amountFishNOde, rootParent.transform, fishParent.transform);
             //    NodeMain nodeMain = new NodeMain (pos);

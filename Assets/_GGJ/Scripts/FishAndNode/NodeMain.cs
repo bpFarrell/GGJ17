@@ -10,9 +10,16 @@ public class NodeMain : MonoBehaviour {
 		mother
 	}
 
+    State state;
+
     IList<NodeFish> fishNodes = new List<NodeFish>();
     public float offsetDistToCore = 1;
     public bool stateChange;
+
+    bool isPlayerOne;
+    Transform player;
+
+    public float travelSpeed = 10;
 	// Use this for initialization
 	void Start () {
       //  Init(pos);
@@ -28,6 +35,11 @@ public class NodeMain : MonoBehaviour {
                 fishNodes[i].dist = fishNodes[i].defaultDist * offsetDistToCore;
             }
         }
+
+        if (state == State.travel) {
+            transform.LookAt(player);
+            transform.position += transform.forward * travelSpeed * Time.deltaTime;
+        }
     }
 
     public void Init(Vector3 origin, int amountFish, Transform rootParent, Transform fishParent) {
@@ -36,7 +48,8 @@ public class NodeMain : MonoBehaviour {
             Vector3 temp = Tools.PointOnCircle(origin, degree * i, Random.Range(1,amountFish*0.1f));
             Vector3 assignedPos = new Vector3(temp.x, Random.Range(origin.y, origin.y+amountFish*0.1f), temp.z);
             GameObject fishNodeGO = new GameObject("fishNode");//GameObject.CreatePrimitive(PrimitiveType.Cube);
-    //        fishNodeGO.GetComponent<MeshRenderer>().enabled = false;
+            //new GameObject("fishNode");//GameObject.CreatePrimitive(PrimitiveType.Cube);
+            //        fishNodeGO.GetComponent<MeshRenderer>().enabled = false;
             fishNodeGO.transform.position = assignedPos;//new Vector3(temp.x, Random.Range(0, 5), temp.z);
             fishNodeGO.transform.localScale *= 0.5f;
 
@@ -45,6 +58,25 @@ public class NodeMain : MonoBehaviour {
             fish.Init(transform, assignedPos, fishParent);
 
             fishNodes.Add(fish);
+        }
+    }
+    void OnTriggerEnter(Collider col) {
+        Debug.Log(col.tag);
+        if (col.tag != "Player") return;
+        Debug.Log(col.name);
+        player = col.transform;
+        state = State.travel;
+        if (col.GetComponent<PlayerController>().isPlayerOne)
+        {
+            isPlayerOne = true;
+        }
+        else isPlayerOne = false;
+    }
+    void OnTriggerLeave(Collider col) {
+        if (col.tag == "Player")
+        {
+            Debug.Log("Leavingggggggggggggggg");
+            state = State.neutral;
         }
     }
 }
