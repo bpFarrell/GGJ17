@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
     void Awake() {
         Mesh mesh;
+        locked = false;
         roll = transform.GetChild(0).gameObject;
         Animation[] anim = GetComponentsInChildren<Animation>();
         for(int x = 0; x < anim.Length; x++) {
