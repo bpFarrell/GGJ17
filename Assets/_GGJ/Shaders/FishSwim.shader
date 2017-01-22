@@ -5,6 +5,7 @@ Shader "Custom/FIshSwim" {
 		_Color("Color", Color) = (1,1,1,1)
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
 		_GlowMap("GlowMap", 2D) = "Black" {}
+		[HDR]
 		_GlowColor("GlowColor", Color) = (1,1,1,1)
 		_Glossiness("Smoothness", Range(0,1)) = 0.5
 		_Metallic("Metallic", Range(0,1)) = 0.0
