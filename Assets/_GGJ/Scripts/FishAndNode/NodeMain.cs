@@ -12,11 +12,11 @@ public class NodeMain : MonoBehaviour {
 
     State state;
 
-    IList<NodeFish> fishNodes = new List<NodeFish>();
+    public IList<NodeFish> fishNodes = new List<NodeFish>();
     public float offsetDistToCore = 1;
     public bool stateChange;
 
-    bool isPlayerOne;
+    public bool isPlayerOne;
     Transform player;
 
     public float travelSpeed = 10;

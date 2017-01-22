@@ -11,5 +11,24 @@ public class GameInfo : MonoBehaviour {
     public float distToInnerBound = 20;
     public float distToOuterBound = 40;
 
+    public int pOneFish;
+    public int pTwoFish;
 
+    CapsuleCollider capCollide;
+
+    IList<NodeMain> capturedNodeMain = new List<NodeMain>();
+    void Start() {
+        capCollide = GetComponent<CapsuleCollider>();
+    }
+
+    void OnTriggerEnter(Collider col) {
+        
+        if (col.GetComponent<NodeMain>()==null) return;
+        NodeMain nm = col.GetComponent<NodeMain>();
+        if (nm.isPlayerOne) {
+            pOneFish += nm.fishNodes.Count;
+            nm.fishNodes.Clear();
+        }
+        capturedNodeMain.Add(nm);
+    }
 }
