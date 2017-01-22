@@ -55,7 +55,7 @@ public class GameInfo : MonoBehaviour {
         }
         capturedNodeMain.Add(nm);
         nm.transform.SetParent(swirl.trackme);
-    //    nm.trackTarget = swirl.trackme;
+        nm.trackTarget = swirl.trackme;
         nm.state = NodeMain.State.mother;
     }
 }

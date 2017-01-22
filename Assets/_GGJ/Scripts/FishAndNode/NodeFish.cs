@@ -45,14 +45,15 @@ public class NodeFish : MonoBehaviour {
         transform.position = Vector3.Lerp(transform.position, desiredPos, 20*Time.deltaTime);
         if (state == State.travel) {
             dist = defaultDist * 0.5f;
-            fishControl.fwdSpeed = Random.Range(3,5);
+            fishControl.fwdSpeed = Random.Range(5,7);
         }
         if (state == State.neutral) {
             dist = defaultDist * 1.5f;
             fishControl.fwdSpeed = fishControl.rotSpeed = Random.Range(0.75f,1.5f);
         }
         if (state == State.mother) {
-
+            dist = defaultDist * 0.5f;
+            fishControl.fwdSpeed = Random.Range(5, 7);
         }
     }
 }

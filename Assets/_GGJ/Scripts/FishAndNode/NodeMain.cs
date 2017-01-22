@@ -48,14 +48,21 @@ public class NodeMain : MonoBehaviour {
             transform.position += transform.forward * travelSpeed * Time.deltaTime;
             if ((trackTarget.position - transform.position).magnitude > 20) {
                 state = State.neutral;
+                for (int i = 0; i < fishNodes.Count; i++)
+                {
+                    //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
+                    fishNodes[i].state = NodeFish.State.neutral;
+                }
                 Debug.Log(state);
             }
         }
 
         if (state == State.mother) {
-         //   transform.LookAt(trackTarget);
-         //   transform.position += transform.forward * travelSpeed * Time.deltaTime;
-
+            transform.LookAt(trackTarget);
+            if ((transform.position - trackTarget.position).magnitude > 10)
+            {
+                transform.position += transform.forward * travelSpeed * Time.deltaTime;
+            }
             if (isPlayerOne)
             {
                 psMain.startColor = new Color(0f, 0.5f, 1.0f, 1.0f);
