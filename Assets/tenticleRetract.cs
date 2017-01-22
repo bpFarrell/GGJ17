@@ -9,21 +9,10 @@ public class tenticleRetract : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		pointCollection = new Vector3[transform.childCount];
-		int i = 0;
-		foreach (GameObject child in transform) 
-		{
-			pointCollection[i] = child.transform.position;
-			i++;
-		}
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		foreach (GameObject child in transform) 
-		{
-
-		}
 	}
 }
