@@ -7,12 +7,16 @@ public class GameInfo : MonoBehaviour {
     public int amountMainNodes = 10;
     public int amountFishToWin = 1000;
     public int amountFishToSpawn = 1500;
+    public int amountFishDelta = 0;
 
     public float distToInnerBound = 20;
     public float distToOuterBound = 40;
 
     public int pOneFish;
     public int pTwoFish;
+    public int totalFishScored {
+        get { return pOneFish + pTwoFish; }
+    }
 
     Swirl swirl;
 
@@ -24,7 +28,9 @@ public class GameInfo : MonoBehaviour {
         swirl = GetComponent<Swirl>();
     }
     void Update() {
-
+        if (totalFishScored >= amountFishToWin) {
+            GameStateManager._MAIN.ChangeState(GameStateManager.STATE.END);
+        }
     }
 
     void OnTriggerEnter(Collider col) {

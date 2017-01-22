@@ -23,7 +23,7 @@ public class NodeManager : MonoBehaviour {
         motherPos = transform.position;
         GameInfo gameInfo = GetComponent<GameInfo>();
         amountMainNode = gameInfo.amountMainNodes;
-        amountFishNOde = Mathf.RoundToInt(gameInfo.amountFishToSpawn / amountMainNode);
+        amountFishNOde = Mathf.RoundToInt(gameInfo.amountFishToSpawn / amountMainNode)+Random.Range(-gameInfo.amountFishDelta,gameInfo.amountFishDelta);
         distToInnerBound = gameInfo.distToInnerBound;
         distToOuterBound = gameInfo.distToOuterBound;
 
