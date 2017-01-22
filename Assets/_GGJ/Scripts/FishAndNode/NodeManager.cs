@@ -10,10 +10,12 @@ public class NodeManager : MonoBehaviour {
 	float distToOuterBound;
 
 	public Vector3 motherPos;
-
+    public GameObject rootParent;
 	public IList<NodeMain> mainNodes = new List<NodeMain>();
 	// Use this for initialization
 	void Start () {
+        rootParent = new GameObject("rootParent");
+        motherPos = transform.position;
         GameInfo gameInfo = GetComponent<GameInfo>();
         amountMainNode = gameInfo.amountMainNodes;
         amountFishNOde = Mathf.RoundToInt(gameInfo.amountFishToSpawn / amountMainNode);
@@ -25,19 +27,22 @@ public class NodeManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        motherPos = transform.position;
 	}
 
 	void NodePlacement(){
 		float sliceDegree = 360.0f / amountMainNode;
 		for (int i = 0; i < amountMainNode; i++) {
+            Debug.Log("mother "+motherPos);
 			Vector3 pos = Tools.PointOnCircle (motherPos, sliceDegree * i, Random.Range (distToInnerBound, distToOuterBound));
+            Debug.Log("circ p "+pos);
             GameObject nodeGO = GameObject.CreatePrimitive(PrimitiveType.Sphere);
             nodeGO.transform.position = pos;
             NodeMain nodeMain = nodeGO.AddComponent<NodeMain>();
-            nodeMain.Init(pos,amountFishNOde);
+            nodeMain.Init(pos,amountFishNOde, rootParent.transform);
             //    NodeMain nodeMain = new NodeMain (pos);
 			mainNodes.Add (nodeMain);
+            nodeGO.transform.SetParent(rootParent.transform);
 		}
 	}
 

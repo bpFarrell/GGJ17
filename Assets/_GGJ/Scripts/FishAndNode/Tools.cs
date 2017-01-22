@@ -8,6 +8,7 @@ public class Tools : MonoBehaviour {
     {
         float x = (float)(radius * Mathf.Cos(angleInDegrees * Mathf.PI / 180F)) + origin.x;
         float z = (float)(radius * Mathf.Sin(angleInDegrees * Mathf.PI / 180F)) + origin.z;
+        Debug.Log("y "+origin.y);
         return new Vector3(x, origin.y, z);
     }
 }

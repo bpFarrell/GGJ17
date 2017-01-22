@@ -19,16 +19,17 @@ public class NodeMain : MonoBehaviour {
         transform.position += Vector3.right * Mathf.Sin(Time.time) * 0.01f;
     }
 
-    public void Init(Vector3 origin, int amountFish) {
+    public void Init(Vector3 origin, int amountFish, Transform rootParent) {
         float degree = 360 / amountFish;
         for (int i = 0; i < amountFish; i++) {
             Vector3 temp = Tools.PointOnCircle(origin, degree * i, Random.Range(2,5));
-            Vector3 assignedPos = new Vector3(temp.x, Random.Range(0, 5), temp.z);
+            Vector3 assignedPos = new Vector3(temp.x, Random.Range(origin.y, origin.y+5), temp.z);
             GameObject fishNodeGO = GameObject.CreatePrimitive(PrimitiveType.Cube);
             fishNodeGO.GetComponent<MeshRenderer>().enabled = false;
             fishNodeGO.transform.position = assignedPos;//new Vector3(temp.x, Random.Range(0, 5), temp.z);
             fishNodeGO.transform.localScale *= 0.5f;
 
+            fishNodeGO.transform.SetParent(rootParent);
             NodeFish fish = fishNodeGO.AddComponent<NodeFish>();
             fish.Init(transform, assignedPos);
 
