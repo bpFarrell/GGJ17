@@ -164,8 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e91140436f70c4c9c7b44daa294989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groupRadius: 5
   fwdSpeed: 1
-  rotSpeed: 5
+  rotSpeed: 1
   dotRight: 0
   dotFwd: 0
   testVec: {x: 1, y: 0, z: 0}
