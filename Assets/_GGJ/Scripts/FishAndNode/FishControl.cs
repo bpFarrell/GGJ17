@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FishControl : MonoBehaviour {
 
+    public float groupRadius = 5;
     public float fwdSpeed = 1;
     public float rotSpeed = 5;
     public float dotRight;
@@ -28,7 +29,7 @@ public class FishControl : MonoBehaviour {
             testVec = (debugObj.position - transform.position).normalized;
             //   Turn(testVec);
             LookTurn(testVec);
-            if ((debugObj.position - transform.position).magnitude > 5.0f) {
+            if ((debugObj.position - transform.position).magnitude > groupRadius) {
                 BabyComeBack(testVec);
             }
         }
