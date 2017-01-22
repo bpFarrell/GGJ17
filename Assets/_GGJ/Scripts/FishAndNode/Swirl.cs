@@ -34,7 +34,7 @@ public class Swirl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (state == State.normal) {
-            pivot.transform.Rotate(0, speed * Time.deltaTime, 0);
+            pivot.transform.Rotate(0, speed*2 * Time.deltaTime, 0);
             Vector3 pos = pivot.transform.position;
             pivot.transform.position = new Vector3(pos.x, pos.y + (Mathf.Sin(Time.time*0.5f)*0.5f), pos.z);
         }
