@@ -12,6 +12,7 @@ public class NodeManager : MonoBehaviour {
 	public Vector3 motherPos;
     public GameObject rootParent;
     public GameObject fishParent;
+    public AudioClip octoGatherSound;
 
 	public IList<NodeMain> mainNodes = new List<NodeMain>();
 	// Use this for initialization
@@ -23,6 +24,8 @@ public class NodeManager : MonoBehaviour {
         motherPos = transform.position;
         GameInfo gameInfo = GetComponent<GameInfo>();
         amountMainNode = gameInfo.amountMainNodes;
+        octoGatherSound = Resources.Load("octoGather", typeof(AudioClip)) as AudioClip;
+
         amountFishNOde = Mathf.RoundToInt(gameInfo.amountFishToSpawn / amountMainNode)+Random.Range(-gameInfo.amountFishDelta,gameInfo.amountFishDelta);
         distToInnerBound = gameInfo.distToInnerBound;
         distToOuterBound = gameInfo.distToOuterBound;
@@ -60,6 +63,9 @@ public class NodeManager : MonoBehaviour {
 
             mainNodes.Add (nodeMain);
             nodeGO.transform.SetParent(rootParent.transform);
+
+            AudioSource octoGather = nodeGO.AddComponent<AudioSource>();
+            octoGather.clip = octoGatherSound;
 		}
 	}
 

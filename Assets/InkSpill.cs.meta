@@ -1,10 +1,14 @@
 fileFormatVersion: 2
 guid: a91d7443546830f40a98e4b08511dc2b
-timeCreated: 1485078789
+timeCreated: 1485132154
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - inkPrefab: {fileID: 1777786592163920, guid: f9d8ecaf8011e3f4eb836ea0ad63f9f1,
+      type: 2}
+  - sputterPrefab: {instanceID: 0}
+  - inkAudio: {fileID: 1809272110911058, guid: 78b7e1c333b328d48a4820c433cfddb4, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

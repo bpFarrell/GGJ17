@@ -15,6 +15,8 @@ public class InkSpill : MonoBehaviour
 	private float counter = 4.0f;
 	private float sputCounter = 4.0f;
 
+    public GameObject inkAudio;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -38,6 +40,7 @@ public class InkSpill : MonoBehaviour
 				}
 				counter = 0.0f;
 				sputCounter = 0.0f;
+                DropAudio();
 			}
 			else if (sputCounter >= delay/8) 
 			{
@@ -59,7 +62,12 @@ public class InkSpill : MonoBehaviour
 		Instantiate (inkPrefab, transform.position, inkPrefab.transform.rotation);
 	}
 
-	void InkSputter()
+    void DropAudio()
+    {
+        Instantiate(inkAudio, transform.position, inkAudio.transform.rotation);
+    }
+
+    void InkSputter()
 	{
 		Instantiate (sputterPrefab, transform.position, sputterPrefab.transform.rotation);
 	}

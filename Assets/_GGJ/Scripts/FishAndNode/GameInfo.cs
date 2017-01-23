@@ -45,11 +45,14 @@ public class GameInfo : MonoBehaviour {
         if (nm.isPlayerOne)
         {
             pOneFish += nm.fishNodes.Count;
+            GetComponent<AudioSource>().Play();
         //    nm.fishNodes.Clear();
         }
         else {
             pTwoFish += nm.fishNodes.Count;
+            GetComponent<AudioSource>().Play();
         }
+
         if ((pOneFish + pTwoFish) >= amountFishToWin) {
             if (pOneFish > pTwoFish)
             {
