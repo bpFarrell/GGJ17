@@ -66,7 +66,7 @@ public class GameInfo : MonoBehaviour {
                 Debug.Log("Player Two Wins");
                 victor = 1;
             }
-            //GameStateManager._MAIN.ChangeState(GameStateManager.STATE.END);
+            GameStateManager._MAIN.ChangeState(GameStateManager.STATE.END);
         }
         capturedNodeMain.Add(nm);
         nm.transform.SetParent(swirl.trackme);

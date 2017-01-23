@@ -63,6 +63,8 @@ public class GameStateManager : MonoBehaviour {
 			Debug.LogError("ChangeState in GameStateController was given null parameter.");
 			return;
 		}
+		if(state == eGameState)
+			return;
 		if (state == STATE.NULL)
 		{
 			Debug.Log ("GameState is entering NULL state.");

@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class GameManagerScript : MonoBehaviour 
 {
 	static public GameManagerScript _MAIN;
+
+	public GameObject cinematicGroup;
+	public GameObject dummyRed;
+	public GameObject dummyBlue;
+
+	public Material[] playerMaterials;
 	
 	// Use this for initialization
 	void Start ()
@@ -23,6 +29,7 @@ public class GameManagerScript : MonoBehaviour
 		//GameStateManager._MAIN.NullState.StartOfState += CreateFishManager;
 
 		GameStateManager._MAIN.ChangeState(GameStateManager.STATE.NULL);
+		GameStateManager._MAIN.End.StartOfState += InstantiateEndGame;
 	}
 
 	void Awake()
@@ -48,9 +55,20 @@ public class GameManagerScript : MonoBehaviour
 		return;
 	}
 
-	public void CreateFishManager()
+	public void InstantiateEndGame()
 	{
-		Debug.Log ("FishManager Initialized");
-		return;
+		cinematicGroup.SetActive(true);
+		if(GameInfo.victor == 1)
+		{
+			dummyBlue.SetActive(true);
+		}
+		else
+		{
+			dummyRed.SetActive(true);
+		}	
+
+		PlayerController.locked = true;
+
+		// count score
 	}
 }

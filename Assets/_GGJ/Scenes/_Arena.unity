@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667546, g: 0.48427135, b: 0.5645225, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -22907,9 +22907,27 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1062728521661372, guid: 7a7dd6335054ce444ba41a8c3509a2ee, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291443606093912, guid: 7a7dd6335054ce444ba41a8c3509a2ee, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a7dd6335054ce444ba41a8c3509a2ee, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &851406083 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1291443606093912, guid: 7a7dd6335054ce444ba41a8c3509a2ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 851406082}
+--- !u!1 &851406084 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1062728521661372, guid: 7a7dd6335054ce444ba41a8c3509a2ee,
+    type: 2}
+  m_PrefabInternal: {fileID: 851406082}
 --- !u!1 &853258100
 GameObject:
   m_ObjectHideFlags: 0
@@ -34414,6 +34432,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f045c5198e0e3447b88191af602e857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cinematicGroup: {fileID: 1681749770}
+  dummyRed: {fileID: 851406084}
+  dummyBlue: {fileID: 851406083}
+  playerMaterials: []
 --- !u!4 &1301140953
 Transform:
   m_ObjectHideFlags: 0
@@ -37033,7 +37055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountMainNodes: 12
-  amountFishToWin: 1000
+  amountFishToWin: 1
   amountFishToSpawn: 3000
   amountFishDelta: 0
   distToInnerBound: 110
