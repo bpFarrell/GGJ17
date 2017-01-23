@@ -141,6 +141,7 @@ public class NodeMain : MonoBehaviour {
                 fishNodes[i].fishControl.SetColor(2);
             }
         }
+        GetComponent<AudioSource>().Play();
     }
 
     void IntruderStay() {
