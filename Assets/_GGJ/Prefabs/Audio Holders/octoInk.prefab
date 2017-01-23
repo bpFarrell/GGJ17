@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4937667390079492}
   - component: {fileID: 82512757669310374}
-  - component: {fileID: 114577109695952548}
+  - component: {fileID: 114922105707147408}
   m_Layer: 0
   m_Name: octoInk
   m_TagString: Untagged
@@ -122,7 +122,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114577109695952548
+--- !u!114 &114922105707147408
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1809272110911058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9e1c51991f3e748a92e9fcf281cad3, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e85a8dc4325e0144adc2ea945281ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 2
+  timeToDie: 1
