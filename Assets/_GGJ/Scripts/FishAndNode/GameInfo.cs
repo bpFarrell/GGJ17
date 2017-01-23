@@ -17,7 +17,7 @@ public class GameInfo : MonoBehaviour {
     public int totalFishScored {
         get { return pOneFish + pTwoFish; }
     }
-
+    public static int victor=0;
     Swirl swirl;
 
     CapsuleCollider capCollide;
@@ -29,7 +29,7 @@ public class GameInfo : MonoBehaviour {
     }
     void Update() {
         if (totalFishScored >= amountFishToWin) {
-            GameStateManager._MAIN.ChangeState(GameStateManager.STATE.END);
+            //GameStateManager._MAIN.ChangeState(GameStateManager.STATE.END);
         }
     }
 
@@ -50,17 +50,23 @@ public class GameInfo : MonoBehaviour {
         }
         else {
             pTwoFish += nm.fishNodes.Count;
-            GetComponent<AudioSource>().Play();
+            AudioSource audio = GetComponent<AudioSource>();
+            if(audio!= null) {
+                audio.Play();
+            }
         }
 
         if ((pOneFish + pTwoFish) >= amountFishToWin) {
             if (pOneFish > pTwoFish)
             {
                 Debug.Log("Player One Wins");
+                victor = 1;
             }
             else {
                 Debug.Log("Player Two Wins");
+                victor = 1;
             }
+            //GameStateManager._MAIN.ChangeState(GameStateManager.STATE.END);
         }
         capturedNodeMain.Add(nm);
         nm.transform.SetParent(swirl.trackme);
