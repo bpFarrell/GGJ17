@@ -23,7 +23,10 @@ public class MenuController : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-
+		if(Input.GetButtonDown("P1_Y"))
+		{
+			GameStateManager._MAIN.ChangeState(GameStateManager.STATE.RESET);
+		}
 	}
 
 	public void PressedPlay()
@@ -44,7 +47,6 @@ public class MenuController : MonoBehaviour
 		voidFunction del = MidLoading;
 		StartCoroutine(ExecuteAfterDelay(2.0f, del));
 		// LoadSceneAdditively the game screen and start initializations
-
 	}
 
 	private void MidLoading()
@@ -65,6 +67,8 @@ public class MenuController : MonoBehaviour
 		foreach (GameObject obj in toyGroups) {
 			obj.SetActive(false);
 		}
+		// Load STATEMACHINE with some end of round functions.
+		GameStateManager._MAIN.Reset.StartOfState += ResetGameMenu;
 	}
 
 	private delegate void voidFunction();
@@ -79,6 +83,7 @@ public class MenuController : MonoBehaviour
 	{
 		// Exit Application.
 		Debug.Log ("Quit Pressed.");
+		Application.Quit();
 	}
 
 	public void FadeInObject(GameObject obj, float duration)
@@ -93,5 +98,33 @@ public class MenuController : MonoBehaviour
 		tempFade.timeToClear = duration;
 	}
 
+	public void ResetGameMenu()
+	{
+		SceneManager.LoadScene("_Menu");
+		//FadeInObject(fadePanel, 0.4f);
+		//foreach (GameObject obj in loadingIcons) {
+		//	obj.SetActive(true);
+		//}
+		//foreach (GameObject obj in toyGroups) {
+		//	obj.SetActive(true);
+		//}
+		//voidFunction del = resetMid;
+		//StartCoroutine(ExecuteAfterDelay(2.0f, del));
+	}
+	public void resetMid()
+	{
+		SceneManager.UnloadSceneAsync("_Arena");
 
+		foreach (GameObject obj in titleScreens) {
+			obj.SetActive(true);
+		}
+
+		voidFunction del = resetEnd;
+		StartCoroutine(ExecuteAfterDelay(2.0f, del));
+	}
+
+	public void resetEnd()
+	{
+		FadeOutObject(fadePanel, 0.4f);
+	}
 }
