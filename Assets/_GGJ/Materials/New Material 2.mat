@@ -30,7 +30,7 @@ Material:
     m_Floats:
     - first:
         name: _Glossiness
-      second: 0.5
+      second: 0
     - first:
         name: _Metallic
       second: 0

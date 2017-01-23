@@ -46,7 +46,7 @@
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
 			fixed4 g = tex2D(_GlowMap, IN.uv_MainTex)*_GlowColor;
 			float sweep = sin(IN.uv_MainTex.x*20 + _Time.x*-150)*0.5+1;
-			o.Albedo = c.rgb;
+			o.Albedo = c.rgb*0.1;
 			o.Emission= g.rgb*sweep;
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
