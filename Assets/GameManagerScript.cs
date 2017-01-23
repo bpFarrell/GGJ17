@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour 
 {
@@ -17,11 +18,16 @@ public class GameManagerScript : MonoBehaviour
 			Destroy (this);
 		}
 
-		GameStateManager._MAIN.NullState.StartOfState += CreatePlayers;
-		GameStateManager._MAIN.NullState.StartOfState += CreateScorekeeper;
-		GameStateManager._MAIN.NullState.StartOfState += CreateFishManager;
+		//GameStateManager._MAIN.NullState.StartOfState += CreatePlayers;
+		//GameStateManager._MAIN.NullState.StartOfState += CreateScorekeeper;
+		//GameStateManager._MAIN.NullState.StartOfState += CreateFishManager;
 
 		GameStateManager._MAIN.ChangeState(GameStateManager.STATE.NULL);
+	}
+
+	void Awake()
+	{
+		SceneManager.SetActiveScene(SceneManager.GetSceneByName("_Arena"));
 	}
 
 	// Update is called once per frame

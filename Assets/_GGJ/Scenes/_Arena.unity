@@ -18542,6 +18542,7 @@ GameObject:
   - component: {fileID: 701549013}
   - component: {fileID: 701549014}
   - component: {fileID: 701549015}
+  - component: {fileID: 701549016}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -18626,6 +18627,24 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &701549016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 701549010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91d7443546830f40a98e4b08511dc2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: 1
+  inkPrefab: {fileID: 1777786592163920, guid: f9d8ecaf8011e3f4eb836ea0ad63f9f1, type: 2}
+  sputterPrefab: {fileID: 1266918524350392, guid: cb7dd6134ebb6ef4198b2442c8009d32,
+    type: 2}
+  delay: 4
+  numberOfInks: 3
+  delayBetweenInks: 0.7
 --- !u!4 &701994022 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f7c19b16795f9e348be04329bcdf5228, type: 3}
