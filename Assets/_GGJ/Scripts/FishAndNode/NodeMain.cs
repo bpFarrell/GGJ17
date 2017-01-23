@@ -107,6 +107,7 @@ public class NodeMain : MonoBehaviour {
             fishNodes.Add(fish);
         }
     }
+    
     void OnTriggerEnter(Collider col) {
         Debug.Log(col.tag);
         if (col.tag != "Player" ||
