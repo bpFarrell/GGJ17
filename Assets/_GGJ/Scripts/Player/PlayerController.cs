@@ -96,11 +96,11 @@ public class PlayerController : MonoBehaviour {
             ForceParticle(0);
             velocity.z += Time.deltaTime * force;
         }
-        if (transform.position.x > 450) {
+        if (transform.position.x > 1450) {
             ForceParticle(90);
             velocity.x -= Time.deltaTime * force;
         }
-        if (transform.position.z > 450) {
+        if (transform.position.z > 1450) {
             ForceParticle(0);
             velocity.z -= Time.deltaTime * force;
         }

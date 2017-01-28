@@ -40,4 +40,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _GlowColor
-      second: {r: 0.7300861, g: 0.591022, b: 8.830564, a: 1}
+      second: {r: 0.865655, g: 0.4256851, b: 2.8569472, a: 1}
