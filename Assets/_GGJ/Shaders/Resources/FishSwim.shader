@@ -6,7 +6,10 @@ Shader "Custom/FIshSwim" {
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
 		_GlowMap("GlowMap", 2D) = "Black" {}
 		[HDR]
-		_GlowColor("GlowColor", Color) = (1,1,1,1)
+		_GlowColorA("GlowColorA", Color) = (1,1,1,1)
+		[HDR]
+		_GlowColorB("GlowColorB", Color) = (1,1,1,1)
+		_T("T",Float) = 0
 		_Glossiness("Smoothness", Range(0,1)) = 0.5
 		_Metallic("Metallic", Range(0,1)) = 0.0
 	}
@@ -26,22 +29,23 @@ Shader "Custom/FIshSwim" {
 
 		struct Input {
 			float2 uv_MainTex;
-			float3 worldPos;
+			float seed;
 		};
-
+			
 		half _Glossiness;
 		half _Metallic;
 		fixed4 _Color;
-		fixed4 _Pos1;
-		fixed4 _Pos2;
-		fixed4 _Color1;
-		fixed4 _Color2;
 		sampler2D _GlowMap;
-		fixed4 _GlowColor;
-		void myvert(inout appdata_full v)
+		fixed4 _GlowColorA;
+		fixed4 _GlowColorB;
+		float _T;
+		void myvert(inout appdata_full v,out Input i)
 		{
-			float f = length	(float3(unity_ObjectToWorld[0].x, unity_ObjectToWorld[1].x, unity_ObjectToWorld[2].x))*500;
-			v.vertex.x += sin((_Time.x * (50 + sin(f)*20)) + v.vertex.z * 3+f*100)*0.1;
+			i.uv_MainTex = float2(1, 1);
+
+			i.seed = length	(float3(unity_ObjectToWorld[0].x, unity_ObjectToWorld[1].x, unity_ObjectToWorld[2].x))*500;
+			v.vertex.x += sin((_Time.x * (50 + sin(i.seed)*20)) + v.vertex.z * 3+i.seed*100)*0.1;
+			i.seed = sin(i.seed * 1000)*0.5 + 0.5;
 		}
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {/*
@@ -60,7 +64,8 @@ Shader "Custom/FIshSwim" {
 			float div = l1 + l2;
 			l1 /= div;*/
 			float sweep = pow(sin(IN.uv_MainTex.x * 20 + _Time.x*-150)*0.5 + 0.5,5)+0.1;
-			fixed4 g = tex2D(_GlowMap, IN.uv_MainTex)*_GlowColor;
+			fixed4 glow = lerp(_GlowColorA, _GlowColorB, saturate(IN.seed+_T));
+			fixed4 g = tex2D(_GlowMap, IN.uv_MainTex)*glow;
 			fixed4 c = tex2D(_MainTex, IN.uv_MainTex)*_Color;
 			o.Albedo = c.rgb;
 			o.Emission = g.xyz*sweep;

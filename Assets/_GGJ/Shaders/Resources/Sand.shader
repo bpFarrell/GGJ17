@@ -41,6 +41,7 @@
 				tex2D(_Caustics, IN.uv_MainTex * 1 + fixed2(_Time.x*0.2, 0)) +
 				tex2D(_Caustics, IN.uv_MainTex * 2 + fixed2(0, _Time.x*0.1)) +
 				tex2D(_Caustics, IN.uv_MainTex * 2 + fixed2(0, _Time.x*-0.1));
+			caustics = pow(caustics, 2);
 			fixed3 normal = normalize((tex2D(_Flake, IN.uv_MainTex * 140) * 2 - 1) + IN.worldNormal);
 			float3 ref = normalize(reflect(normal,dir2Cam));
 			float d = max(pow(dot(ref, normalize(fixed3(1, -1, 1))),2),0)*0.5 + 0.1;

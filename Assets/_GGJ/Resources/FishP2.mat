@@ -119,6 +119,9 @@ Material:
         name: _SrcBlend
       second: 1
     - first:
+        name: _T
+      second: 0
+    - first:
         name: _UVSec
       second: 0
     - first:
@@ -140,3 +143,9 @@ Material:
     - first:
         name: _GlowColor
       second: {r: 3, g: 0.3058824, b: 0, a: 1}
+    - first:
+        name: _GlowColorA
+      second: {r: 5, g: 2.3793104, b: 0, a: 1}
+    - first:
+        name: _GlowColorB
+      second: {r: 5, g: 0, b: 0, a: 1}
