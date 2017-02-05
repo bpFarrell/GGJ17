@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
     float twist = 360;
     public event func flutter;
     public static bool locked;
-	// Use this for initialization
+    public Camera cam;
     void Awake() {
         Mesh mesh;
         locked = false;
@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour {
         for(int x = 0; x < anim.Length; x++) {
             anim[x].Play();
         }
+        cam = transform.parent.GetComponentInChildren<Camera>();
     }
 	void Start () {
         Transform[] children = GetComponentsInChildren<Transform>();
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour {
         BoundCheck();
         float deltaTwist = CalculateTwist();
         float levelOut = LevelOut();
+        CalculateInput();
         transform.Rotate(0, angle * Time.deltaTime*100, 0);
         roll.transform.Rotate(0, 0, deltaTwist);
         
@@ -66,6 +68,29 @@ public class PlayerController : MonoBehaviour {
         transform.position += velocity * Time.deltaTime;
         velocity = velocity - (velocity * Time.deltaTime*friction);
 	}
+    Quaternion CalculateInput() {
+        Vector3 camForward = cam.transform.forward;
+        Vector3 camRight = cam.transform.right;
+        camForward.y = 0;
+        camRight.y = 0;
+        camForward.Normalize();
+        camRight.Normalize();
+
+
+        Vector3 target = Vector3.zero;
+
+        float angle = 0;
+        if (Input.GetKey(KeyCode.A)) angle = -1;
+        if (Input.GetKey(KeyCode.D)) angle = 1;
+        if(angle == 0) {
+            target = transform.forward;
+        }else {
+
+            target += camRight * angle;
+        }
+        
+        return Quaternion.Euler(target);
+    }
     float CalculateTwist() {
 
         float old = twist;
@@ -87,20 +112,20 @@ public class PlayerController : MonoBehaviour {
         roll.transform.localPosition = offset;
     }
     void BoundCheck() {
-        float force=50;
-        if (transform.position.x < 50) {
+        float force=100;
+        if (transform.position.x < 250) {
             ForceParticle(90);
             velocity.x += Time.deltaTime * force;
         }
-        if (transform.position.z < 50) {
+        if (transform.position.z < 250) {
             ForceParticle(0);
             velocity.z += Time.deltaTime * force;
         }
-        if (transform.position.x > 1450) {
+        if (transform.position.x > 750) {
             ForceParticle(90);
             velocity.x -= Time.deltaTime * force;
         }
-        if (transform.position.z > 1450) {
+        if (transform.position.z > 750) {
             ForceParticle(0);
             velocity.z -= Time.deltaTime * force;
         }

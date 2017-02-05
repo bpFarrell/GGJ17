@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667546, g: 0.48427135, b: 0.5645225, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1848,6 +1848,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   friction: 1
   power: 20
+  cam: {fileID: 0}
 --- !u!54 &61988414
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8694,7 +8695,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 221697020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 249.2, y: 0, z: 246.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 701549012}
@@ -27922,6 +27923,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   friction: 1
   power: 20
+  cam: {fileID: 0}
 --- !u!4 &701549012
 Transform:
   m_ObjectHideFlags: 0
@@ -29356,7 +29358,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 744495374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 249.2, y: 0, z: 246.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 61988411}
@@ -53340,11 +53342,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountMainNodes: 12
-  amountFishToWin: 1
+  amountFishToWin: 2000
   amountFishToSpawn: 3000
   amountFishDelta: 0
   distToInnerBound: 110
-  distToOuterBound: 160
+  distToOuterBound: 200
   pOneFish: 0
   pTwoFish: 0
 --- !u!4 &1366315537
@@ -53354,7 +53356,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1366315534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 246.75168, y: 44.16, z: 247.06143}
+  m_LocalPosition: {x: 497.5, y: 44.16, z: 513.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55628,7 +55630,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4758356947323990, guid: 5e86ebe790a43f54d9b25acc8b6eadc0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 221.3
+      value: 453.8
       objectReference: {fileID: 0}
     - target: {fileID: 4758356947323990, guid: 5e86ebe790a43f54d9b25acc8b6eadc0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -55636,7 +55638,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4758356947323990, guid: 5e86ebe790a43f54d9b25acc8b6eadc0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 195.3
+      value: 448.7
       objectReference: {fileID: 0}
     - target: {fileID: 4758356947323990, guid: 5e86ebe790a43f54d9b25acc8b6eadc0, type: 2}
       propertyPath: m_LocalRotation.x
