@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-
+    public enum InputType {
+        Tank,
+        CamerarRlative
+    }
+    public InputType inputType = InputType.CamerarRlative;
     float psTime;
     public bool isPlayerOne;
 	public string playerPrefix = "P1_";
@@ -60,8 +64,11 @@ public class PlayerController : MonoBehaviour {
         BoundCheck();
         float deltaTwist = CalculateTwist();
         float levelOut = LevelOut();
-        CalculateInput();
-        transform.Rotate(0, angle * Time.deltaTime*100, 0);
+        if (inputType == InputType.CamerarRlative) {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, CalculateInput(), Time.deltaTime * 125);
+        } else if (inputType == InputType.CamerarRlative) {
+            transform.Rotate(0, angle * Time.deltaTime*100, 0);
+        }
         roll.transform.Rotate(0, 0, deltaTwist);
         
 
@@ -79,17 +86,24 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 target = Vector3.zero;
 
-        float angle = 0;
-        if (Input.GetKey(KeyCode.A)) angle = -1;
-        if (Input.GetKey(KeyCode.D)) angle = 1;
-        if(angle == 0) {
-            target = transform.forward;
-        }else {
+        float angleX = Input.GetAxis(playerPrefix + "LeftHorizontal");
 
-            target += camRight * angle;
+        if (Input.GetKey(KeyCode.A)) angleX = -1;
+        if (Input.GetKey(KeyCode.D)) angleX = 1;
+        target += camRight * angleX;
+
+
+        float angleY = -Input.GetAxis(playerPrefix + "LeftVertical");
+
+        if (Input.GetKey(KeyCode.W)) angleY = 1;
+        if (Input.GetKey(KeyCode.S)) angleY = -1;
+        target += camForward * angleY;
+
+
+        if (target.magnitude<0.1) {
+            target = transform.forward;
         }
-        
-        return Quaternion.Euler(target);
+        return Quaternion.LookRotation(target,transform.up);
     }
     float CalculateTwist() {
 
