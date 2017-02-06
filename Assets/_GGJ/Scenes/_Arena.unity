@@ -1880,6 +1880,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   friction: 1
   power: 20
+  torso: {fileID: 0}
   cam: {fileID: 0}
 --- !u!54 &61988414
 Rigidbody:
@@ -4186,6 +4187,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 114868063}
+  - component: {fileID: 114868064}
   m_Layer: 9
   m_Name: octoTorso
   m_TagString: Untagged
@@ -4215,6 +4217,19 @@ Transform:
   m_Father: {fileID: 62213865}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114868064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 114868062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dab0cd8b70789045abae0deb15dc31e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ideling: 1
+  t: -90
 --- !u!4 &115347312 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4083476826158080, guid: 0be7f874b3a5e7e4fab2e70b2dd78854,
@@ -22902,9 +22917,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   t: 0
   weight: 0.5
-  playSpeed: 0.3
   play: 1
   mat: {fileID: 0}
+  state: 0
 --- !u!1001 &551000715
 Prefab:
   m_ObjectHideFlags: 0
@@ -28820,6 +28835,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   friction: 1
   power: 20
+  torso: {fileID: 0}
   cam: {fileID: 0}
 --- !u!4 &701549012
 Transform:
@@ -82094,6 +82110,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2070863564}
+  - component: {fileID: 2070863565}
   m_Layer: 9
   m_Name: octoTorso
   m_TagString: Untagged
@@ -82123,6 +82140,19 @@ Transform:
   m_Father: {fileID: 408607015}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2070863565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2070863563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dab0cd8b70789045abae0deb15dc31e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ideling: 1
+  t: -90
 --- !u!1 &2070970541
 GameObject:
   m_ObjectHideFlags: 0

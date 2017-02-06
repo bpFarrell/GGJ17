@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour {
     float twist = 360;
     public event func flutter;
     public static bool locked;
+    public TorsoLogic torso;
     public Camera cam;
     void Awake() {
         Mesh mesh;
@@ -32,6 +33,10 @@ public class PlayerController : MonoBehaviour {
             anim[x].Play();
         }
         cam = transform.parent.GetComponentInChildren<Camera>();
+        torso = transform.GetComponentInChildren<TorsoLogic>();
+        if (torso == null) {
+            Debug.LogError("Torse not set! Attack torso logic to octoTorso");
+        }
     }
 	void Start () {
         Transform[] children = GetComponentsInChildren<Transform>();
@@ -50,6 +55,7 @@ public class PlayerController : MonoBehaviour {
             if (Input.GetButtonDown(playerPrefix + "A") || Input.GetKeyDown(KeyCode.Space)) {
                 velocity += transform.forward * power;
                 flutter();
+                torso.Woosh();
                 if (lastPressTime + twistDelay > Time.time) {
                     if (twist > 0)
                         twist -= 360;
