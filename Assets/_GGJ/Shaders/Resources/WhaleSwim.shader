@@ -1,6 +1,6 @@
 ﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 
-Shader "Custom/FIshSwim" {
+Shader "Custom/Whale" {
 	Properties {
 		_Color("Color", Color) = (1,1,1,1)
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
@@ -44,7 +44,11 @@ Shader "Custom/FIshSwim" {
 			i.uv_MainTex = float2(1, 1);
 
 			i.seed = length	(float3(unity_ObjectToWorld[0].x, unity_ObjectToWorld[1].x, unity_ObjectToWorld[2].x))*500;
-			v.vertex.x += sin((_Time.x * (50 + sin(i.seed)*20)) + v.vertex.z * 3+i.seed*100)*0.1;
+			v.vertex.y += sin(v.vertex.z+_Time.x*20)*0.2*pow(v.vertex.z-2,2)*0.05;
+			v.vertex.y += sin(_Time.x * 20)*0.1;
+			v.vertex.x += sin(_Time.x * 30)*0.1;
+			//float t = saturate((-v.vertex.y) - .3);
+			//v.vertex.x = lerp(v.vertex.x,v.vertex*sin(_Time.x*30+t)*(t + 1)*0.3,t);
 			i.seed = sin(i.seed * 1000)*0.5 + 0.5;
 		}
 
@@ -63,7 +67,7 @@ Shader "Custom/FIshSwim" {
 			}*
 			float div = l1 + l2;
 			l1 /= div;*/
-			float sweep = pow(sin(IN.uv_MainTex.x * 20 + _Time.x*-150)*0.5 + 0.5,5)+0.1;
+			float sweep = pow(sin(IN.uv_MainTex.x * 20 + _Time.x*-50)*0.5 + 0.5,5)+0.1;
 			fixed4 glow = lerp(_GlowColorA, _GlowColorB, saturate(IN.seed+_T));
 			fixed4 g = tex2D(_GlowMap, IN.uv_MainTex)*glow;
 			fixed4 c = tex2D(_MainTex, IN.uv_MainTex)*_Color;

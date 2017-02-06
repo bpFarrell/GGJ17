@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: FishNeutral
-  m_Shader: {fileID: 4800000, guid: d0d8e8b61ad730041a8bfd9932b650e5, type: 3}
-  m_ShaderKeywords: _DETAIL_MULX2 _EMISSION _NORMALMAP
-  m_LightmapFlags: 1
+  m_Name: Group1Mat
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -36,19 +36,13 @@ Material:
     - first:
         name: _DetailNormalMap
       second:
-        m_Texture: {fileID: 2800000, guid: 83e61bea4f320b84d92902ec9026c94b, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _EmissionMap
       second:
-        m_Texture: {fileID: 2800000, guid: dc1337e1c8b65d841bedae17f7e2f332, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - first:
-        name: _GlowMap
-      second:
-        m_Texture: {fileID: 2800000, guid: dc1337e1c8b65d841bedae17f7e2f332, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -93,7 +87,7 @@ Material:
       second: 1
     - first:
         name: _Glossiness
-      second: 0
+      second: 0.5
     - first:
         name: _GlossyReflections
       second: 1
@@ -119,9 +113,6 @@ Material:
         name: _SrcBlend
       second: 1
     - first:
-        name: _T
-      second: -1.92
-    - first:
         name: _UVSec
       second: 0
     - first:
@@ -130,22 +121,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0, g: 0, b: 0, a: 1}
-    - first:
-        name: _Color1
-      second: {r: 0.36551714, g: 0, b: 1, a: 1}
-    - first:
-        name: _Color2
-      second: {r: 1, g: 0.6413793, b: 0, a: 1}
+      second: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - first:
         name: _EmissionColor
-      second: {r: 1, g: 1, b: 1, a: 1}
-    - first:
-        name: _GlowColor
-      second: {r: 2, g: 2, b: 2, a: 1}
-    - first:
-        name: _GlowColorA
-      second: {r: 1, g: 1, b: 1, a: 1}
-    - first:
-        name: _GlowColorB
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0, g: 0, b: 0, a: 1}

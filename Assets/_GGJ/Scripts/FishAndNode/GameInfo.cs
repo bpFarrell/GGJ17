@@ -14,6 +14,11 @@ public class GameInfo : MonoBehaviour {
 
     public int pOneFish;
     public int pTwoFish;
+    public float fishRation {
+        get {
+            return ((float)pOneFish) / ((float)totalFishScored);
+        }
+    }
     public int totalFishScored {
         get { return pOneFish + pTwoFish; }
     }
@@ -22,7 +27,12 @@ public class GameInfo : MonoBehaviour {
 
     CapsuleCollider capCollide;
 
+    public static GameInfo main;
+
     IList<NodeMain> capturedNodeMain = new List<NodeMain>();
+    void Awake() {
+        main = this;
+    }
     void Start() {
         capCollide = GetComponent<CapsuleCollider>();
         swirl = GetComponent<Swirl>();

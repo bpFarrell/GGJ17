@@ -5,7 +5,7 @@ using UnityEngine;
 public class TentacleLogic : MonoBehaviour {
     PlayerController pc;
     Quaternion targetRot {
-        get { return Quaternion.LerpUnclamped(rotMin, rotMax, t+(Mathf.Cos(Time.time*1.3f))*0.5f); }
+        get { return Quaternion.LerpUnclamped(rotMin, rotMax, t); }
     }
     public float t = 0;
     Quaternion rotMax;
@@ -26,7 +26,7 @@ public class TentacleLogic : MonoBehaviour {
     }
 	void Update () {
         if (state == State.Contract) {
-            t -= Time.deltaTime*2;
+            t -= Time.deltaTime*3;
             if (t < 0) {
                 state = State.Expand;
             }
@@ -34,7 +34,7 @@ public class TentacleLogic : MonoBehaviour {
             t += Time.deltaTime;
         }
         t = Mathf.Clamp01(t);
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRot, Time.deltaTime*100);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRot, Time.deltaTime*300);
     }
     public void Init(PlayerController pc) {
         this.pc = pc;
