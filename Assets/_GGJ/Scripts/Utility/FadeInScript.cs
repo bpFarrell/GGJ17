@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class FadeInScript : MonoBehaviour {
 
 	public float timeToOpaque = 2.0f;
+	public delegate void simpleDel();
+	public simpleDel Callback = delegate {};
 
 	private Image Image2Fade;
 

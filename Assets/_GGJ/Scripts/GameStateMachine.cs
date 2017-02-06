@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameStateMachine : MonoBehaviour {
 	
-	static public GameStateMachine _MAIN;
+	static public GameStateMachine _Main;
 	
 	public enum STATE 
 	{
@@ -17,7 +17,7 @@ public class GameStateMachine : MonoBehaviour {
 		NULL    = 6
 	}
 	
-	public STATE eGameState = STATE.NULL;
+	public STATE? eGameState = STATE.NULL;
 	
 	public delegate void StateDelegate();
 	
@@ -47,25 +47,29 @@ public class GameStateMachine : MonoBehaviour {
 	private StateDelegate updateDelegate = delegate {};
 	
 	// Use this for initialization
-	void Start ()
+	void Awake ()
 	{
-		if (GameStateMachine._MAIN == null)
-			GameStateMachine._MAIN = this;
+		if (GameStateMachine._Main == null)
+			GameStateMachine._Main = this;
 		else
 		{
 			Debug.LogError("Multiple GameStateMachine exist in scene: Deleting extra instance.");
 			Destroy (this);
 		}
-		
-		stateContainer = new genericState[] {sMenu, sMenu, sLoading, sGame, sEnd, sReturn, sNull};
+
+		stateContainer = new genericState[] {sStart, sMenu, sLoading, sGame, sEnd, sReturn, sNull};
+	}
+
+	void Start ()
+	{
 		updateDelegate = delegate {
 			ChangeState(STATE.START);
 		};
 	}
-	
-	public void ChangeState(STATE state)
+
+	public void ChangeState(STATE? state)
 	{
-		if (state == null) 
+		if (state == null)
 		{
 			Debug.LogError("ChangeState in GameStateController was given null parameter.");
 			return;
