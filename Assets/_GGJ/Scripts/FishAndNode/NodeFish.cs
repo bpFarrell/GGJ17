@@ -21,13 +21,15 @@ public class NodeFish : MonoBehaviour {
             return (parentNode.position + (dir.normalized * dist));
         }
     }
-    public void Init(Transform parent, Vector3 assignedPos, Transform fishParent) {
+    public void Init(Transform parent, Vector3 assignedPos, Transform fishParent, Material matFish) {
         parentNode = parent;
         dir = (assignedPos - parent.position);
         dist = dir.magnitude;
         defaultDist = dist;
 
         GameObject fish = Instantiate(Resources.Load("fish")) as GameObject;
+        fish.GetComponentInChildren<MeshRenderer>().sharedMaterial = matFish;
+    //    Debug.Log(matFish.name + " : " + fish.GetComponentInChildren<MeshRenderer>().sharedMaterial.name);
         fish.transform.position = transform.position;
         fish.transform.localScale *= Random.Range(0.8001f, 1.2001f);
     //    fish.GetComponent<FishBehavior>().target = transform;

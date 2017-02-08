@@ -54,7 +54,7 @@ public class NodeManager : MonoBehaviour {
             sphCol.radius = 10;
             
             NodeMain nodeMain = nodeGO.AddComponent<NodeMain>();
-            nodeMain.Init(pos,amountFishNOde, rootParent.transform, fishParent.transform);
+            nodeMain.Init(pos,amountFishNOde, rootParent.transform, fishParent.transform, ColorMaster.instance.getDefaultMaterial);
 
             GameObject ps = Instantiate(Resources.Load("psPickup")) as GameObject; //GameObject.CreatePrimitive(PrimitiveType.Sphere);
             ps.transform.SetParent(nodeGO.transform);
