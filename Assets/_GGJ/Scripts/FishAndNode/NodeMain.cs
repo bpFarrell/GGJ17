@@ -124,7 +124,8 @@ public class NodeMain : MonoBehaviour {
         SetColor(ColorMaster.instance.clrNuetrual);
         Debug.Log(state);
     }
-    public void Init(Vector3 origin, int amountFish, Transform rootParent, Transform fishParent, Material defaultFishMaterial) {
+    public void Init(Vector3 origin, int amountFish, Transform rootParent, Transform fishParent, Material defaultFishMaterial, float transitionSpeed) {
+        this.transitionSpeed = transitionSpeed;
         float degree = 360 / amountFish;
         matFish = new Material(defaultFishMaterial);
         matFish.SetColor("_GlowColorA", ColorMaster.instance.clrNuetrual);

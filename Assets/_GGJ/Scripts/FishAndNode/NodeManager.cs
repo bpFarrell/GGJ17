@@ -8,21 +8,23 @@ public class NodeManager : MonoBehaviour {
 	int amountFishNOde;
 	float distToInnerBound;
 	float distToOuterBound;
-
+    
 	public Vector3 motherPos;
     public GameObject rootParent;
     public GameObject fishParent;
     public AudioClip octoGatherSound;
 
 	public IList<NodeMain> mainNodes = new List<NodeMain>();
-	// Use this for initialization
-	void Start () {
+
+    GameInfo gameInfo;
+    // Use this for initialization
+    void Start () {
         rootParent = new GameObject("rootParent");
         fishParent = new GameObject("fishParent");
         fishParent.AddComponent<FishManager>();
 
         motherPos = transform.position;
-        GameInfo gameInfo = GetComponent<GameInfo>();
+        gameInfo = GetComponent<GameInfo>();
         amountMainNode = gameInfo.amountMainNodes;
         octoGatherSound = Resources.Load("octoGather", typeof(AudioClip)) as AudioClip;
 
@@ -54,7 +56,7 @@ public class NodeManager : MonoBehaviour {
             sphCol.radius = 10;
             
             NodeMain nodeMain = nodeGO.AddComponent<NodeMain>();
-            nodeMain.Init(pos,amountFishNOde, rootParent.transform, fishParent.transform, ColorMaster.instance.getDefaultMaterial);
+            nodeMain.Init(pos,amountFishNOde, rootParent.transform, fishParent.transform, ColorMaster.instance.getDefaultMaterial, gameInfo.materialTransitionSpeed);
 
             GameObject ps = Instantiate(Resources.Load("psPickup")) as GameObject; //GameObject.CreatePrimitive(PrimitiveType.Sphere);
             ps.transform.SetParent(nodeGO.transform);
