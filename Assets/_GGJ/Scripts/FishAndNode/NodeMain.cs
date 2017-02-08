@@ -30,6 +30,19 @@ public class NodeMain : MonoBehaviour {
     float intrudeTimeStart;
     bool isIntrude;
     float radius;
+
+    public Material matFish;
+    Color resultingColor;
+
+    private float delta;
+    public float transitionSpeed = 1;
+    enum ColorState {
+        idle,
+        begin,
+        transition,
+        complete
+    }
+    ColorState colorState;
 	// Use this for initialization
 	void Start () {
         //  Init(pos);
@@ -42,6 +55,7 @@ public class NodeMain : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        ColorStateManager(colorState);
         transform.position += Vector3.forward * Mathf.Sin(Time.time) * 0.01f;
         transform.position += Vector3.right * Mathf.Sin(Time.time) * 0.01f;
         if (stateChange) {
@@ -79,18 +93,42 @@ public class NodeMain : MonoBehaviour {
         }
     }
 
+    public void SetColor(Color colorResult) {
+        colorState = ColorState.begin;
+        resultingColor = colorResult;
+    }
+    void SetColorBegin() {
+        delta = -1;
+        matFish.SetColor("_GlowColorB", resultingColor);
+        matFish.SetFloat("_T", delta);
+    }
+    void SetColorTransition() {
+        delta += Time.deltaTime * transitionSpeed;
+        matFish.SetFloat("_T", delta);
+    }
+    void SetColorComplete() {
+        delta = -1;
+        matFish.SetColor("_GlowColorA", resultingColor);
+        matFish.SetFloat("_T", delta);
+    }
+
     public void SetToNeutralState() {
         state = State.neutral;
         for (int i = 0; i < fishNodes.Count; i++)
         {
             //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
             fishNodes[i].state = NodeFish.State.neutral;
-            fishNodes[i].fishControl.SetColor(0);
+            //    fishNodes[i].fishControl.SetColor(0);
+            SetColor(ColorMaster.instance.clrNuetrual);
         }
         Debug.Log(state);
     }
-    public void Init(Vector3 origin, int amountFish, Transform rootParent, Transform fishParent) {
+    public void Init(Vector3 origin, int amountFish, Transform rootParent, Transform fishParent, Material defaultFishMaterial) {
         float degree = 360 / amountFish;
+        matFish = new Material(defaultFishMaterial);
+        matFish.SetColor("_GlowColorA", ColorMaster.instance.clrNuetrual);
+        matFish.SetFloat("_T", -1);
+        
         for (int i = 0; i < amountFish; i++) {
             Vector3 temp = Tools.PointOnCircle(origin, degree * i, Random.Range(1,amountFish*0.1f));
             Vector3 assignedPos = new Vector3(temp.x, Random.Range(origin.y, origin.y+amountFish*0.1f), temp.z);
@@ -102,7 +140,7 @@ public class NodeMain : MonoBehaviour {
 
             fishNodeGO.transform.SetParent(rootParent);
             NodeFish fish = fishNodeGO.AddComponent<NodeFish>();
-            fish.Init(transform, assignedPos, fishParent);
+            fish.Init(transform, assignedPos, fishParent,matFish);
 
             fishNodes.Add(fish);
         }
@@ -129,7 +167,8 @@ public class NodeMain : MonoBehaviour {
             {
                 //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
                 fishNodes[i].state = NodeFish.State.travel;
-                fishNodes[i].fishControl.SetColor(1);
+                //    fishNodes[i].fishControl.SetColor(1);
+                SetColor(ColorMaster.instance.clrPlayerOne);
             }
         }
         else
@@ -139,7 +178,8 @@ public class NodeMain : MonoBehaviour {
             {
                 //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
                 fishNodes[i].state = NodeFish.State.travel;
-                fishNodes[i].fishControl.SetColor(2);
+                //   fishNodes[i].fishControl.SetColor(2);
+                SetColor(ColorMaster.instance.clrPlayerTwo);
             }
         }
         GetComponent<AudioSource>().Play();
@@ -156,6 +196,27 @@ public class NodeMain : MonoBehaviour {
         if (Time.time > intrudeTimeStart + 2.0f) {
             // drop the node;
             SetToNeutralState();
+        }
+    }
+
+    void ColorStateManager(ColorState clrState) {
+        switch (clrState) {
+            case ColorState.idle:
+                return;
+            case ColorState.begin:
+                SetColorBegin();
+                colorState = ColorState.transition;
+                break;
+            case ColorState.transition:
+                SetColorTransition();
+                if (delta >= 1) colorState = ColorState.complete;
+                break;
+            case ColorState.complete:
+                SetColorComplete();
+                colorState = ColorState.idle;
+                break;
+            default:
+                return;
         }
     }
  //   void OnTriggerLeave(Collider col) {
