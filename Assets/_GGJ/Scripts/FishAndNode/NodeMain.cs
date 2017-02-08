@@ -119,8 +119,9 @@ public class NodeMain : MonoBehaviour {
             //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
             fishNodes[i].state = NodeFish.State.neutral;
             //    fishNodes[i].fishControl.SetColor(0);
-            SetColor(ColorMaster.instance.clrNuetrual);
+            
         }
+        SetColor(ColorMaster.instance.clrNuetrual);
         Debug.Log(state);
     }
     public void Init(Vector3 origin, int amountFish, Transform rootParent, Transform fishParent, Material defaultFishMaterial) {
@@ -167,20 +168,22 @@ public class NodeMain : MonoBehaviour {
             {
                 //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
                 fishNodes[i].state = NodeFish.State.travel;
-                //    fishNodes[i].fishControl.SetColor(1);
-                SetColor(ColorMaster.instance.clrPlayerOne);
+                
             }
+            SetColor(ColorMaster.instance.clrPlayerOne);
+
         }
         else
         {
             isPlayerOne = false;
+            
             for (int i = 0; i < fishNodes.Count; i++)
             {
                 //     fishNodes[i].dist = fishNodes[i].defaultDist * 0.5f;
                 fishNodes[i].state = NodeFish.State.travel;
-                //   fishNodes[i].fishControl.SetColor(2);
-                SetColor(ColorMaster.instance.clrPlayerTwo);
+                
             }
+            SetColor(ColorMaster.instance.clrPlayerTwo);
         }
         GetComponent<AudioSource>().Play();
     }

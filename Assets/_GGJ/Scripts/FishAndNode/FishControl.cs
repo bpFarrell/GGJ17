@@ -16,9 +16,8 @@ public class FishControl : MonoBehaviour {
     public Transform target;
     // Use this for initialization
     void Start () {
-//        test = true;
-//        target = GetComponent<FishBehavior>().target;
-        SetColor(0);
+
+    //    SetColor(0);
 	}
 	
 	// Update is called once per frame
@@ -42,9 +41,7 @@ public class FishControl : MonoBehaviour {
         transform.Rotate(0, rotSpeed * normDot, 0);
     }
     void LookTurn(Vector3 dir) {
-//        dotFwd = Vector3.Dot(transform.forward, dir.normalized);
-//        dotFwd += 1;
-//        dotFwd *= 0.5f;
+
         Vector3 lookVec = Vector3.Lerp(transform.forward, dir.normalized, rotSpeed * Time.deltaTime);
         transform.rotation = Quaternion.LookRotation(lookVec,Vector3.up);
     }
