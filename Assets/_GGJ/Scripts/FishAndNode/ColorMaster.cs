@@ -14,7 +14,7 @@ public class ColorMaster : MonoBehaviour {
     public Color clrPlayerTwo;
 
     [SerializeField]
-    Material defaultFishMaterial;
+    private Material defaultFishMaterial;
     public Material getDefaultMaterial {
         get {
             if(defaultFishMaterial == null) defaultFishMaterial = Resources.Load("matFishDefault") as Material;
