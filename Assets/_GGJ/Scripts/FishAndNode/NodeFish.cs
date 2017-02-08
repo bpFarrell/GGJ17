@@ -30,8 +30,9 @@ public class NodeFish : MonoBehaviour {
         GameObject fish = Instantiate(Resources.Load("fish")) as GameObject;
         fish.transform.position = transform.position;
         fish.transform.localScale *= Random.Range(0.8001f, 1.2001f);
-        fish.GetComponent<FishBehavior>().target = transform;
+    //    fish.GetComponent<FishBehavior>().target = transform;
         fishControl = fish.GetComponent<FishControl>();
+        fishControl.target = transform;
         fish.transform.SetParent(fishParent);
     }
 	// Use this for initialization

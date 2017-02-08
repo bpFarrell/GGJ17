@@ -10,14 +10,14 @@ public class FishControl : MonoBehaviour {
     public float dotRight;
     public float dotFwd;
     public Vector3 testVec = Vector3.right;
-    public bool test;
+//    public bool test;
     public MeshRenderer mr;
 
-    public Transform debugObj;
+    public Transform target;
     // Use this for initialization
     void Start () {
-        test = true;
-        debugObj = GetComponent<FishBehavior>().target;
+//        test = true;
+//        target = GetComponent<FishBehavior>().target;
         SetColor(0);
 	}
 	
@@ -27,11 +27,11 @@ public class FishControl : MonoBehaviour {
         transform.position += transform.forward * fwdSpeed * Time.deltaTime;
 
         
-        if (test && debugObj!=null) {
-            testVec = (debugObj.position - transform.position).normalized;
+        if (target!=null) {
+            testVec = (target.position - transform.position).normalized;
             //   Turn(testVec);
             LookTurn(testVec);
-            if ((debugObj.position - transform.position).magnitude > groupRadius) {
+            if ((target.position - transform.position).magnitude > groupRadius) {
                 BabyComeBack(testVec);
             }
         }
@@ -42,9 +42,9 @@ public class FishControl : MonoBehaviour {
         transform.Rotate(0, rotSpeed * normDot, 0);
     }
     void LookTurn(Vector3 dir) {
-        dotFwd = Vector3.Dot(transform.forward, dir.normalized);
-        dotFwd += 1;
-        dotFwd *= 0.5f;
+//        dotFwd = Vector3.Dot(transform.forward, dir.normalized);
+//        dotFwd += 1;
+//        dotFwd *= 0.5f;
         Vector3 lookVec = Vector3.Lerp(transform.forward, dir.normalized, rotSpeed * Time.deltaTime);
         transform.rotation = Quaternion.LookRotation(lookVec,Vector3.up);
     }
@@ -61,12 +61,12 @@ public class FishControl : MonoBehaviour {
         transform.rotation = rot;
     }
 
-    bool IsItRight(Vector3 dir) {
-        if ((dotRight = Vector3.Dot(transform.right, dir.normalized)) > 0) {
-            return true;
-        }
-        return false;
-    }
+//    bool IsItRight(Vector3 dir) {
+//        if ((dotRight = Vector3.Dot(transform.right, dir.normalized)) > 0) {
+//            return true;
+//        }
+//        return false;
+//    }
     /// <summary>
     /// 0 is neutral 1 is P1 and 2 is P2
     /// </summary>
