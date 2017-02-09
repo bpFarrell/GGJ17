@@ -16,12 +16,18 @@ public class ScoreBoard : MonoBehaviour {
         }
     }
     bool normalized= true;
-    float playSpeed = 0.3f;
+    float playSpeed = 0.2f;
     float pushSpeed = 1;
     float idleTime = 1;
     float completedTime;
     public bool play = false;
     public Material mat;
+    public Material octoproxy;
+    public Material octomoma;
+    [ColorUsageAttribute(true, true, 0f, 8f, 0.125f, 3f)]
+    Color currentClr;
+    [ColorUsageAttribute(true, true, 0f, 8f, 0.125f, 3f)]
+    Color targetClr;
 	// Use this for initialization
     public enum State {
         Counter,
@@ -32,6 +38,12 @@ public class ScoreBoard : MonoBehaviour {
 	void Start () {
         mat = GetComponent<MeshRenderer>().material;
         weight = GameInfo.main.fishRation;
+        currentClr = ColorMaster.instance.clrNuetrual;
+        if (weight > 0.5f) {
+            targetClr = ColorMaster.instance.clrPlayerOne;
+        }else {
+            targetClr = ColorMaster.instance.clrPlayerTwo;
+        }
 	}
 	
 	// Update is called once per frame
@@ -67,6 +79,9 @@ public class ScoreBoard : MonoBehaviour {
     }
     void Push() {
         weight = Mathf.Clamp01(weight += pushSpeed * direction * Time.deltaTime);
+        currentClr = Color.Lerp(currentClr, targetClr, Time.deltaTime);
+        octoproxy.SetColor("_GlowColor", currentClr);
+        octomoma.SetColor("_GlowColor", currentClr);
     }
     void Draw() {
         float jitter = 0;
@@ -79,5 +94,9 @@ public class ScoreBoard : MonoBehaviour {
             //old
             mat.SetVector("_T", new Vector4(Mathf.Min(t, weight), Mathf.Min(t, 1 - weight), 0, 0));
         }
+    }
+    private void OnDisable() {
+        octoproxy.SetColor("_GlowColor", ColorMaster.instance.clrNuetrual);
+        octomoma.SetColor("_GlowColor", ColorMaster.instance.clrNuetrual);
     }
 }

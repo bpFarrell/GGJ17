@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: New Material 6
+  m_Name: octoproxy
   m_Shader: {fileID: 4800000, guid: d0bc9d82bf6cfc9488d4995cb2d622af, type: 3}
   m_ShaderKeywords: _DETAIL_MULX2 _EMISSION _NORMALMAP
   m_LightmapFlags: 1

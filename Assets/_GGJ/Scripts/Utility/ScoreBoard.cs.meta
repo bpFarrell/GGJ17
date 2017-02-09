@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: c865a298aaa3bfa4286187c649656989
-timeCreated: 1486337947
+timeCreated: 1486624968
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - mat: {instanceID: 0}
+  - octoproxy: {fileID: 2100000, guid: 8df1e2acb251afb4b9cafb35155221b2, type: 2}
+  - octomoma: {fileID: 2100000, guid: 9bc6ee87287c7ce47bdf73c92257642e, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
