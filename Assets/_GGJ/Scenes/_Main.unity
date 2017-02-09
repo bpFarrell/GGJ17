@@ -271,6 +271,7 @@ MonoBehaviour:
     type: 2}
   singleDisplay: {fileID: 1615182638346586, guid: bae7ee0b6c7cd79499c110a8025a78d4,
     type: 2}
+  ForceDualScreen: 1
   DisplayCount: 0
   DisplayRoot: {fileID: 0}
   PlayButton: {fileID: 0}
