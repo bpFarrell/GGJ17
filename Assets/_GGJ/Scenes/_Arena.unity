@@ -59419,17 +59419,22 @@ Prefab:
     - target: {fileID: 114803887144260070, guid: 405bfd9db8a329642806bbdae51c8784,
         type: 2}
       propertyPath: clrPlayerOne.r
-      value: 0.16811058
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114803887144260070, guid: 405bfd9db8a329642806bbdae51c8784,
         type: 2}
       propertyPath: clrPlayerOne.g
-      value: 2.216
+      value: 2.085
       objectReference: {fileID: 0}
     - target: {fileID: 114803887144260070, guid: 405bfd9db8a329642806bbdae51c8784,
         type: 2}
       propertyPath: clrPlayerOne.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114803887144260070, guid: 405bfd9db8a329642806bbdae51c8784,
+        type: 2}
+      propertyPath: clrPlayerTwo.b
+      value: 1.285
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 405bfd9db8a329642806bbdae51c8784, type: 2}

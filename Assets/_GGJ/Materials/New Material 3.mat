@@ -133,4 +133,4 @@ Material:
       second: {r: 7.39, g: 0.45868966, b: 0, a: 1}
     - first:
         name: _GlowColor
-      second: {r: 7.39, g: 0.45868966, b: 0, a: 1}
+      second: {r: 1.5109288, g: 0, b: 0.38097176, a: 1}
