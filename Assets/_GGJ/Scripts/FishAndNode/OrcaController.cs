@@ -25,7 +25,13 @@ public class OrcaController : MonoBehaviour {
         Vector3 dir = (Random.insideUnitCircle.normalized)*radius;
         dir.z = dir.y;
         dir.y = 0;
-        Vector3 cross = Vector3.Cross(dir.normalized, Vector3.up);
+        Vector3 cross;
+        if (Random.value > 0.5f) {
+            cross = Vector3.Cross(dir.normalized, Vector3.up);
+        }else {
+
+            cross = Vector3.Cross(Vector3.up, dir.normalized);
+        }
         Vector3 point = dir + transform.position + cross * -900 + transform.up * -20;
         for (int x = 0; x < count; x++) {
             Vector3 offset = Random.onUnitSphere * 70;
