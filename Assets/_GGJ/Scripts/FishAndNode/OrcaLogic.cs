@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class OrcaLogic : MonoBehaviour {
-    float speed = 40;
+    float speed = 30;
     float deltaY = 12;
-    float decayY = 0.5f;
+    float decayY = 0.45f;
     float killY;
 	// Use this for initialization
 	void Start () {
