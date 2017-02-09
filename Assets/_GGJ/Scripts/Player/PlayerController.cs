@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     public enum InputType {
         Tank,
-        CamerarRlative
+        CamerarRlative,
+        None
     }
     public InputType inputType = InputType.CamerarRlative;
     public bool isPlayerOne;
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour {
         }
         cam = transform.parent.GetComponentInChildren<Camera>();
         torso = transform.GetComponentInChildren<TorsoLogic>();
-        if (torso == null) {
+        if (torso == null&&inputType!=InputType.None) {
             Debug.LogError("Torse not set! Attack torso logic to octoTorso");
         }
         ml = gameObject.AddComponent<MoveLogic>();
