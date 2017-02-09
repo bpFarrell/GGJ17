@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 	private void GameSetup()
 	{
 		Transform titleObj;
-		if(DisplayCount > -1)
+		if(DisplayCount > 1)
 		{
 			DisplayRoot = Instantiate( dualDisplay ) as GameObject;
 			titleObj = DisplayRoot.transform.Find("Screen One").Find("UI Canvas").Find("TitleScreen");

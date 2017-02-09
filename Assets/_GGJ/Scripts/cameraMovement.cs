@@ -8,7 +8,9 @@ public class cameraMovement : MonoBehaviour
 	public Transform cameraFollow;
 	public Transform lookTarget;
 	public Vector3 targetOffset = Vector3.zero;
+	public bool cameraBroken = false;
     NodeManager nodeManage;
+	[ReadOnly][SerializeField]
     float distFromMother;
 
 	private Vector3 lookAtPos = new Vector3 ();
@@ -25,10 +27,10 @@ public class cameraMovement : MonoBehaviour
 
 	// Update is called once per frame
 	void Update () 
-	{
-		
+	{		
         distFromMother = (nodeManage.transform.position - lookTarget.position).magnitude;
-        if (distFromMother < 100)
+		if (distFromMother > 100) cameraBroken = false;
+        if (distFromMother < 100 && !cameraBroken)
         {
             LookAtMother();
         }

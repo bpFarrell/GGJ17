@@ -14,6 +14,7 @@ public class CameraAnchor : MonoBehaviour
 	public float chaseSpeed = 0.1f;
 	public float rotateSpeed = 1.0f;
 	public float targetDistance = 50.0f;
+	public cameraMovement cameraScript;
 
 	private string playerPrefix = "P1_";
 	// Use this for initialization
@@ -26,21 +27,31 @@ public class CameraAnchor : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		bool inputDetected = false;
 		// Jason Input for camera rotation//
-		if(Input.GetAxis(playerPrefix + "RightHorizontal") != 0.0f) 
+		float horizontalVector = Input.GetAxis(playerPrefix + "RightHorizontal");
+		float verticalVector = Input.GetAxis (playerPrefix + "RightVertical");
+		Debug.Log(verticalVector);
+		if(horizontalVector >= 0.1f || horizontalVector <= -0.1f) 
 		{
+			inputDetected = true;
 			Vector3 point = (transform.position + Vector3.up);
 			Vector3 axis = Vector3.up;
 			float rotAngle = Input.GetAxis(playerPrefix + "RightHorizontal") * rotateSpeed;
 			cameraPosition.RotateAround(point, axis, rotAngle);
 		}
-		if (Input.GetAxis (playerPrefix + "RightVertical") != 0.0f)
+		if (verticalVector >= 0.1f || verticalVector <= -0.1f)
 		{
-			height += (heightAdjSpeed * (Input.GetAxis (playerPrefix + "RightVertical") - 0.5f)) * Time.deltaTime;
+			inputDetected = true;
+			height += (heightAdjSpeed * (Input.GetAxis (playerPrefix + "RightVertical"))) * Time.deltaTime;
 			if (height > roofBound) {height = roofBound;}
 			if (height < floorBound) {height = floorBound;}
-
 		}
+		if (inputDetected)
+		{
+			cameraScript.cameraBroken = true;
+		}
+
 		Vector3 tempPos = cameraPosition.position;
 		Vector3 displacement = transform.position - cameraPosition.position;
 		float step = (displacement.magnitude - targetDistance) * chaseSpeed;
