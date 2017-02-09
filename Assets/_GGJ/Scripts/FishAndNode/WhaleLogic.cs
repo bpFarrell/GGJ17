@@ -11,6 +11,6 @@ public class WhaleLogic : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Rotate(0, Time.deltaTime * 2, 0);
+        transform.Rotate(0, Time.deltaTime * 4, 0);
 	}
 }
