@@ -30,6 +30,7 @@ Shader "Custom/Whale" {
 		struct Input {
 			float2 uv_MainTex;
 			float seed;
+			float3 localPos;
 		};
 			
 		half _Glossiness;
@@ -42,7 +43,7 @@ Shader "Custom/Whale" {
 		void myvert(inout appdata_full v,out Input i)
 		{
 			i.uv_MainTex = float2(1, 1);
-
+			i.localPos = v.vertex;
 			i.seed = length	(float3(unity_ObjectToWorld[0].x, unity_ObjectToWorld[1].x, unity_ObjectToWorld[2].x))*500;
 			v.vertex.y += sin(v.vertex.z+_Time.x*20)*0.2*pow(v.vertex.z-2,2)*0.05;
 			v.vertex.y += sin(_Time.x * 20)*0.1;
@@ -67,7 +68,7 @@ Shader "Custom/Whale" {
 			}*
 			float div = l1 + l2;
 			l1 /= div;*/
-			float sweep = pow(sin(IN.uv_MainTex.x * 20 + _Time.x*-50)*0.5 + 0.5,5)+0.1;
+			float sweep = pow(sin(IN.localPos.z * 1.5 + _Time.x*50)*0.5 + 0.5,5)+0.1;
 			fixed4 glow = lerp(_GlowColorA, _GlowColorB, saturate(IN.seed+_T));
 			fixed4 g = tex2D(_GlowMap, IN.uv_MainTex)*glow;
 			fixed4 c = tex2D(_MainTex, IN.uv_MainTex)*_Color;
