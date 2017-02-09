@@ -43,7 +43,7 @@ public class GameStateManager : MonoBehaviour {
 	private StateDelegate updateDelegate = delegate {};
 	
 	// Use this for initialization
-	void Start ()
+	void Awake ()
 	{
 		if (GameStateManager._MAIN == null)
 			GameStateManager._MAIN = this;
@@ -58,11 +58,6 @@ public class GameStateManager : MonoBehaviour {
 	
 	public void ChangeState(STATE state)
 	{
-		if (state == null) 
-		{
-			Debug.LogError("ChangeState in GameStateController was given null parameter.");
-			return;
-		}
 		if(state == eGameState)
 			return;
 		if (state == STATE.NULL)

@@ -5,56 +5,70 @@ using UnityEngine;
 
 public class MenuController : MonoBehaviour 
 {
+	static public MenuController _Main;
+
 	public float loadingScreenWait = 5.0f;
 	public GameObject fadePanel;
+	public GameObject[] fadePanels;
 	public GameObject[] loadingIcons;
 	public GameObject[] titleScreens;
 	public GameObject[] toyGroups;
 
-	private float fadeCounter = 0.0f;
-	private float fadeRate = 0.1f;
-
-	// Use this for initialization
-	void Start () 
+	void Awake ()
 	{
-		fadeCounter = 0.0f;
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		if(Input.GetButtonDown("P1_Y"))
+		if (!MenuController._Main)
+			_Main = this;
+		else
 		{
-			GameStateManager._MAIN.ChangeState(GameStateManager.STATE.RESET);
+			Debug.LogError("Multiple MenuController scripts have appeared in the scene.", gameObject);
+			Destroy(this);
 		}
+		gameObject.transform.parent = null;
+		GameStateMachine._Main.sLoading.StartOfState += LoadingStart;
+		GameStateMachine._Main.sLoading.ExitState += EndOfLoading;
 	}
 
 	public void PressedPlay()
 	{
-		Debug.Log ("Play Pressed.");
-		// Fade to black
-		FadeInObject(fadePanel, 0.4f);
-		foreach (GameObject obj in titleScreens) {
-			obj.SetActive(false);
-		}
-		// Animate loading icon
-		foreach (GameObject obj in loadingIcons) {
-			FadeInObject(obj, 1.0f);
-			FadeInObject(obj, 1.0f);
-		}
-
-		// Wait arbitrary 5 seconds or so for loading screen
-		voidFunction del = MidLoading;
-		StartCoroutine(ExecuteAfterDelay(2.0f, del));
-		// LoadSceneAdditively the game screen and start initializations
+		GameStateMachine._Main.ChangeState(GameStateMachine.STATE.LOADING);
 	}
 
-	private void MidLoading()
+	public void LoadingStart()
 	{
-		SceneManager.LoadScene("_Arena", LoadSceneMode.Additive);
+		// Fade to black
+		FadeObject(fadePanels, 0.4f, true, LoadAssets);
 
-		voidFunction del = WaitedForLoading;
-		StartCoroutine(ExecuteAfterDelay(2.0f, del));
+		foreach (GameObject obj in titleScreens) 
+		{
+			obj.SetActive(false);
+		}
+		// Animate loading icons
+
+		FadeObject(loadingIcons, 1.0f, true);
+	}
+
+	private void LoadAssets()
+	{
+		//TODO: Load in assets instead of scene
+		SceneManager.LoadScene("_Arena", LoadSceneMode.Additive);
+		wait(5.0f, LoadingDone );
+	}
+
+	private void LoadingDone()
+	{
+		GameStateMachine._Main.ChangeState(GameStateMachine.STATE.GAME);
+	}
+
+	private void EndOfLoading()
+	{
+		FadeObject(fadePanels, 0.4f, false);
+		
+		foreach (GameObject obj in loadingIcons) {
+			obj.SetActive(false);
+		}
+		foreach (GameObject obj in toyGroups) {
+			obj.SetActive(false);
+		}
 	}
 
 	private void WaitedForLoading()
@@ -71,8 +85,7 @@ public class MenuController : MonoBehaviour
 		GameStateManager._MAIN.Reset.StartOfState += ResetGameMenu;
 	}
 
-	private delegate void voidFunction();
-	IEnumerator ExecuteAfterDelay(float time, voidFunction dele)
+	IEnumerator ExecuteAfterDelay(float time, GameManager.simpleDelegate dele)
 	{
 		yield return new WaitForSeconds(time);
 
@@ -98,6 +111,36 @@ public class MenuController : MonoBehaviour
 		tempFade.timeToClear = duration;
 	}
 
+	public FadeScript FadeObject(GameObject obj, float duration, bool toBlack, GameManager.simpleDelegate callback = null)
+	{
+		FadeScript tempFade = obj.AddComponent<FadeScript>() as FadeScript;
+		tempFade.timeToFade = duration;
+		tempFade.toBlack = toBlack;
+		if (callback != null)tempFade.Callback = callback;
+		return tempFade;
+	}
+	public void FadeObject(GameObject[] obj, float duration, bool toBlack, GameManager.simpleDelegate callback = null)
+	{
+		FadeScript tempFade = obj[0].AddComponent<FadeScript>() as FadeScript;;
+		tempFade.timeToFade = duration;
+		tempFade.toBlack = toBlack;
+		if (callback != null)tempFade.Callback = callback;
+		for (int i = 1; i < obj.Length; i++) 
+		{
+			tempFade = obj[i].AddComponent<FadeScript>() as FadeScript;
+			tempFade.timeToFade = duration;
+			tempFade.toBlack = toBlack;
+		}
+		return;
+	}
+
+	public WaitScript wait(float seconds, GameManager.simpleDelegate callback = null)
+	{
+		WaitScript script = gameObject.AddComponent<WaitScript>() as WaitScript;
+		if(callback != null) script.Callback = callback;
+		return script;
+	}
+
 	public void ResetGameMenu()
 	{
 		SceneManager.LoadScene("_Menu");
@@ -119,7 +162,7 @@ public class MenuController : MonoBehaviour
 			obj.SetActive(true);
 		}
 
-		voidFunction del = resetEnd;
+		GameManager.simpleDelegate del = resetEnd;
 		StartCoroutine(ExecuteAfterDelay(2.0f, del));
 	}
 

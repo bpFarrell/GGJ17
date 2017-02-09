@@ -28,9 +28,8 @@ public class PlayerController : MonoBehaviour {
         cam = transform.parent.GetComponentInChildren<Camera>();
         torso = transform.GetComponentInChildren<TorsoLogic>();
         if (torso == null&&inputType!=InputType.None) {
-            Debug.LogError("Torse not set! Attack torso logic to octoTorso");
-        }
-        ml = gameObject.AddComponent<MoveLogic>();
+            Debug.LogError("Torse not set! Attack torso logic to octoTorso", gameObject);        }
+        }        ml = gameObject.AddComponent<MoveLogic>();
     }
 	void Start () {
         Transform[] children = GetComponentsInChildren<Transform>();
