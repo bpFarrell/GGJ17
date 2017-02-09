@@ -40,6 +40,7 @@ Shader "Custom/Whale" {
 		fixed4 _GlowColorA;
 		fixed4 _GlowColorB;
 		float _T;
+		fixed4 _G_Glow;
 		void myvert(inout appdata_full v,out Input i)
 		{
 			i.uv_MainTex = float2(1, 1);
@@ -69,8 +70,7 @@ Shader "Custom/Whale" {
 			float div = l1 + l2;
 			l1 /= div;*/
 			float sweep = pow(sin(IN.localPos.z * 1.5 + _Time.x*50)*0.5 + 0.5,5)+0.1;
-			fixed4 glow = lerp(_GlowColorA, _GlowColorB, saturate(IN.seed+_T));
-			fixed4 g = tex2D(_GlowMap, IN.uv_MainTex)*glow;
+			fixed4 g = tex2D(_GlowMap, IN.uv_MainTex)*_G_Glow;
 			fixed4 c = tex2D(_MainTex, IN.uv_MainTex)*_Color;
 			o.Albedo = c.rgb;
 			o.Emission = g.xyz*sweep;

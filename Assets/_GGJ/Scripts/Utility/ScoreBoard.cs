@@ -81,7 +81,7 @@ public class ScoreBoard : MonoBehaviour {
         weight = Mathf.Clamp01(weight += pushSpeed * direction * Time.deltaTime);
         currentClr = Color.Lerp(currentClr, targetClr, Time.deltaTime);
         octoproxy.SetColor("_GlowColor", currentClr);
-        octomoma.SetColor("_GlowColor", currentClr);
+        Shader.SetGlobalColor("_G_Glow", currentClr);
     }
     void Draw() {
         float jitter = 0;
@@ -98,5 +98,6 @@ public class ScoreBoard : MonoBehaviour {
     private void OnDisable() {
         octoproxy.SetColor("_GlowColor", ColorMaster.instance.clrNuetrual);
         octomoma.SetColor("_GlowColor", ColorMaster.instance.clrNuetrual);
+        Shader.SetGlobalColor("_G_Glow", ColorMaster.instance.clrNuetrual);
     }
 }

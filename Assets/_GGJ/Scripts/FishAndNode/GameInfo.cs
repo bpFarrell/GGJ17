@@ -33,6 +33,7 @@ public class GameInfo : MonoBehaviour {
     IList<NodeMain> capturedNodeMain = new List<NodeMain>();
     void Awake() {
         main = this;
+        Shader.SetGlobalColor("_G_Glow", Color.white);
     }
     void Start() {
         capCollide = GetComponent<CapsuleCollider>();
