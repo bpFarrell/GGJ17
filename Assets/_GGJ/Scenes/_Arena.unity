@@ -2031,7 +2031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a1b754436f9684e9dbb99685e6e6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 1
+  player: 2
   cameraPosition: {fileID: 308469046}
   startPosition: {x: 251.46, y: 45, z: 306.3}
   heightAdjSpeed: 1
@@ -2041,6 +2041,7 @@ MonoBehaviour:
   chaseSpeed: 0.1
   rotateSpeed: 1
   targetDistance: 30
+  cameraScript: {fileID: 1705019948}
 --- !u!114 &61988413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29266,6 +29267,7 @@ MonoBehaviour:
   chaseSpeed: 0.1
   rotateSpeed: 1
   targetDistance: 30
+  cameraScript: {fileID: 1506697087}
 --- !u!54 &701549014
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -61520,6 +61522,8 @@ MonoBehaviour:
   cameraFollow: {fileID: 1341529227}
   lookTarget: {fileID: 701549012}
   targetOffset: {x: 0, y: 5, z: 0}
+  cameraBroken: 0
+  distFromMother: 0
 --- !u!4 &1506814228 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 1197105d719f46340ad7dec10bac5f33, type: 3}
@@ -69152,6 +69156,8 @@ MonoBehaviour:
   cameraFollow: {fileID: 308469046}
   lookTarget: {fileID: 61988411}
   targetOffset: {x: 0, y: 0, z: 0}
+  cameraBroken: 0
+  distFromMother: 0
 --- !u!114 &1705019949
 MonoBehaviour:
   m_ObjectHideFlags: 0
