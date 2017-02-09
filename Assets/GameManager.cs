@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 	static public GameManager _Main;
 	public GameObject dualDisplay;
 	public GameObject singleDisplay;
+	public bool ForceDualScreen = false;
 	public delegate void simpleDelegate();
 
 	[ReadOnly][SerializeField] private int DisplayCount;
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour
 	private void GameSetup()
 	{
 		Transform titleObj;
-		if(DisplayCount > 1)
+		if(DisplayCount > 1 || ForceDualScreen)
 		{
 			DisplayRoot = Instantiate( dualDisplay ) as GameObject;
 			titleObj = DisplayRoot.transform.Find("Screen One").Find("UI Canvas").Find("TitleScreen");

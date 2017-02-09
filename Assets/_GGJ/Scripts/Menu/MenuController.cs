@@ -51,12 +51,12 @@ public class MenuController : MonoBehaviour
 	{
 		//TODO: Load in assets instead of scene
 		SceneManager.LoadScene("_Arena", LoadSceneMode.Additive);
-		wait(5.0f, LoadingDone );
+		//wait(5.0f, LoadingDone );
 	}
 
 	private void LoadingDone()
 	{
-		GameStateMachine._Main.ChangeState(GameStateMachine.STATE.GAME);
+		//GameStateMachine._Main.ChangeState(GameStateMachine.STATE.GAME);
 	}
 
 	private void EndOfLoading()
