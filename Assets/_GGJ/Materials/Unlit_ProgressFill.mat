@@ -31,10 +31,10 @@ Material:
     m_Colors:
     - first:
         name: _Clr1
-      second: {r: 0, g: 0.323206, b: 3.605, a: 1}
+      second: {r: 3.605, g: 0.49388498, b: 0, a: 1}
     - first:
         name: _Clr2
-      second: {r: 1.575, g: 0.53735286, b: 0.2316176, a: 1}
+      second: {r: 1.575, g: 0, b: 0.26775002, a: 1}
     - first:
         name: _T
       second: {r: 0.5, g: 0.5, b: 0, a: 0}

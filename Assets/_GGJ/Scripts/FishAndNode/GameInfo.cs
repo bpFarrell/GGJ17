@@ -9,6 +9,7 @@ public class GameInfo : MonoBehaviour {
     public int amountFishToSpawn = 1500;
     public int amountFishDelta = 0;
 
+    public float materialTransitionSpeed = 0.5f;
     public float distToInnerBound = 20;
     public float distToOuterBound = 40;
 

@@ -44,9 +44,6 @@ public class FishBehavior : MonoBehaviour {
             {
                 subState = SubState.scared;
             }
-         //   else if (subState != SubState.avoidance) {
-         //       subState = SubState.normal;
-         //   }
         }
         
     }
