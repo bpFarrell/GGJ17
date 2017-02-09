@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.497311, g: 0.7640594, b: 0.8621048, a: 1}
+  m_IndirectSpecularColor: {r: 0.49731135, g: 0.7640612, b: 0.862105, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -55202,6 +55202,7 @@ MonoBehaviour:
   amountFishToWin: 800
   amountFishToSpawn: 1000
   amountFishDelta: 10
+  materialTransitionSpeed: 0.5
   distToInnerBound: 110
   distToOuterBound: 200
   pOneFish: 0
@@ -59414,6 +59415,21 @@ Prefab:
     - target: {fileID: 4738548585126908, guid: 405bfd9db8a329642806bbdae51c8784, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114803887144260070, guid: 405bfd9db8a329642806bbdae51c8784,
+        type: 2}
+      propertyPath: clrPlayerOne.r
+      value: 0.16811058
+      objectReference: {fileID: 0}
+    - target: {fileID: 114803887144260070, guid: 405bfd9db8a329642806bbdae51c8784,
+        type: 2}
+      propertyPath: clrPlayerOne.g
+      value: 2.216
+      objectReference: {fileID: 0}
+    - target: {fileID: 114803887144260070, guid: 405bfd9db8a329642806bbdae51c8784,
+        type: 2}
+      propertyPath: clrPlayerOne.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 405bfd9db8a329642806bbdae51c8784, type: 2}
@@ -85590,6 +85606,26 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2ded4216218a0214d9f84f1f3c33cac9, type: 2}
+    - target: {fileID: 198221460305227354, guid: 2282a082b3bf7c947ae7a2f0fef4e41a,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1975584880
+      objectReference: {fileID: 0}
+    - target: {fileID: 198221460305227354, guid: 2282a082b3bf7c947ae7a2f0fef4e41a,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 198221460305227354, guid: 2282a082b3bf7c947ae7a2f0fef4e41a,
+        type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.key1.rgba
+      value: 2348833279
+      objectReference: {fileID: 0}
+    - target: {fileID: 198221460305227354, guid: 2282a082b3bf7c947ae7a2f0fef4e41a,
+        type: 2}
+      propertyPath: ColorModule.gradient.maxGradient.key2.rgba
+      value: 2689751128
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2282a082b3bf7c947ae7a2f0fef4e41a, type: 2}
   m_IsPrefabParent: 0
