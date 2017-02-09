@@ -67,7 +67,7 @@ Shader "Custom/Orca" {
 			}*
 			float div = l1 + l2;
 			l1 /= div;*/
-			float sweep = pow(sin(IN.uv_MainTex.x * 20 + _Time.x*-50*(IN.seed*0.2+0.9) + IN.seed*100)*0.5 + 0.5,5)+0.1;
+			float sweep = pow(sin(IN.uv_MainTex.y * 10 + _Time.x*-100*(IN.seed*0.2+0.9) + IN.seed*100)*0.5 + 0.5,5)+0.1;
 			fixed4 glow = lerp(_GlowColorA, _GlowColorB, saturate(IN.seed+_T));
 			fixed4 g = tex2D(_GlowMap, IN.uv_MainTex)*glow;
 			fixed4 c = tex2D(_MainTex, IN.uv_MainTex)*_Color;
