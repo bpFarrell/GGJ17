@@ -38,6 +38,7 @@ public class OrcaController : MonoBehaviour {
             GameObject go = Instantiate(orcaPrefab,
                 point+offset,
                 Quaternion.LookRotation(cross, Vector3.up));
+			go.transform.parent = transform.parent;
         }
     }
 }

@@ -20,7 +20,9 @@ public class NodeManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rootParent = new GameObject("rootParent");
+		rootParent.transform.parent = transform.parent;
         fishParent = new GameObject("fishParent");
+		fishParent.transform.parent = transform.parent;
         fishParent.AddComponent<FishManager>();
 
         motherPos = transform.position;

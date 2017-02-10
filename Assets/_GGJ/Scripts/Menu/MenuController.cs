@@ -57,7 +57,7 @@ public class MenuController : MonoBehaviour
 	private void LoadAssets()
 	{
 		//TODO: Load in assets instead of scene
-		SceneManager.LoadScene("_Arena", LoadSceneMode.Additive);
+		//SceneManager.LoadScene("_Arena", LoadSceneMode.Additive);
 		//wait(5.0f, LoadingDone );
 	}
 
@@ -163,7 +163,7 @@ public class MenuController : MonoBehaviour
 	}
 	public void resetMid()
 	{
-		SceneManager.UnloadSceneAsync("_Arena");
+		//SceneManager.UnloadSceneAsync("_Arena");
 
 		foreach (GameObject obj in titleScreens) {
 			obj.SetActive(true);

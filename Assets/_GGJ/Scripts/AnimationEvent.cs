@@ -16,6 +16,6 @@ public class AnimationEvent : MonoBehaviour {
 
 	void StartResetState()
 	{
-		GameStateManager._MAIN.ChangeState(GameStateManager.STATE.RESET);
+		GameStateMachine._Main.ChangeState(GameStateMachine.STATE.RETURN);
 	}
 }

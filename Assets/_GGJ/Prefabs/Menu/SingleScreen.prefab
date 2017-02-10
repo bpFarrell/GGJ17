@@ -4323,7 +4323,8 @@ MonoBehaviour:
   - {fileID: 1300247907590726}
   - {fileID: 1828626549789794}
   - {fileID: 1864161859961096}
-  titleScreens: []
+  titleScreens:
+  - {fileID: 1683176639820386}
   toyGroups:
   - {fileID: 1025252028289264}
   - {fileID: 1777041910408896}

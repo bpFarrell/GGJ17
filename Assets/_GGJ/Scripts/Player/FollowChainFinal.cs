@@ -18,6 +18,7 @@ public class FollowChainFinal : MonoBehaviour {
     void Awake() {
         if (rootNode == null) {
             rootNode = new GameObject("RootNode");
+			rootNode.transform.parent = FindObjectOfType<DelayEnable>().transform;
         }
         if (length == -1) return;
         Spawn(null);
