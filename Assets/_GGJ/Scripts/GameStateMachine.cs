@@ -16,8 +16,9 @@ public class GameStateMachine : MonoBehaviour {
 		RETURN	= 5,
 		NULL    = 6
 	}
-	
-	public STATE? eGameState = STATE.NULL;
+
+	[SerializeField]
+	public STATE eGameState = STATE.NULL;
 	
 	public delegate void StateDelegate();
 	
@@ -67,7 +68,7 @@ public class GameStateMachine : MonoBehaviour {
 		};
 	}
 
-	public void ChangeState(STATE? state)
+	public void ChangeState(STATE state)
 	{
 		if (state == null)
 		{

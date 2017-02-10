@@ -8,13 +8,15 @@ public class GameManager : MonoBehaviour
 	static public GameManager _Main;
 	public GameObject dualDisplay;
 	public GameObject singleDisplay;
+	public GameObject MenuDoodads;
 	public bool ForceDualScreen = false;
 	public delegate void simpleDelegate();
 
 	[ReadOnly][SerializeField] private int DisplayCount;
 	[ReadOnly][SerializeField] private GameObject DisplayRoot;
-	[ReadOnly][SerializeField] private GameObject PlayButton;
-	[ReadOnly][SerializeField] private GameObject QuitButton;
+	[ReadOnly][SerializeField] private GameObject menuObject;
+	//[ReadOnly][SerializeField] private GameObject PlayButton;
+	//[ReadOnly][SerializeField] private GameObject QuitButton;
 	[ReadOnly][SerializeField] private GameStateMachine gsm;
 
 	// Use this for initialization
@@ -42,6 +44,13 @@ public class GameManager : MonoBehaviour
 		gsm = GameStateMachine._Main;
 		
 		gsm.sStart.StartOfState += GameSetup;
+		gsm.sStart.StartOfState += () => {
+			menuObject = Instantiate(MenuDoodads) as GameObject;
+		};
+
+		gsm.sGame.StartOfState += () => {
+			Destroy (menuObject);
+		};
 	}
 
 	private void GameSetup()
@@ -59,10 +68,10 @@ public class GameManager : MonoBehaviour
 		}
 
 		//titleObj = DisplayRoot.transform.Find("Screen One").Find("UI Canvas").Find("TitleScreen");
-		PlayButton = titleObj.Find("PLAY BUTTON").gameObject;
-		PlayButton.GetComponent<Button>().onClick.AddListener(MenuController._Main.PressedPlay);
-		QuitButton = titleObj.Find("QUIT BUTTON").gameObject;
-		QuitButton.GetComponent<Button>().onClick.AddListener(MenuController._Main.PressedQuit);
+		//PlayButton = titleObj.Find("PLAY BUTTON").gameObject;
+		//PlayButton.GetComponent<Button>().onClick.AddListener(MenuController._Main.PressedPlay);
+		//QuitButton = titleObj.Find("QUIT BUTTON").gameObject;
+		//QuitButton.GetComponent<Button>().onClick.AddListener(MenuController._Main.PressedQuit);
 	}
 
 	private void LoadingScreenStart()

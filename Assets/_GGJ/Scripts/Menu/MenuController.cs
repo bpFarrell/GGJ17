@@ -26,11 +26,18 @@ public class MenuController : MonoBehaviour
 		gameObject.transform.parent = null;
 		GameStateMachine._Main.sLoading.StartOfState += LoadingStart;
 		GameStateMachine._Main.sLoading.ExitState += EndOfLoading;
+		GameStateMachine._Main.sStart.UpdateState += MenuScreenUpdate;
 	}
 
 	public void PressedPlay()
 	{
 		GameStateMachine._Main.ChangeState(GameStateMachine.STATE.LOADING);
+	}
+
+	void MenuScreenUpdate()
+	{
+		if(Input.GetButtonDown("P1_A"))
+			GameStateMachine._Main.ChangeState(GameStateMachine.STATE.LOADING);
 	}
 
 	public void LoadingStart()
