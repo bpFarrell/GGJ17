@@ -14,6 +14,7 @@ public class MoveLogic : MonoBehaviour {
     float psTime;
     bool queued = false;
     float timeToPush;
+    int frameCount;
     // Use this for initialization
     void Awake () {
 
@@ -22,7 +23,10 @@ public class MoveLogic : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (frameCount < 40) {
+            frameCount++;
+            return;
+        }
         CalculateIdle();
         BoundCheck();
         if (Time.time > timeToPush&&queued)
