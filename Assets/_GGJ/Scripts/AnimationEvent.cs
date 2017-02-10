@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class AnimationEvent : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	bool animFinished = false;
+
+	void Start()
+	{
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void EndUpdate()
+	{
+		bool inputDetected = Input.GetButtonDown("P1_A") || Input.GetButtonDown("P1_Start") || Input.GetButtonDown("P2_A") || Input.GetButtonDown("P2_Start");
+
+		if(inputDetected && animFinished)
+		{
+			GameStateMachine._Main.ChangeState(GameStateMachine.STATE.RETURN);
+		}
 	}
 
 	void StartResetState()
 	{
-		GameStateManager._MAIN.ChangeState(GameStateManager.STATE.RESET);
+		animFinished = true;
+		//GameStateMachine._Main.ChangeState(GameStateMachine.STATE.RETURN);
 	}
 }

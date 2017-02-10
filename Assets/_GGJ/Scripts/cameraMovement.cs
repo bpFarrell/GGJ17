@@ -28,6 +28,11 @@ public class cameraMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{		
+		if(nodeManage == null)
+		{
+			nodeManage = FindObjectOfType<NodeManager>();
+			return;
+		}
         distFromMother = (nodeManage.transform.position - lookTarget.position).magnitude;
 		if (distFromMother > 100) cameraBroken = false;
         if (distFromMother < 100 && !cameraBroken)

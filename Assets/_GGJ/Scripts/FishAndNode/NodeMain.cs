@@ -50,7 +50,7 @@ public class NodeMain : MonoBehaviour {
         psMain = particle.main;
 
         radius = GetComponent<SphereCollider>().radius;
-        Debug.Log(radius);
+       // Debug.Log(radius);
 	}
 	
 	// Update is called once per frame
@@ -149,10 +149,10 @@ public class NodeMain : MonoBehaviour {
     }
     
     void OnTriggerEnter(Collider col) {
-        Debug.Log(col.tag);
+        //Debug.Log(col.tag);
         if (col.tag != "Player" ||
             state == State.mother) return;
-        Debug.Log(col.name);
+        //Debug.Log(col.name);
         trackTarget = col.transform;
         state = State.travel;
         if (state == State.travel) {
@@ -194,7 +194,7 @@ public class NodeMain : MonoBehaviour {
 
         if (dist > radius) {
             isIntrude = false;
-            Debug.Log("failed to steal");
+            //Debug.Log("failed to steal");
             return;
         }
         if (Time.time > intrudeTimeStart + 2.0f) {

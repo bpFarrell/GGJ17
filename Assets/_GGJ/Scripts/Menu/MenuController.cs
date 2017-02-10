@@ -26,11 +26,19 @@ public class MenuController : MonoBehaviour
 		gameObject.transform.parent = null;
 		GameStateMachine._Main.sLoading.StartOfState += LoadingStart;
 		GameStateMachine._Main.sLoading.ExitState += EndOfLoading;
+		GameStateMachine._Main.sStart.UpdateState += MenuScreenUpdate;
+		GameStateMachine._Main.sReturn.StartOfState += ResetGameMenu;
 	}
 
 	public void PressedPlay()
 	{
 		GameStateMachine._Main.ChangeState(GameStateMachine.STATE.LOADING);
+	}
+
+	void MenuScreenUpdate()
+	{
+		if(Input.GetButtonDown("P1_A") || Input.GetButtonDown("P1_Start") || Input.GetButtonDown("P2_A") || Input.GetButtonDown("P2_Start"))
+			GameStateMachine._Main.ChangeState(GameStateMachine.STATE.LOADING);
 	}
 
 	public void LoadingStart()
@@ -50,7 +58,7 @@ public class MenuController : MonoBehaviour
 	private void LoadAssets()
 	{
 		//TODO: Load in assets instead of scene
-		SceneManager.LoadScene("_Arena", LoadSceneMode.Additive);
+		//SceneManager.LoadScene("_Arena", LoadSceneMode.Additive);
 		//wait(5.0f, LoadingDone );
 	}
 
@@ -143,7 +151,7 @@ public class MenuController : MonoBehaviour
 
 	public void ResetGameMenu()
 	{
-		SceneManager.LoadScene("_Menu");
+		SceneManager.LoadScene("_Main");
 		//FadeInObject(fadePanel, 0.4f);
 		//foreach (GameObject obj in loadingIcons) {
 		//	obj.SetActive(true);
@@ -156,7 +164,7 @@ public class MenuController : MonoBehaviour
 	}
 	public void resetMid()
 	{
-		SceneManager.UnloadSceneAsync("_Arena");
+		//SceneManager.UnloadSceneAsync("_Arena");
 
 		foreach (GameObject obj in titleScreens) {
 			obj.SetActive(true);

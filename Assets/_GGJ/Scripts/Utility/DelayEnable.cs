@@ -10,6 +10,10 @@ public class DelayEnable : MonoBehaviour {
 	void Awake () {
         startTime = Time.time;
 	}
+
+	void Start() {
+
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -17,10 +21,11 @@ public class DelayEnable : MonoBehaviour {
             TurnOn();
         }
 	}
-    void TurnOn() {
-        foreach(GameObject go in gos) {
-            go.SetActive(true);
-        }
+    void TurnOn() {       
+        foreach (var go in gos) {
+			go.SetActive(true);
+		} 
+        
         Destroy(this);
     }
 }

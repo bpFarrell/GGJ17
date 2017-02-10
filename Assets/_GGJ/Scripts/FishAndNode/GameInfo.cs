@@ -71,14 +71,14 @@ public class GameInfo : MonoBehaviour {
         if ((pOneFish + pTwoFish) >= amountFishToWin) {
             if (pOneFish > pTwoFish)
             {
-                Debug.Log("Player One Wins");
+                //Debug.Log("Player One Wins");
                 victor = 1;
             }
             else {
-                Debug.Log("Player Two Wins");
+                //Debug.Log("Player Two Wins");
                 victor = 1;
             }
-            GameStateManager._MAIN.ChangeState(GameStateManager.STATE.END);
+			GameStateMachine._Main.ChangeState(GameStateMachine.STATE.END);
         }
         capturedNodeMain.Add(nm);
         nm.transform.SetParent(swirl.trackme);

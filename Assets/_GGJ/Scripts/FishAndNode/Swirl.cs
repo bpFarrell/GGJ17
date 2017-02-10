@@ -24,11 +24,12 @@ public class Swirl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         pivot = new GameObject("pivot");//GameObject.CreatePrimitive(PrimitiveType.Sphere);// new GameObject("pivot");
+		pivot.transform.parent = transform.parent;
         //    swirl = GameObject.CreatePrimitive(PrimitiveType.Cube);// new GameObject("swirl");
         pivot.transform.position = transform.position;
     //    swirl.transform.position = pivot.transform.position + (Vector3.forward * radius);
     //    swirl.transform.SetParent(pivot.transform);
-        Debug.Log(pivot.transform.position);
+    //    Debug.Log(pivot.transform.position);
 	}
 	
 	// Update is called once per frame

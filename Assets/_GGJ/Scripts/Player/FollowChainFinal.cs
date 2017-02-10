@@ -15,14 +15,21 @@ public class FollowChainFinal : MonoBehaviour {
     public float transStiffness = 1;
     public float rotStiffness = 1;
     public Vector3 offset;
+    public int frameCount = 0;
+    public int counter = 0;
     void Awake() {
         if (rootNode == null) {
             rootNode = new GameObject("RootNode");
+			rootNode.transform.parent = FindObjectOfType<DelayEnable>().transform;
         }
         if (length == -1) return;
         Spawn(null);
     }
     void Update() {
+        if (frameCount < 10+counter) {
+            frameCount++;
+            return;
+        }
         if (Prev == null) return;
         Vector3 dir = transform.position - Prev.transform.position;
         float dist = dir.magnitude;
@@ -37,6 +44,7 @@ public class FollowChainFinal : MonoBehaviour {
     }
     public void Spawn(FollowChainFinal from) {
         if(Prev!= null) {
+            counter = Prev.counter + 0;
             dummy = new GameObject(transform.name);
             dummy.transform.parent = rootNode.transform;
             dummy.transform.position = transform.position;
