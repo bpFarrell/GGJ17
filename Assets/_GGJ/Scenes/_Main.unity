@@ -480,7 +480,7 @@ MonoBehaviour:
     type: 2}
   LevelGroups:
   - {fileID: 1575546895001084, guid: f0f858c8e2095f04997098f942ed49d7, type: 2}
-  ForceDualScreen: 1
+  ForceDualScreen: 0
   DisplayCount: 0
   DisplayRoot: {fileID: 0}
   menuObject: {fileID: 0}
