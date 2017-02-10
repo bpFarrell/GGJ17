@@ -57,7 +57,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1057544171222070
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +72,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1078158523464054
 GameObject:
   m_ObjectHideFlags: 1
@@ -3696,7 +3696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91d7443546830f40a98e4b08511dc2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 1
+  player: 2
   inkPrefab: {fileID: 1777786592163920, guid: f9d8ecaf8011e3f4eb836ea0ad63f9f1, type: 2}
   sputterPrefab: {fileID: 1266918524350392, guid: cb7dd6134ebb6ef4198b2442c8009d32,
     type: 2}
@@ -3776,7 +3776,7 @@ MonoBehaviour:
   roofBound: 16
   floorBound: 0
   chaseSpeed: 0.1
-  rotateSpeed: 1
+  rotateSpeed: 2
   targetDistance: 30
   cameraScript: {fileID: 114779293352693122}
 --- !u!114 &114569395427922820
@@ -3848,7 +3848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91d7443546830f40a98e4b08511dc2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 1
+  player: 2
   inkPrefab: {fileID: 1777786592163920, guid: f9d8ecaf8011e3f4eb836ea0ad63f9f1, type: 2}
   sputterPrefab: {fileID: 1266918524350392, guid: cb7dd6134ebb6ef4198b2442c8009d32,
     type: 2}
@@ -4016,7 +4016,7 @@ MonoBehaviour:
   roofBound: 16
   floorBound: 0
   chaseSpeed: 0.1
-  rotateSpeed: 1
+  rotateSpeed: 2
   targetDistance: 30
   cameraScript: {fileID: 114747128329871306}
 --- !u!114 &114906285832171242

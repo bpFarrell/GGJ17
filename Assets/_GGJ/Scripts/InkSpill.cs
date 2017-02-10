@@ -28,7 +28,7 @@ public class InkSpill : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-        return;
+        //return;
 		if (counter < delay) counter += Time.deltaTime;
 		if (sputCounter < delay/8) sputCounter += Time.deltaTime;
 		if (Input.GetButtonDown(playerPrefix + "X"))
