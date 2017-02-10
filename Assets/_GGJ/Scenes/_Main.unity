@@ -202,10 +202,6 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1053671407969390, guid: ea0fba4d23cead34cb27b99e84045123, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea0fba4d23cead34cb27b99e84045123, type: 2}
   m_IsPrefabParent: 0
@@ -251,10 +247,6 @@ Prefab:
     - target: {fileID: 1666837416401746, guid: 4fa1c93fb98c03e4eb370893170a3dcd, type: 2}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1268764911356126, guid: 4fa1c93fb98c03e4eb370893170a3dcd, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4fa1c93fb98c03e4eb370893170a3dcd, type: 2}
@@ -390,7 +382,7 @@ MonoBehaviour:
     type: 2}
   LevelGroups:
   - {fileID: 1575546895001084, guid: f0f858c8e2095f04997098f942ed49d7, type: 2}
-  ForceDualScreen: 0
+  ForceDualScreen: 1
   DisplayCount: 0
   DisplayRoot: {fileID: 0}
   menuObject: {fileID: 0}

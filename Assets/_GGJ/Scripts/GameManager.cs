@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 		
 		DisplayCount = 1;
 
-		Debug.Log("Displays connected: " + Display.displays.Length);
+		//Debug.Log("Displays connected: " + Display.displays.Length);
 		if(Display.displays.Length > 1)
 		{
 			Display.displays[1].Activate();
@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
 	public void InstantiateEndGame()
 	{
 		CinematicGroup = (Resources.FindObjectsOfTypeAll(typeof(Targetable))[0] as Targetable).gameObject;
+		gsm.sEnd.UpdateState += CinematicGroup.GetComponent<AnimationEvent>().EndUpdate;
 		CinematicGroup.SetActive(true);
 		if(GameInfo.victor == 1)
 		{

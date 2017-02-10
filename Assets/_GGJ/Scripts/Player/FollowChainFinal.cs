@@ -44,7 +44,7 @@ public class FollowChainFinal : MonoBehaviour {
     }
     public void Spawn(FollowChainFinal from) {
         if(Prev!= null) {
-            counter = Prev.counter + 5;
+            counter = Prev.counter + 0;
             dummy = new GameObject(transform.name);
             dummy.transform.parent = rootNode.transform;
             dummy.transform.position = transform.position;

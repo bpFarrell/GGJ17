@@ -15,6 +15,7 @@ public class MoveLogic : MonoBehaviour {
     bool queued = false;
     float timeToPush;
     int frameCount;
+	float idleT = 0.0f;
     // Use this for initialization
     void Awake () {
 
@@ -69,10 +70,12 @@ public class MoveLogic : MonoBehaviour {
     void CalculateIdle() {
         float scale = 1;
         float speed = 1;
+		idleT += Time.deltaTime;
+		if(idleT >= 360.0f) idleT -= 360.0f;
         Vector3 offset = new Vector3(
-            Mathf.Sin(Time.time * speed) * scale,
-            Mathf.Cos(Time.time * speed * 1.3f) * scale,
-            -Mathf.Cos(Time.time * speed) * scale
+			Mathf.Sin(idleT * speed) * scale,
+			Mathf.Cos(idleT * speed * 1.3f) * scale,
+			-Mathf.Cos(idleT * speed) * scale
             );
         roll.transform.localPosition = offset;
     }

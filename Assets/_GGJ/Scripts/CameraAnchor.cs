@@ -31,7 +31,7 @@ public class CameraAnchor : MonoBehaviour
 		// Jason Input for camera rotation//
 		float horizontalVector = Input.GetAxis(playerPrefix + "RightHorizontal");
 		float verticalVector = Input.GetAxis (playerPrefix + "RightVertical");
-		Debug.Log(verticalVector);
+		//Debug.Log(verticalVector);
 		if(horizontalVector >= 0.1f || horizontalVector <= -0.1f) 
 		{
 			inputDetected = true;

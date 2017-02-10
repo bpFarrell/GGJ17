@@ -471,7 +471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1300896386384600
 GameObject:
   m_ObjectHideFlags: 1
@@ -3549,12 +3549,12 @@ MonoBehaviour:
   player: 2
   cameraPosition: {fileID: 4339707503139874}
   startPosition: {x: 251.46, y: 45, z: 306.3}
-  heightAdjSpeed: 1
+  heightAdjSpeed: 20
   height: 10
-  roofBound: 0
-  floorBound: 5
+  roofBound: 16
+  floorBound: 0
   chaseSpeed: 0.1
-  rotateSpeed: 1
+  rotateSpeed: 2
   targetDistance: 30
   cameraScript: {fileID: 114237207557959320}
 --- !u!114 &114271254910069112
@@ -3674,7 +3674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99072754195ebaf49bb170d90ebfdd2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 1
+  delayTime: 0
   gos:
   - {fileID: 1268764911356126}
   - {fileID: 1318746485808204}
@@ -3960,7 +3960,7 @@ MonoBehaviour:
   roofBound: 16
   floorBound: 0
   chaseSpeed: 0.1
-  rotateSpeed: 1
+  rotateSpeed: 2
   targetDistance: 30
   cameraScript: {fileID: 114758920659387178}
 --- !u!114 &114945627875042644
