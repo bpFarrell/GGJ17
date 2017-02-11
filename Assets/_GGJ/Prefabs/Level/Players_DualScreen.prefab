@@ -174,6 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4086170633940624}
   - component: {fileID: 114154303815122130}
+  - component: {fileID: 114070874855830238}
   m_Layer: 0
   m_Name: Players_DualScreen
   m_TagString: Untagged
@@ -3506,6 +3507,17 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   frameCount: 0
   counter: 0
+--- !u!114 &114070874855830238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1109030404400530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2b879fec3dc3f488a2f602b8ecfa9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114083710787080436
 MonoBehaviour:
   m_ObjectHideFlags: 1
