@@ -26,10 +26,6 @@ public class FollowChainFinal : MonoBehaviour {
         Spawn(null);
     }
     void Update() {
-        if (frameCount < 10+counter) {
-            frameCount++;
-            return;
-        }
         if (Prev == null) return;
         Vector3 dir = transform.position - Prev.transform.position;
         float dist = dir.magnitude;

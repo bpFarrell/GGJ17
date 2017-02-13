@@ -37,7 +37,7 @@ public class CameraAnchor : MonoBehaviour
 			inputDetected = true;
 			Vector3 point = (transform.position + Vector3.up);
 			Vector3 axis = Vector3.up;
-			float rotAngle = Input.GetAxis(playerPrefix + "RightHorizontal") * rotateSpeed;
+			float rotAngle = Input.GetAxis(playerPrefix + "RightHorizontal") * rotateSpeed * Time.deltaTime * 20;
 			cameraPosition.RotateAround(point, axis, rotAngle);
 		}
 		if (verticalVector >= 0.1f || verticalVector <= -0.1f)
@@ -54,7 +54,7 @@ public class CameraAnchor : MonoBehaviour
 
 		Vector3 tempPos = cameraPosition.position;
 		Vector3 displacement = transform.position - cameraPosition.position;
-		float step = (displacement.magnitude - targetDistance) * chaseSpeed;
+		float step = (displacement.magnitude - targetDistance) * (0.3f * Time.deltaTime);
 		tempPos += displacement.normalized * step;
 		tempPos.y = transform.position.y + height;
 		cameraPosition.position = tempPos;

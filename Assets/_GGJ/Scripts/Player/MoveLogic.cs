@@ -26,7 +26,7 @@ public class MoveLogic : MonoBehaviour {
 	void Update () {
         if (frameCount < 40) {
             frameCount++;
-            return;
+            
         }
         CalculateIdle();
         BoundCheck();

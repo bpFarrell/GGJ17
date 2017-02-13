@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 	public List<GameObject> LevelGroups = new List<GameObject>();
 	public bool ForceDualScreen = false;
 	public delegate void simpleDelegate();
+    static bool hasBeenLoaded = false;
 
 	[ReadOnly][SerializeField] private int DisplayCount;
 	[ReadOnly][SerializeField] private GameObject DisplayRoot;
@@ -39,10 +40,11 @@ public class GameManager : MonoBehaviour
 		DisplayCount = 1;
 
 		//Debug.Log("Displays connected: " + Display.displays.Length);
-		if(Display.displays.Length > 1)
+		if(Display.displays.Length > 1 && !hasBeenLoaded)
 		{
 			Display.displays[1].Activate();
-			DisplayCount = 2;
+            hasBeenLoaded = true;
+            DisplayCount = 2;
 		}
 	}
 	void Start ()
